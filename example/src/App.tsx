@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { ExampleComponent } from 'volkeno-forumy'
 import 'volkeno-forumy/dist/index.css'
+import { ExampleComponent } from '../../dist'
 
 const App = () => {
   return <ExampleComponent text="Hello volkeno forumy 😄" />
