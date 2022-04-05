@@ -1,12 +1,18 @@
 import * as React from 'react'
-import styles from './styles.module.css'
+// import Discussion from './components/Discussion'
+import Sommaire from './components/Sommaire'
+// import styles from './styles.module.css'
 
-interface Props {
-  text: string
-}
+// interface Props {
+//   text: string
+// }
 
-export const VolkenoForumy = ({ text }: Props) => {
+export const VolkenoForumy = () => {
   return (
-    <div className={styles.test}>Example Component: {text}</div>
+    // <div className={styles.test}>Example Component: {text}</div>
+    <div>
+      <Sommaire />
+      {/* <Discussion /> */}
+    </div>
   )
 }
