@@ -1,10 +1,10 @@
 import React from 'react'
 
+import { VolkenoForumy } from 'volkeno-forumy'
 import 'volkeno-forumy/dist/index.css'
-import { VolkenoForumy } from '../../src/index'
 
 const App = () => {
-  return  <VolkenoForumy />
+  return <VolkenoForumy text="Hello and welcome to volkeno forumy 😄" />
 }
 
 export default App

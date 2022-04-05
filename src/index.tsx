@@ -1,13 +1,10 @@
 import * as React from 'react'
-import Sommaire from './components/Sommaire'
-// interface Props {
-//   text: string
-// }
+import styles from './styles.module.css'
 
-export const VolkenoForumy = () => {
-  return (
-    <div>
-      <Sommaire />
-    </div>
-  )
+interface Props {
+  text: string
+}
+
+export const VolkenoForumy = ({ text }: Props) => {
+  return <div className={styles.test}>Example Component: {text}</div>
 }

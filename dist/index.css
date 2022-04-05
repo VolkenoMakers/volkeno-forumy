@@ -10,3 +10,8 @@
 ._styles-module__sommaire__1qJY4 {
   color: coral;
 }
+
+._styles-module__bloc-principal__2_k3P {
+	width: calc(100% - 17%);
+	padding-top: 6rem;
+}
