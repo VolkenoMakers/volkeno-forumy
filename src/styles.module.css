@@ -7,3 +7,11 @@
   font-size: 2em;
   text-align: center;
 }
+.sommaire {
+  color: coral;
+}
+
+.bloc-principal {
+	width: calc(100% - 17%);
+	padding-top: 6rem;
+}

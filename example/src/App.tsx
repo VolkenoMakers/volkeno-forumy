@@ -1,10 +1,10 @@
 import React from 'react'
 
 import 'volkeno-forumy/dist/index.css'
-import { ExampleComponent } from 'volkeno-forumy'
+import { VolkenoForumy } from '../../src/index'
 
 const App = () => {
-  return <ExampleComponent text="Hello volkeno forumy 😄" />
+  return  <VolkenoForumy />
 }
 
 export default App
