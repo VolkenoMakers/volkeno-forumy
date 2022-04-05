@@ -1,8 +1,8 @@
 import { createElement } from 'react';
 
-var styles = {"test":"_styles-module__test__3ybTi"};
+var styles = {"test":"_styles-module__test__3ybTi","sommaire":"_styles-module__sommaire__1qJY4"};
 
-const ExampleComponent = ({
+const VolkenoForumy = ({
   text
 }) => {
   return createElement("div", {
@@ -10,5 +10,5 @@ const ExampleComponent = ({
   }, "Example Component: ", text);
 };
 
-export { ExampleComponent };
+export { VolkenoForumy };
 //# sourceMappingURL=index.modern.js.map
