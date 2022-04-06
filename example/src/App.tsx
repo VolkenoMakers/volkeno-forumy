@@ -4,9 +4,7 @@ import { VolkenoForumy } from 'volkeno-forumy'
 import 'volkeno-forumy/dist/index.css'
 
 const App = () => {
-  var text = ''
-
-  return <VolkenoForumy text={text} />
+  return <VolkenoForumy />
 }
 
 export default App

@@ -1,6 +1,3 @@
 /// <reference types="react" />
-interface Props {
-    text: string;
-}
-declare function Sommaire({ text }: Props): JSX.Element;
+declare function Sommaire(): JSX.Element;
 export default Sommaire;
