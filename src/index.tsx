@@ -1,6 +1,7 @@
 import * as React from 'react'
+import Ajoutersujet from './components/AjouterSujet'
 // import Discussion from './components/Discussion'
-import Sommaire from './components/Sommaire'
+// import Sommaire from './components/Sommaire'
 // import styles from './styles.module.css'
 
 // interface Props {
@@ -11,8 +12,9 @@ export const VolkenoForumy = () => {
   return (
     // <div className={styles.test}>Example Component: {text}</div>
     <div>
-      <Sommaire />
+      {/* <Sommaire /> */}
       {/* <Discussion /> */}
+      <Ajoutersujet />
     </div>
   )
 }
