@@ -421,16 +421,15 @@
 }
 /* ------------AJOUTER UN SUJET------------ */
 ._styles-module__loginContainer__m4gZP {
-  background: #E5E5E5;
+  background-color: #E5E5E5;
   height: 100vh;
 }
 ._styles-module__forumContainer__1-B4b {
   background: #FFFFFF;
   box-sizing: border-box;
   border-radius: 8px;
-  margin-top: 5%;
   padding: 20px 45px;
-  width: 50%;
+  width: 60%;
   margin: auto;
 }
 ._styles-module__forumTitle__1Tjly {
