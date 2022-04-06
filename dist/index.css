@@ -48,6 +48,8 @@
   border-radius: 10px;
   position: relative;
   min-width: 100% !important;
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
 }
 ._styles-module__forum-card-taille__1eBJ7{
   width: 65vw;
@@ -140,6 +142,7 @@
   align-items: center;
   letter-spacing: -0.025em;
   color: #000000;
+  padding-top: 15px;
 
 }
 ._styles-module__forumSommaireAuteurCard__3ovWR {
@@ -251,6 +254,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+}
+
+._styles-module__imgSommaireForum__3wJ3U{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid #FFFFFF;
+    /* max-width: 100%; */
 }
 
 /* ===================== discussion =================== */
