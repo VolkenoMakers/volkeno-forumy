@@ -114,6 +114,27 @@ export const DatasForum = [
                 }
                 ]
             }
+        ],
+        user_comments: [
+            {   
+                id: 1,
+                user: {
+                    prenom: "Sadio",
+                    nom: "Sanghare",
+                    avatar: '/mediafiles/avatars/default.png',
+                    fullname: 'SS'
+                },
+            },
+            {   
+                id: 2,
+                user: {
+                    prenom: "Paul",
+                    nom: "Gomis",
+                    avatar: '/mediafiles/avatars/default.png',
+                    fullname: 'PG'
+                },
+            },
         ]
+
     }
 ]

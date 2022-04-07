@@ -126,18 +126,18 @@ function Sommaire() {
                                 </div>
                                 <div className="col-lg-3">
                                   <div className={styles.sommaireForumUserChat}>
-                                    {/* {item?.user_comments
+                                    {item?.user_comments
                                       .slice(0, 4)
                                       .map((comment, index) => (
                                         <img
                                           src={comment?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${comment?.user?.fullname}` : `${comment?.user?.avatar}`}
                                           key={comment?.id}
                                           alt="user-avatar"
-                                          className={`img-sommaire-forum-user-chat div-sommaire-forum-user-chat${
+                                          className={`img-sommaire-forum-user-chat divSommaireForumUserChat${
                                             index + 1
                                           }`}
                                         />
-                                      ))}  */}
+                                      ))} 
                                       {
                                         console.log( 'user comment',item?.user_comments)
                                       }

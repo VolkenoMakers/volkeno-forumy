@@ -58,5 +58,13 @@ export declare const DatasForum: ({
             contenu: string;
         }[];
     }[];
-    user_comments?: undefined;
+    user_comments: {
+        id: number;
+        user: {
+            prenom: string;
+            nom: string;
+            avatar: string;
+            fullname: string;
+        };
+    }[];
 })[];

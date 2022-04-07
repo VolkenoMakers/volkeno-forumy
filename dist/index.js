@@ -5,7 +5,7 @@ var React__default = _interopDefault(React);
 var bs = require('react-icons/bs');
 var io5 = require('react-icons/io5');
 
-var styles = {"test":"_styles-module__test__3ybTi","contentViewStart":"_styles-module__contentViewStart__vMiGT","containerCayore":"_styles-module__containerCayore__zRBck","bannerListeProjet":"_styles-module__bannerListeProjet__zERCC","titreBannerListeProjet":"_styles-module__titreBannerListeProjet__cjRbQ","forumCardSommaire":"_styles-module__forumCardSommaire__3HiKz","forum-card-taille":"_styles-module__forum-card-taille__1eBJ7","forumCardSommaireFixWidth":"_styles-module__forumCardSommaireFixWidth__2uXL-","forum-card-skeleton-fix-width":"_styles-module__forum-card-skeleton-fix-width__2V2Qy","avatarSkeleton":"_styles-module__avatarSkeleton__1jx2o","avatarArticleSkeleton":"_styles-module__avatarArticleSkeleton__vRP36","contentSkeleton":"_styles-module__contentSkeleton__3H1kl","contentSkeleton2":"_styles-module__contentSkeleton2__10yh-","contentSkeletonUser":"_styles-module__contentSkeletonUser__zGOQu","contentSkeletonPara":"_styles-module__contentSkeletonPara__186w2","contentSkeletonPara2":"_styles-module__contentSkeletonPara2__3ncCE","cardSommaireDateAjout":"_styles-module__cardSommaireDateAjout__3TZlv","img-sommaire-forum":"_styles-module__img-sommaire-forum__CKiSb","img-sommaire-forum-discussion":"_styles-module__img-sommaire-forum-discussion__1lAQf","titreSommaireForum":"_styles-module__titreSommaireForum__lypzQ","forumSommaireAuteurCard":"_styles-module__forumSommaireAuteurCard__3ovWR","textSommaireForum":"_styles-module__textSommaireForum__R0WUA","sommaireForumUserChat":"_styles-module__sommaireForumUserChat__2fmvg","divNombreCommentaireSommaireForum":"_styles-module__divNombreCommentaireSommaireForum__3VGq1","div-sommaire-forum-user-chat1":"_styles-module__div-sommaire-forum-user-chat1__3rVPT","div-sommaire-forum-user-chat2":"_styles-module__div-sommaire-forum-user-chat2__112Ze","div-sommaire-forum-user-chat3":"_styles-module__div-sommaire-forum-user-chat3__PIEgK","div-sommaire-forum-user-chat4":"_styles-module__div-sommaire-forum-user-chat4__2-YEl","divSommaireForumUserChat5":"_styles-module__divSommaireForumUserChat5__Ms10U","divSommaireForumUserChat2":"_styles-module__divSommaireForumUserChat2__n-NHS","divSommaireForumUserChat3":"_styles-module__divSommaireForumUserChat3__1qa_i","divSommaireForumUserChat4":"_styles-module__divSommaireForumUserChat4__2PTKK","imgSommaireForumUserChat":"_styles-module__imgSommaireForumUserChat__WUnJj","nombreCommentaireSommaireForum":"_styles-module__nombreCommentaireSommaireForum__CZnT8","troisPoints":"_styles-module__troisPoints__1NUMh","sommaireAvatarTitre":"_styles-module__sommaireAvatarTitre__pLURL","imgSommaireForum":"_styles-module__imgSommaireForum__3wJ3U","card-discussion-heure-vu":"_styles-module__card-discussion-heure-vu__3dK_D","card-discussion-heure-commentaire":"_styles-module__card-discussion-heure-commentaire__ha-BC","card-discussion-heure-vu-laurhille":"_styles-module__card-discussion-heure-vu-laurhille__35Bmn","card-discussion-commentaire":"_styles-module__card-discussion-commentaire__17jE_","img-sommaire-forum-discussion2":"_styles-module__img-sommaire-forum-discussion2__3Wu6c","div-separateur":"_styles-module__div-separateur__JqWLR","row-input":"_styles-module__row-input__GLjv2","row-reponse":"_styles-module__row-reponse__x3w6R","row-reponse-ligne-union":"_styles-module__row-reponse-ligne-union__2905Z","row-reponse-ligne-union1":"_styles-module__row-reponse-ligne-union1__2_YyU","forum-discussion-ligne-union":"_styles-module__forum-discussion-ligne-union___ranC","offline-alert-card":"_styles-module__offline-alert-card__wh7If","offline-alert-textual":"_styles-module__offline-alert-textual__3oC-v","redirect-to-login-btn":"_styles-module__redirect-to-login-btn__1ZnBs","card-parent":"_styles-module__card-parent__9AC6h","sommaire-avatar-titre":"_styles-module__sommaire-avatar-titre__39Vol"};
+var styles = {"test":"_styles-module__test__3ybTi","contentViewStart":"_styles-module__contentViewStart__vMiGT","containerCayore":"_styles-module__containerCayore__zRBck","bannerListeProjet":"_styles-module__bannerListeProjet__zERCC","titreBannerListeProjet":"_styles-module__titreBannerListeProjet__cjRbQ","forumCardSommaire":"_styles-module__forumCardSommaire__3HiKz","forum-card-taille":"_styles-module__forum-card-taille__1eBJ7","forumCardSommaireFixWidth":"_styles-module__forumCardSommaireFixWidth__2uXL-","forum-card-skeleton-fix-width":"_styles-module__forum-card-skeleton-fix-width__2V2Qy","avatarSkeleton":"_styles-module__avatarSkeleton__1jx2o","avatarArticleSkeleton":"_styles-module__avatarArticleSkeleton__vRP36","contentSkeleton":"_styles-module__contentSkeleton__3H1kl","contentSkeleton2":"_styles-module__contentSkeleton2__10yh-","contentSkeletonUser":"_styles-module__contentSkeletonUser__zGOQu","contentSkeletonPara":"_styles-module__contentSkeletonPara__186w2","contentSkeletonPara2":"_styles-module__contentSkeletonPara2__3ncCE","cardSommaireDateAjout":"_styles-module__cardSommaireDateAjout__3TZlv","img-sommaire-forum":"_styles-module__img-sommaire-forum__CKiSb","img-sommaire-forum-discussion":"_styles-module__img-sommaire-forum-discussion__1lAQf","titreSommaireForum":"_styles-module__titreSommaireForum__lypzQ","forumSommaireAuteurCard":"_styles-module__forumSommaireAuteurCard__3ovWR","textSommaireForum":"_styles-module__textSommaireForum__R0WUA","sommaireForumUserChat":"_styles-module__sommaireForumUserChat__2fmvg","divNombreCommentaireSommaireForum":"_styles-module__divNombreCommentaireSommaireForum__3VGq1","divSommaireForumUserChat1":"_styles-module__divSommaireForumUserChat1__3AK7B","divSommaireSorumUserChat2":"_styles-module__divSommaireSorumUserChat2__2fhuF","divSommaireForumUserChat3":"_styles-module__divSommaireForumUserChat3__1qa_i","divSommaireForumUserChat4":"_styles-module__divSommaireForumUserChat4__2PTKK","divSommaireForumUserChat5":"_styles-module__divSommaireForumUserChat5__Ms10U","divSommaireForumUserChat2":"_styles-module__divSommaireForumUserChat2__n-NHS","imgSommaireForumUserChat":"_styles-module__imgSommaireForumUserChat__WUnJj","nombreCommentaireSommaireForum":"_styles-module__nombreCommentaireSommaireForum__CZnT8","troisPoints":"_styles-module__troisPoints__1NUMh","sommaireAvatarTitre":"_styles-module__sommaireAvatarTitre__pLURL","imgSommaireForum":"_styles-module__imgSommaireForum__3wJ3U","card-discussion-heure-vu":"_styles-module__card-discussion-heure-vu__3dK_D","card-discussion-heure-commentaire":"_styles-module__card-discussion-heure-commentaire__ha-BC","card-discussion-heure-vu-laurhille":"_styles-module__card-discussion-heure-vu-laurhille__35Bmn","card-discussion-commentaire":"_styles-module__card-discussion-commentaire__17jE_","img-sommaire-forum-discussion2":"_styles-module__img-sommaire-forum-discussion2__3Wu6c","div-separateur":"_styles-module__div-separateur__JqWLR","row-input":"_styles-module__row-input__GLjv2","row-reponse":"_styles-module__row-reponse__x3w6R","row-reponse-ligne-union":"_styles-module__row-reponse-ligne-union__2905Z","row-reponse-ligne-union1":"_styles-module__row-reponse-ligne-union1__2_YyU","forum-discussion-ligne-union":"_styles-module__forum-discussion-ligne-union___ranC","offline-alert-card":"_styles-module__offline-alert-card__wh7If","offline-alert-textual":"_styles-module__offline-alert-textual__3oC-v","redirect-to-login-btn":"_styles-module__redirect-to-login-btn__1ZnBs","card-parent":"_styles-module__card-parent__9AC6h","sommaire-avatar-titre":"_styles-module__sommaire-avatar-titre__39Vol"};
 
 var DatasForum = [{
   titre: "Quels sont les avantages d'utiliser le vélo comme moyen de transport ?",
@@ -101,6 +101,23 @@ var DatasForum = [{
       user_avatar: "image3",
       contenu: "Reponse 3"
     }]
+  }],
+  user_comments: [{
+    id: 1,
+    user: {
+      prenom: "Sadio",
+      nom: "Sanghare",
+      avatar: '/mediafiles/avatars/default.png',
+      fullname: 'SS'
+    }
+  }, {
+    id: 2,
+    user: {
+      prenom: "Paul",
+      nom: "Gomis",
+      avatar: '/mediafiles/avatars/default.png',
+      fullname: 'PG'
+    }
   }]
 }];
 
@@ -159,7 +176,16 @@ function Sommaire() {
       className: "col-lg-3"
     }, React__default.createElement("div", {
       className: styles.sommaireForumUserChat
-    }, console.log('user comment', item === null || item === void 0 ? void 0 : item.user_comments), React__default.createElement("div", {
+    }, item === null || item === void 0 ? void 0 : item.user_comments.slice(0, 4).map(function (comment, index) {
+      var _comment$user, _comment$user2, _comment$user3;
+
+      return React__default.createElement("img", {
+        src: (comment === null || comment === void 0 ? void 0 : (_comment$user = comment.user) === null || _comment$user === void 0 ? void 0 : _comment$user.avatar) === '/mediafiles/avatars/default.png' ? "https://ui-avatars.com/api/?name=" + (comment === null || comment === void 0 ? void 0 : (_comment$user2 = comment.user) === null || _comment$user2 === void 0 ? void 0 : _comment$user2.fullname) : "" + (comment === null || comment === void 0 ? void 0 : (_comment$user3 = comment.user) === null || _comment$user3 === void 0 ? void 0 : _comment$user3.avatar),
+        key: comment === null || comment === void 0 ? void 0 : comment.id,
+        alt: "user-avatar",
+        className: "img-sommaire-forum-user-chat divSommaireForumUserChat" + (index + 1)
+      });
+    }), console.log('user comment', item === null || item === void 0 ? void 0 : item.user_comments), React__default.createElement("div", {
       className: styles.divSommaireForumUserChat5
     }, React__default.createElement("div", {
       className: styles.troisPoints

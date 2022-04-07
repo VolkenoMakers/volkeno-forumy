@@ -178,18 +178,18 @@
 .sommaireForumUserChat {
   margin-top: -38px;
 }
-.div-sommaire-forum-user-chat1 {
+.divSommaireForumUserChat1 {
   z-index: 1000;
   border-radius: 50%;
   border: 1px solid #CCCCCC !important;
 }
-.div-sommaire-forum-user-chat2 {
+.divSommaireSorumUserChat2 {
   z-index: 900;
 }
-.div-sommaire-forum-user-chat3 {
+.divSommaireForumUserChat3 {
   z-index: 800;
 }
-.div-sommaire-forum-user-chat4 {
+.divSommaireForumUserChat4 {
   z-index: 700;
 }
 .divSommaireForumUserChat5 {
