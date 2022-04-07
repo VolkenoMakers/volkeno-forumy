@@ -205,6 +205,10 @@
   color: #BDBDBD;
   padding-top: -20px;
   box-sizing: border-box;
+
+  width: 30px;
+  height: 30px;
+  border: 1px solid #FFFFFF;
 }
 
 .divSommaireForumUserChat2,
@@ -214,6 +218,10 @@
   margin-left: -15px;
   border-radius: 50%;
   border: 1px solid #CCCCCC !important;
+  
+  width: 30px;
+  height: 30px;
+  border: 1px solid #FFFFFF;
 }
 
 .imgSommaireForumUserChat {

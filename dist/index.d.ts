@@ -1,2 +1,2 @@
-/// <reference types="react" />
-export declare const VolkenoForumy: () => JSX.Element;
+import * as React from 'react';
+export declare const VolkenoForumy: React.FC;

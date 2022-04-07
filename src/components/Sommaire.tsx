@@ -11,7 +11,7 @@ import { IoReturnDownBackOutline } from "react-icons/io5";
 
 function Sommaire() {
 
-  console.log('data forum',DatasForum)
+  // console.log('data forum',DatasForum)
 
     return (
         <div className="component-liste-projet">
@@ -128,27 +128,27 @@ function Sommaire() {
                                   <div className={styles.sommaireForumUserChat}>
                                     {item?.user_comments
                                       .slice(0, 4)
-                                      .map((comment, index) => (
+                                      .map((comment) => (
                                         <img
                                           src={comment?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${comment?.user?.fullname}` : `${comment?.user?.avatar}`}
                                           key={comment?.id}
                                           alt="user-avatar"
-                                          className={`img-sommaire-forum-user-chat divSommaireForumUserChat${
-                                            index + 1
-                                          }`}
+                                          className={
+                                            // imgSommaireForumUserChat 
+                                            styles.divSommaireForumUserChat2}
                                         />
                                       ))} 
-                                      {
+                                      {/* {
                                         console.log( 'user comment',item?.user_comments)
-                                      }
+                                      } */}
                                     <div className={
                                         // styles.imgSommaireForumUserChat 
                                         styles.divSommaireForumUserChat5
                                         }>
                                       <div className={styles.troisPoints}>
-                                      {/* {`
+                                      {`
                                             ${item?.user_comments.length > 4 ?  item?.user_comments.length - 4 + "+"  : "..."}
-                                        `} ... */}
+                                        `}
                                       </div>
                                     </div>
                                   </div>
