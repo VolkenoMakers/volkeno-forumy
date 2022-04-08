@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from 'react'
 import styles from '../styles.module.css'
 import AjoutComments from './AjoutComments'
@@ -116,14 +117,14 @@ function Discussion() {
 
             {/* =========================================================== FIN COLLAPSE ============================================================================ */}
 
-            <span
+            {/* <span
               className={
                 styles.divSeparateur
                 // w-100 mb-4
               } />
             ></span>
 
-            <hr className='divider' />
+            <hr className='divider' /> */}
 
             <div
               className={
@@ -188,7 +189,8 @@ function Discussion() {
             </div>
           </div>
         </div>
-      {/* <FrontFooterV2 /> */}
+        {/* <FrontFooterV2 /> */}
+      </div>
     </div>
   )
 }
