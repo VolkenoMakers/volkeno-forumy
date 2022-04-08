@@ -14,6 +14,10 @@
   width: 100% !important;
 }
 
+._styles-module__navigationLink__3BNu_:hover {
+  text-decoration: none;
+}
+
 ._styles-module__containerCayore__zRBck {
   padding-left: 4rem !important;
   padding-right: 4rem ;
@@ -123,8 +127,8 @@
   color: #5E5B5B;
 }
 
-._styles-module__img-sommaire-forum__CKiSb, 
-._styles-module__img-sommaire-forum-discussion__1lAQf {
+._styles-module__imgSommaireForum__3wJ3U, 
+._styles-module__imgSommaireForumDiscussion__10Qyd {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -218,7 +222,7 @@
   margin-left: -15px;
   border-radius: 50%;
   border: 1px solid #CCCCCC !important;
-  
+
   width: 30px;
   height: 30px;
   border: 1px solid #FFFFFF;
@@ -274,9 +278,9 @@
 
 /* ===================== discussion =================== */
 
-._styles-module__card-discussion-heure-vu__3dK_D, 
-._styles-module__card-discussion-heure-commentaire__ha-BC,
-._styles-module__card-discussion-heure-vu-laurhille__35Bmn {
+._styles-module__cardDiscussionHeureVu__2l2Yb, 
+._styles-module__cardDiscussionHeureCommentaire__1W3UV,
+._styles-module__cardDiscussionHeureVuLaurhille__prVaz {
   
   padding: 5px 15px;
   font-family: 'Poppins';
@@ -290,33 +294,34 @@
   color: #5E5B5B;
   gap: 15px;
 }
-._styles-module__card-discussion-heure-commentaire__ha-BC{
+._styles-module__cardDiscussionHeureCommentaire__1W3UV{
   position: absolute;
   right: 0px;
   bottom: 0px;
 }
-._styles-module__card-discussion-heure-vu__3dK_D {
+._styles-module__cardDiscussionHeureVu__2l2Yb {
   position: absolute;
   right: 0px;
   top: 0px;
 }
-._styles-module__card-discussion-commentaire__17jE_,
-._styles-module__card-discussion-commentaire__17jE_:hover,
-._styles-module__card-discussion-commentaire__17jE_:focus
+._styles-module__cardDiscussionCommentaire__8e0yO,
+._styles-module__cardDiscussionCommentaire__8e0yO:hover,
+._styles-module__cardDiscussionCommentaire__8e0yO:focus
 {
   color: #5E5B5B;
   text-decoration: none;
 }
 
-._styles-module__img-sommaire-forum-discussion2__3Wu6c{
+._styles-module__imgSommaireForumDiscussion2__1nB31{
   width: 50px;
   height: 50px;
   border-radius: 50%;
   border: 1px solid #FFFFFF;
 }
 
-._styles-module__div-separateur__JqWLR {
-  border: 1px solid grey;
+._styles-module__divSeparateur__3S7lS {
+  border: 1px solid grey !important;
+
 }
 
 ._styles-module__row-input__GLjv2 {
@@ -325,7 +330,7 @@
   padding-right: 0px !important;
 }
 
-._styles-module__row-reponse__x3w6R {
+._styles-module__rowReponse__15pjE {
   width: 100%;
 }
 ._styles-module__row-reponse-ligne-union__2905Z,
@@ -354,11 +359,18 @@
   left: 40px;
   z-index: -1;
 }
+/* 
+hr.divider {
+  margin:0;
+  padding:0;
+  line-height:1px;
+  height:0;
+  } */
 
-
-
-._styles-module__div-separateur__JqWLR {
-  border: 1px solid #C4C4C4;
+._styles-module__divSeparateur__3S7lS {
+  border: 1px solid #C4C4C4 !important;
+  margin-bottom: 20px !important;
+  z-index: 10 !important;
 }
 
 ._styles-module__forum-discussion-ligne-union___ranC::after {
@@ -397,16 +409,34 @@
   color: #115c67 !important;
 }
 
-._styles-module__card-parent__9AC6h {
+._styles-module__cardParent__nRyJj {
   width: 100% !important;
 }
 
+
+._styles-module__formAddCguButtonAjouter__2H-xZ {
+  background: #115C67;
+  border-radius: 4px;
+  /* width: 86px;
+  height: 38px; */
+  padding: 10px 15px;
+border-radius: 4px;
+font-family: "Poppins";
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 22px;
+text-align: center;
+color: #fff;
+outline: none;
+  padding: 4px 10px;
+}
 
 @media (max-width: 768px) {
   ._styles-module__sommaireForumUserChat__2fmvg {
       margin-top: 10px;
   }
-  ._styles-module__img-sommaire-forum-discussion__1lAQf {
+  ._styles-module__imgSommaireForumDiscussion__10Qyd {
       margin-top: 15px;
   }
 }
@@ -416,11 +446,11 @@
     padding-right: 1rem !important;
   }
 
-  ._styles-module__row-reponse__x3w6R {
+  ._styles-module__rowReponse__15pjE {
       width: 100%;
   }
 
-  ._styles-module__card-discussion-heure-commentaire__ha-BC {
+  ._styles-module__cardDiscussionHeureCommentaire__1W3UV {
       font-size: 16px;
       line-height: 22px;
       gap: 5px;
@@ -430,7 +460,7 @@
   ._styles-module__forum-discussion-ligne-union___ranC::after {
       display: none;
   }
-  ._styles-module__sommaire-avatar-titre__39Vol {
+  ._styles-module__sommaireAvatarTitre__pLURL {
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;

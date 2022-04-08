@@ -1,4 +1,4 @@
-export declare const DatasForum: ({
+export declare const DatasForum: {
     titre: string;
     contenu: string;
     id: number;
@@ -15,12 +15,17 @@ export declare const DatasForum: ({
             prenom: string;
             nom: string;
             avatar: string;
+            fullname: string;
         };
         text: string;
         created_at: string;
         reponse_commentaire: {
-            user: string;
-            user_avatar: string;
+            user: {
+                prenom: string;
+                nom: string;
+                user_avatar: string;
+                fullname: string;
+            };
             contenu: string;
         }[];
     }[];
@@ -33,38 +38,13 @@ export declare const DatasForum: ({
             fullname: string;
         };
     }[];
-} | {
-    titre: string;
-    contenu: string;
+}[];
+export declare const DatasUserSession: {
     id: number;
-    created_at: string;
-    author: {
+    user: {
         prenom: string;
         nom: string;
-        avatar: string;
         fullname: string;
+        avatar: string;
     };
-    comments: {
-        user: {
-            prenom: string;
-            nom: string;
-            avatar: string;
-        };
-        text: string;
-        created_at: string;
-        reponse_commentaire: {
-            user: string;
-            user_avatar: string;
-            contenu: string;
-        }[];
-    }[];
-    user_comments: {
-        id: number;
-        user: {
-            prenom: string;
-            nom: string;
-            avatar: string;
-            fullname: string;
-        };
-    }[];
-})[];
+}[];

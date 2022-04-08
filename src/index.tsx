@@ -21,7 +21,7 @@ export const VolkenoForumy: React.FC = () => {
 						element={<Sommaire/>}
 					/>
 					<Route
-						path="/forum-discussion"
+						path="/forum-discussion/:id"
 						element={<Discussion/>}
 					/>
         </Routes>

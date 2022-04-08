@@ -19,31 +19,41 @@ export const DatasForum = [
                     prenom: "Sadio",
                     nom: "Sanghare",
                     avatar: '/mediafiles/avatars/default.png',
+                    fullname: "SS"
                 },
-                text: "Reponse 1",
+                text: "Comment 1",
                 created_at: "6/04/2022",
                 reponse_commentaire: [
                 {
-                    user: "Sadio",
-                    user_avatar: "image3",
-                    contenu: "Reponse 3",
+                    user: {
+                        prenom: "Ndeye",
+                        nom: "Faye",
+                        user_avatar: '/mediafiles/avatars/default.png',
+                        fullname: "NF"
+                    },
+                    contenu: "Reponse 7",
                 }
                 ]
             },
             {
                 id: 2,
                 user: {
-                    prenom: "Sadio",
-                    nom: "Sangh",
+                    prenom: "Amadou",
+                    nom: "Sall",
                     avatar: '/mediafiles/avatars/default.png',
+                    fullname: "AS"
                 },
                 text: "Reponse 2",
                 created_at: "6/04/2022",
                 reponse_commentaire: [
                 {
-                    user: "Sadio",
-                    user_avatar: "image3",
-                    contenu: "Reponse 3",
+                    user: {
+                        prenom: "Fatou",
+                        nom: "Samb",
+                        user_avatar: '/mediafiles/avatars/default.png',
+                        fullname: "FS"
+                    },
+                    contenu: "Reponse 10",
                 }
                 ]
             }
@@ -83,34 +93,46 @@ export const DatasForum = [
         },
         comments: [
             {
+                id: 1,
                 user: {
                     prenom: "Paul",
                     nom: "Gomis",
                     avatar: '/mediafiles/avatars/default.png',
+                    fullname: "PG"
                 },
                 text: "Reponse 1",
                 created_at: "6/04/2022",
                 reponse_commentaire: [
                 {
-                    user: "Sadio",
-                    user_avatar: "image3",
+                    user: {
+                        prenom: "Alpha",
+                        nom: "Diallo",
+                        user_avatar: "image5",
+                        fullname: "AD"
+                    },
                     contenu: "Reponse 3",
                 }
                 ]
             },
             {
+                id: 2,
                 user: {
                     prenom: "Sadio",
                     nom: "Sangh",
                     avatar: '/mediafiles/avatars/default.png',
+                    fullname: "SS"
                 },
                 text: "Reponse 2",
                 created_at: "6/04/2022",
                 reponse_commentaire: [
                 {
-                    user: "Sadio",
-                    user_avatar: "image3",
-                    contenu: "Reponse 3",
+                    user: {
+                        prenom: "Cheikh",
+                        nom: "Dieng",
+                        user_avatar: '/mediafiles/avatars/default.png',
+                        fullname: "FS"
+                    },
+                    contenu: "Reponse 6",
                 }
                 ]
             }
@@ -136,5 +158,17 @@ export const DatasForum = [
             },
         ]
 
+    }
+]
+
+export const DatasUserSession = [
+    {
+        id: 1,
+        user: {
+            prenom: "Me",
+            nom: "",
+            fullname: "Me",
+            avatar: '/mediafiles/avatars/default.png'
+        }
     }
 ]

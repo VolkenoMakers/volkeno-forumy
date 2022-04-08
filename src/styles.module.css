@@ -14,6 +14,10 @@
   width: 100% !important;
 }
 
+.navigationLink:hover {
+  text-decoration: none;
+}
+
 .containerCayore {
   padding-left: 4rem !important;
   padding-right: 4rem ;
@@ -123,8 +127,8 @@
   color: #5E5B5B;
 }
 
-.img-sommaire-forum, 
-.img-sommaire-forum-discussion {
+.imgSommaireForum, 
+.imgSommaireForumDiscussion {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -218,7 +222,7 @@
   margin-left: -15px;
   border-radius: 50%;
   border: 1px solid #CCCCCC !important;
-  
+
   width: 30px;
   height: 30px;
   border: 1px solid #FFFFFF;
@@ -274,9 +278,9 @@
 
 /* ===================== discussion =================== */
 
-.card-discussion-heure-vu, 
-.card-discussion-heure-commentaire,
-.card-discussion-heure-vu-laurhille {
+.cardDiscussionHeureVu, 
+.cardDiscussionHeureCommentaire,
+.cardDiscussionHeureVuLaurhille {
   
   padding: 5px 15px;
   font-family: 'Poppins';
@@ -290,33 +294,34 @@
   color: #5E5B5B;
   gap: 15px;
 }
-.card-discussion-heure-commentaire{
+.cardDiscussionHeureCommentaire{
   position: absolute;
   right: 0px;
   bottom: 0px;
 }
-.card-discussion-heure-vu {
+.cardDiscussionHeureVu {
   position: absolute;
   right: 0px;
   top: 0px;
 }
-.card-discussion-commentaire,
-.card-discussion-commentaire:hover,
-.card-discussion-commentaire:focus
+.cardDiscussionCommentaire,
+.cardDiscussionCommentaire:hover,
+.cardDiscussionCommentaire:focus
 {
   color: #5E5B5B;
   text-decoration: none;
 }
 
-.img-sommaire-forum-discussion2{
+.imgSommaireForumDiscussion2{
   width: 50px;
   height: 50px;
   border-radius: 50%;
   border: 1px solid #FFFFFF;
 }
 
-.div-separateur {
-  border: 1px solid grey;
+.divSeparateur {
+  border: 1px solid grey !important;
+
 }
 
 .row-input {
@@ -325,7 +330,7 @@
   padding-right: 0px !important;
 }
 
-.row-reponse {
+.rowReponse {
   width: 100%;
 }
 .row-reponse-ligne-union,
@@ -354,11 +359,18 @@
   left: 40px;
   z-index: -1;
 }
+/* 
+hr.divider {
+  margin:0;
+  padding:0;
+  line-height:1px;
+  height:0;
+  } */
 
-
-
-.div-separateur {
-  border: 1px solid #C4C4C4;
+.divSeparateur {
+  border: 1px solid #C4C4C4 !important;
+  margin-bottom: 20px !important;
+  z-index: 10 !important;
 }
 
 .forum-discussion-ligne-union::after {
@@ -397,16 +409,34 @@
   color: #115c67 !important;
 }
 
-.card-parent {
+.cardParent {
   width: 100% !important;
 }
 
+
+.formAddCguButtonAjouter {
+  background: #115C67;
+  border-radius: 4px;
+  /* width: 86px;
+  height: 38px; */
+  padding: 10px 15px;
+border-radius: 4px;
+font-family: "Poppins";
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 22px;
+text-align: center;
+color: #fff;
+outline: none;
+  padding: 4px 10px;
+}
 
 @media (max-width: 768px) {
   .sommaireForumUserChat {
       margin-top: 10px;
   }
-  .img-sommaire-forum-discussion {
+  .imgSommaireForumDiscussion {
       margin-top: 15px;
   }
 }
@@ -416,11 +446,11 @@
     padding-right: 1rem !important;
   }
 
-  .row-reponse {
+  .rowReponse {
       width: 100%;
   }
 
-  .card-discussion-heure-commentaire {
+  .cardDiscussionHeureCommentaire {
       font-size: 16px;
       line-height: 22px;
       gap: 5px;
@@ -430,7 +460,7 @@
   .forum-discussion-ligne-union::after {
       display: none;
   }
-  .sommaire-avatar-titre {
+  .sommaireAvatarTitre {
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;

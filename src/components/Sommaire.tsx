@@ -3,6 +3,7 @@ import styles from '../styles.module.css'
 import { DatasForum } from './DatasForum';
 import { BsChat } from "react-icons/bs";
 import { IoReturnDownBackOutline } from "react-icons/io5";
+import { NavLink } from 'react-router-dom';
 // import avatar from './img/avatar.png'
 
 // interface Props {
@@ -53,17 +54,19 @@ function Sommaire() {
                 ) : forum_data.data.length > 0 ? (
                   forum_data.data.map((item) => { */}
                     {/* return ( */}
-                      {/* <NavLink
-                        className=""
+                      <NavLink
+                        className={styles.navigationLink}
                         to={{
-                          pathname: `/forum-discussion/${item.id}`,
-                          state: { item },
+                          pathname: `/forum-discussion/${1
+                            // item.id
+                          }`,
+                          // state: { item },
                         }}
-                        key={item.id}
-                        onClick={() => {
-                          getForumData(item);
-                        }}
-                      > */}
+                        // key={item.id}
+                        // onClick={() => {
+                        //   getForumData(item);
+                        // }}
+                      >
 
                       {
                         DatasForum.length > 0  ? (
@@ -175,6 +178,7 @@ function Sommaire() {
                           </div>
                         )
                       }
+                    </NavLink>
               </div>
             </div>
             </div>
