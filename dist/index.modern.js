@@ -69,7 +69,7 @@ const DatasForum = [{
         user_avatar: '/mediafiles/avatars/default.png',
         fullname: "NF"
       },
-      contenu: "Reponse 7"
+      contenu: "Reponse 7 deus"
     }]
   }, {
     id: 2,
@@ -379,7 +379,7 @@ function Sommaire() {
   }, React__default.createElement("div", {
     className: "col-12"
   }, React__default.createElement(NavLink, {
-    className: styles.navigationLink,
+    className: "",
     to: {
       pathname: `/forum-discussion/${1}`
     }
@@ -428,7 +428,7 @@ function Sommaire() {
         alt: "user-avatar",
         className: styles.divSommaireForumUserChat2
       });
-    }), React__default.createElement("div", {
+    }), console.log('user comment', item === null || item === void 0 ? void 0 : item.user_comments), React__default.createElement("div", {
       className: styles.divSommaireForumUserChat5
     }, React__default.createElement("div", {
       className: styles.troisPoints

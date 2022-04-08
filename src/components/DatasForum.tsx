@@ -31,7 +31,7 @@ export const DatasForum = [
                         user_avatar: '/mediafiles/avatars/default.png',
                         fullname: "NF"
                     },
-                    contenu: "Reponse 7",
+                    contenu: "Reponse 7 deus",
                 }
                 ]
             },

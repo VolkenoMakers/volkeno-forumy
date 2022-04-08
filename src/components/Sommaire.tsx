@@ -55,11 +55,9 @@ function Sommaire() {
                   forum_data.data.map((item) => { */}
                     {/* return ( */}
                       <NavLink
-                        className={styles.navigationLink}
+                        className=""
                         to={{
-                          pathname: `/forum-discussion/${1
-                            // item.id
-                          }`,
+                          pathname: `/forum-discussion/${1}`,
                           // state: { item },
                         }}
                         // key={item.id}
@@ -141,9 +139,9 @@ function Sommaire() {
                                             styles.divSommaireForumUserChat2}
                                         />
                                       ))} 
-                                      {/* {
+                                      {
                                         console.log( 'user comment',item?.user_comments)
-                                      } */}
+                                      }
                                     <div className={
                                         // styles.imgSommaireForumUserChat 
                                         styles.divSommaireForumUserChat5
@@ -178,7 +176,7 @@ function Sommaire() {
                           </div>
                         )
                       }
-                    </NavLink>
+                      </NavLink>
               </div>
             </div>
             </div>
