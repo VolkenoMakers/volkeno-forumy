@@ -28,11 +28,11 @@ function Sommaire(props:{}) {
         <div className="component-liste-projet">
           {/* <FrontHeaderV2 /> */}
           <div className={styles.contentViewStart}>
-            <div className={styles.bannerListeProjet}>
+            {/* <div className={styles.bannerListeProjet}>
               <h3 className={styles.titreBannerListeProjet}>
                 De la discussion, jaillit la lumière
               </h3>
-            </div>
+            </div> */}
             <div className={styles.containerCayore}>
               <div className="row align-items-center" style={{ margin: "3rem 0" }}>
               <div className="col-12">
@@ -62,15 +62,15 @@ function Sommaire(props:{}) {
                     ))
                   
                 ) : forum_data.data.length > 0 ? ( */}
-                  {DatasForum.map((item) => {
-                     return ( 
+                  {/* {DatasForum.map((item) => {
+                     return (  */}
                       <NavLink
-                        className=""
+                        className={styles.navigationLink}
                         to={{
-                          pathname: `/forum-discussion/${item.id}`,
+                          pathname: `/forum-discussion/${1}`,
                           // state: { item },
                         }}
-                        key={item.id}
+                        // key={item.id}
                         // onClick={() => {
                         //   getForumData(item);
                         // }}
@@ -187,7 +187,7 @@ function Sommaire(props:{}) {
                         )
                       }
                       </NavLink>
-                     )})}
+                     {/* )})} */}
               </div>
             </div>
             </div>

@@ -369,10 +369,6 @@ function Sommaire(props) {
   }, React__default.createElement("div", {
     className: styles.contentViewStart
   }, React__default.createElement("div", {
-    className: styles.bannerListeProjet
-  }, React__default.createElement("h3", {
-    className: styles.titreBannerListeProjet
-  }, "De la discussion, jaillit la lumi\u00E8re")), React__default.createElement("div", {
     className: styles.containerCayore
   }, React__default.createElement("div", {
     className: "row align-items-center",
@@ -381,81 +377,78 @@ function Sommaire(props) {
     }
   }, React__default.createElement("div", {
     className: "col-12"
-  }, DatasForum.map(item => {
-    return React__default.createElement(NavLink, {
-      className: "",
-      to: {
-        pathname: `/forum-discussion/${item.id}`
-      },
-      key: item.id
-    }, DatasForum.length > 0 ? DatasForum.map(item => {
-      var _item$author, _item$author2, _item$author3, _item$author4, _item$author5, _item$author6, _item$author7;
+  }, React__default.createElement(NavLink, {
+    className: styles.navigationLink,
+    to: {
+      pathname: `/forum-discussion/${1}`
+    }
+  }, DatasForum.length > 0 ? DatasForum.map(item => {
+    var _item$author, _item$author2, _item$author3, _item$author4, _item$author5, _item$author6, _item$author7;
 
-      return React__default.createElement("div", {
-        className: styles.forumCardSommaire,
-        key: item === null || item === void 0 ? void 0 : item.id
-      }, React__default.createElement("div", {
-        className: styles.cardSommaireDateAjout
-      }, item === null || item === void 0 ? void 0 : item.created_at), React__default.createElement("div", {
-        className: styles.sommaireAvatarTitre
-      }, React__default.createElement("div", {
-        className: ""
-      }, React__default.createElement("div", {
-        className: "p1"
-      }, React__default.createElement("img", {
-        src: (item === null || item === void 0 ? void 0 : (_item$author = item.author) === null || _item$author === void 0 ? void 0 : _item$author.avatar) === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item === null || item === void 0 ? void 0 : (_item$author2 = item.author) === null || _item$author2 === void 0 ? void 0 : _item$author2.fullname}` : `${item === null || item === void 0 ? void 0 : (_item$author3 = item.author) === null || _item$author3 === void 0 ? void 0 : _item$author3.avatar}`,
+    return React__default.createElement("div", {
+      className: styles.forumCardSommaire,
+      key: item === null || item === void 0 ? void 0 : item.id
+    }, React__default.createElement("div", {
+      className: styles.cardSommaireDateAjout
+    }, item === null || item === void 0 ? void 0 : item.created_at), React__default.createElement("div", {
+      className: styles.sommaireAvatarTitre
+    }, React__default.createElement("div", {
+      className: ""
+    }, React__default.createElement("div", {
+      className: "p1"
+    }, React__default.createElement("img", {
+      src: (item === null || item === void 0 ? void 0 : (_item$author = item.author) === null || _item$author === void 0 ? void 0 : _item$author.avatar) === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item === null || item === void 0 ? void 0 : (_item$author2 = item.author) === null || _item$author2 === void 0 ? void 0 : _item$author2.fullname}` : `${item === null || item === void 0 ? void 0 : (_item$author3 = item.author) === null || _item$author3 === void 0 ? void 0 : _item$author3.avatar}`,
+      alt: "user-avatar",
+      className: styles.imgSommaireForum
+    }))), React__default.createElement("div", {
+      className: ""
+    }, React__default.createElement("h3", {
+      className: styles.titreSommaireForum
+    }, item === null || item === void 0 ? void 0 : item.titre), React__default.createElement("div", {
+      className: styles.forumSommaireAuteurCard
+    }, React__default.createElement(IoReturnDownBackOutline, {
+      className: "mr-1"
+    }), "Par", " ", (item === null || item === void 0 ? void 0 : (_item$author4 = item.author) === null || _item$author4 === void 0 ? void 0 : _item$author4.prenom) !== undefined || (item === null || item === void 0 ? void 0 : (_item$author5 = item.author) === null || _item$author5 === void 0 ? void 0 : _item$author5.nom) !== undefined ? (item === null || item === void 0 ? void 0 : (_item$author6 = item.author) === null || _item$author6 === void 0 ? void 0 : _item$author6.prenom) + " " + (item === null || item === void 0 ? void 0 : (_item$author7 = item.author) === null || _item$author7 === void 0 ? void 0 : _item$author7.nom) : "Anonyme"))), React__default.createElement("div", {
+      className: "row"
+    }, React__default.createElement("div", {
+      className: "col-lg-9 pt-3"
+    }, React__default.createElement("p", {
+      className: styles.textSommaireForum
+    }, item === null || item === void 0 ? void 0 : item.contenu)), React__default.createElement("div", {
+      className: "col-lg-3"
+    }, React__default.createElement("div", {
+      className: styles.sommaireForumUserChat
+    }, item === null || item === void 0 ? void 0 : item.user_comments.slice(0, 4).map(comment => {
+      var _comment$user, _comment$user2, _comment$user3;
+
+      return React__default.createElement("img", {
+        src: (comment === null || comment === void 0 ? void 0 : (_comment$user = comment.user) === null || _comment$user === void 0 ? void 0 : _comment$user.avatar) === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${comment === null || comment === void 0 ? void 0 : (_comment$user2 = comment.user) === null || _comment$user2 === void 0 ? void 0 : _comment$user2.fullname}` : `${comment === null || comment === void 0 ? void 0 : (_comment$user3 = comment.user) === null || _comment$user3 === void 0 ? void 0 : _comment$user3.avatar}`,
+        key: comment === null || comment === void 0 ? void 0 : comment.id,
         alt: "user-avatar",
-        className: styles.imgSommaireForum
-      }))), React__default.createElement("div", {
-        className: ""
-      }, React__default.createElement("h3", {
-        className: styles.titreSommaireForum
-      }, item === null || item === void 0 ? void 0 : item.titre), React__default.createElement("div", {
-        className: styles.forumSommaireAuteurCard
-      }, React__default.createElement(IoReturnDownBackOutline, {
-        className: "mr-1"
-      }), "Par", " ", (item === null || item === void 0 ? void 0 : (_item$author4 = item.author) === null || _item$author4 === void 0 ? void 0 : _item$author4.prenom) !== undefined || (item === null || item === void 0 ? void 0 : (_item$author5 = item.author) === null || _item$author5 === void 0 ? void 0 : _item$author5.nom) !== undefined ? (item === null || item === void 0 ? void 0 : (_item$author6 = item.author) === null || _item$author6 === void 0 ? void 0 : _item$author6.prenom) + " " + (item === null || item === void 0 ? void 0 : (_item$author7 = item.author) === null || _item$author7 === void 0 ? void 0 : _item$author7.nom) : "Anonyme"))), React__default.createElement("div", {
-        className: "row"
-      }, React__default.createElement("div", {
-        className: "col-lg-9 pt-3"
-      }, React__default.createElement("p", {
-        className: styles.textSommaireForum
-      }, item === null || item === void 0 ? void 0 : item.contenu)), React__default.createElement("div", {
-        className: "col-lg-3"
-      }, React__default.createElement("div", {
-        className: styles.sommaireForumUserChat
-      }, item === null || item === void 0 ? void 0 : item.user_comments.slice(0, 4).map(comment => {
-        var _comment$user, _comment$user2, _comment$user3;
-
-        return React__default.createElement("img", {
-          src: (comment === null || comment === void 0 ? void 0 : (_comment$user = comment.user) === null || _comment$user === void 0 ? void 0 : _comment$user.avatar) === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${comment === null || comment === void 0 ? void 0 : (_comment$user2 = comment.user) === null || _comment$user2 === void 0 ? void 0 : _comment$user2.fullname}` : `${comment === null || comment === void 0 ? void 0 : (_comment$user3 = comment.user) === null || _comment$user3 === void 0 ? void 0 : _comment$user3.avatar}`,
-          key: comment === null || comment === void 0 ? void 0 : comment.id,
-          alt: "user-avatar",
-          className: styles.divSommaireForumUserChat2
-        });
-      }), console.log('user comment', item === null || item === void 0 ? void 0 : item.user_comments), React__default.createElement("div", {
-        className: styles.divSommaireForumUserChat5
-      }, React__default.createElement("div", {
-        className: styles.troisPoints
-      }, `
+        className: styles.divSommaireForumUserChat2
+      });
+    }), console.log('user comment', item === null || item === void 0 ? void 0 : item.user_comments), React__default.createElement("div", {
+      className: styles.divSommaireForumUserChat5
+    }, React__default.createElement("div", {
+      className: styles.troisPoints
+    }, `
                                             ${(item === null || item === void 0 ? void 0 : item.user_comments.length) > 4 ? (item === null || item === void 0 ? void 0 : item.user_comments.length) - 4 + "+" : "..."}
                                         `))), React__default.createElement("div", {
-        className: styles.divNombreCommentaireSommaireForum
-      }, React__default.createElement("p", {
-        className: styles.nombreCommentaireSommaireForum
-      }, React__default.createElement(BsChat, {
-        className: "mr-1"
-      }), " ", item === null || item === void 0 ? void 0 : item.comments.length, " Commentaires")))));
-    }) : React__default.createElement("div", {
-      className: "card-contacts-main-content"
-    }, React__default.createElement("div", {
-      className: "row div-card"
-    }, React__default.createElement("div", {
-      className: "col-12"
-    }, React__default.createElement("h4", {
-      className: "admin-contacts-title text-center"
-    }, "Pas de sujet de discussion")))));
-  }))))));
+      className: styles.divNombreCommentaireSommaireForum
+    }, React__default.createElement("p", {
+      className: styles.nombreCommentaireSommaireForum
+    }, React__default.createElement(BsChat, {
+      className: "mr-1"
+    }), " ", item === null || item === void 0 ? void 0 : item.comments.length, " Commentaires")))));
+  }) : React__default.createElement("div", {
+    className: "card-contacts-main-content"
+  }, React__default.createElement("div", {
+    className: "row div-card"
+  }, React__default.createElement("div", {
+    className: "col-12"
+  }, React__default.createElement("h4", {
+    className: "admin-contacts-title text-center"
+  }, "Pas de sujet de discussion"))))))))));
 }
 
 const VolkenoForumy = () => {
