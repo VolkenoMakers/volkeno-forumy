@@ -1,4 +1,5 @@
 import * as React from 'react'
+// import Ajoutersujet from './components/AjoutSujet'
 // import Discussion from './components/Discussion'
 import Sommaire from './components/Sommaire'
 // import styles from './styles.module.css'
@@ -13,6 +14,7 @@ export const VolkenoForumy = () => {
     <div>
       <Sommaire />
       {/* <Discussion /> */}
+      {/* <Ajoutersujet /> */}
     </div>
   )
 }
