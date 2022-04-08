@@ -3,16 +3,26 @@ import styles from '../styles.module.css'
 import { DatasForum } from './DatasForum';
 import { BsChat } from "react-icons/bs";
 import { IoReturnDownBackOutline } from "react-icons/io5";
-import { NavLink } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 // import avatar from './img/avatar.png'
 
 // interface Props {
-//     text: string
+//     // text: string,
+//     state:string[]
 // }
 
-function Sommaire() {
+function Sommaire(props:{}) {
+  console.log(props)
 
-  // console.log('data forum',DatasForum)
+
+  // const [forumData, setForumData] = useState();
+
+  console.log('data forum',DatasForum)
+
+  // const getForumData = (data: any) => {
+  //   setForumData(data);
+  //   console.log('forum',forumData)
+  // };
 
     return (
         <div className="component-liste-projet">
@@ -51,16 +61,16 @@ function Sommaire() {
                         <SommaireSkeleton key={index}/>
                     ))
                   
-                ) : forum_data.data.length > 0 ? (
-                  forum_data.data.map((item) => { */}
-                    {/* return ( */}
+                ) : forum_data.data.length > 0 ? ( */}
+                  {DatasForum.map((item) => {
+                     return ( 
                       <NavLink
                         className=""
                         to={{
-                          pathname: `/forum-discussion/${1}`,
+                          pathname: `/forum-discussion/${item.id}`,
                           // state: { item },
                         }}
-                        // key={item.id}
+                        key={item.id}
                         // onClick={() => {
                         //   getForumData(item);
                         // }}
@@ -177,6 +187,7 @@ function Sommaire() {
                         )
                       }
                       </NavLink>
+                     )})}
               </div>
             </div>
             </div>

@@ -1,3 +1,3 @@
 /// <reference types="react" />
-declare function Discussion(): JSX.Element;
+declare function Discussion(props: {}): JSX.Element;
 export default Discussion;

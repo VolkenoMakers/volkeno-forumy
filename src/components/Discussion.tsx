@@ -5,8 +5,22 @@ import FrontCommentItem from './FrontCommentItem';
 import { IoReturnDownBackOutline } from 'react-icons/io5';
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { DatasForum, DatasUserSession } from './DatasForum';
+import { useLocation } from 'react-router-dom';
 
-function Discussion() {
+// interface forumProps {
+//   item: DatasType,
+// }
+
+function Discussion(props:{}) {
+
+  console.log(props)
+
+  let location = useLocation();
+  console.log('location',location)
+
+  // const params = useParams();
+
+  // let id = params?.id;
  
   console.log( 'user data',DatasUserSession)
 
@@ -100,6 +114,15 @@ function Discussion() {
 								</div>
 							</div>
 						{/* )} */}
+{/* 
+            {
+              DatasForum.length && (
+                DatasForum?.map((item) => (
+                  <FrontCommentItem item={item} key={item?.id} />
+                ))
+              )
+            } */}
+              
 
             <FrontCommentItem />
 
@@ -126,7 +149,7 @@ function Discussion() {
               // w-100 mb-4
               }></span>
               
-              <hr className='divider'></hr>
+              {/* <hr className='divider'></hr> */}
 
 						<div className={
               // "row "
