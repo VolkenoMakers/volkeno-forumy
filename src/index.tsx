@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { BrowserRouter, Route,  Routes } from 'react-router-dom'
+import Ajoutersujet from './components/AjouterSujet'
 import Discussion from './components/Discussion'
 // import Discussion from './components/Discussion'
 import Sommaire from './components/Sommaire'
@@ -23,6 +24,10 @@ export const VolkenoForumy: React.FC = () => {
 					<Route
 						path="/forum-discussion/:id"
 						element={<Discussion/>}
+					/>
+          <Route
+						path="/ajouter-sujet"
+						element={<Ajoutersujet/>}
 					/>
         </Routes>
       </div>
