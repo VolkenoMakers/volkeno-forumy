@@ -114,33 +114,8 @@ function Discussion(props:{}) {
 								</div>
 							</div>
 						{/* )} */}
-{/* 
-            {
-              DatasForum.length && (
-                DatasForum?.map((item) => (
-                  <FrontCommentItem item={item} key={item?.id} />
-                ))
-              )
-            } */}
-              
-
+            
             <FrontCommentItem />
-
-						{/* {isLoading ? (
-							[...Array(3)].map((item, index) => (
-								<CommentSkeleton key={index} />
-							))
-						) : dataComments.length ? (
-							dataComments?.map((item) => (
-								<FrontCommentIem item={item} key={item?.id} />
-							))
-						) : ( */}
-							{/* <div className="gfa-rowy mt-5">
-								<div className="alert alert-warning gfa-warning">
-									Aucun commentaire
-								</div>
-							</div> */}
-						{/* )} */}
 
 						{/* =========================================================== FIN COLLAPSE ============================================================================ */}
 
@@ -153,8 +128,8 @@ function Discussion(props:{}) {
 
 						<div className={
               // "row "
-            styles.rowReponse
-          }>
+              styles.rowReponse
+            }>
 							<div className='row'>
               <div className="col-2">
 								<div className={styles.sommaireAvatarTitre}>

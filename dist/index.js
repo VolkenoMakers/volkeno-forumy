@@ -364,28 +364,8 @@ function Discussion(props) {
   }, React__default.createElement(AjoutComments, null))))))));
 }
 
-function Sommaire(props) {
-  console.log(props);
-  console.log('data forum', DatasForum);
-  return React__default.createElement("div", {
-    className: "component-liste-projet"
-  }, React__default.createElement("div", {
-    className: styles.contentViewStart
-  }, React__default.createElement("div", {
-    className: styles.containerCayore
-  }, React__default.createElement("div", {
-    className: "row align-items-center",
-    style: {
-      margin: "3rem 0"
-    }
-  }, React__default.createElement("div", {
-    className: "col-12"
-  }, React__default.createElement(reactRouterDom.NavLink, {
-    className: styles.navigationLink,
-    to: {
-      pathname: "/forum-discussion/" + 1
-    }
-  }, DatasForum.length > 0 ? DatasForum.map(function (item) {
+function SommaireItem() {
+  return React__default.createElement("div", null, DatasForum.length > 0 ? DatasForum.map(function (item) {
     var _item$author, _item$author2, _item$author3, _item$author4, _item$author5, _item$author6, _item$author7;
 
     return React__default.createElement("div", {
@@ -434,7 +414,7 @@ function Sommaire(props) {
       className: styles.divSommaireForumUserChat5
     }, React__default.createElement("div", {
       className: styles.troisPoints
-    }, "\n                                            " + ((item === null || item === void 0 ? void 0 : item.user_comments.length) > 4 ? (item === null || item === void 0 ? void 0 : item.user_comments.length) - 4 + "+" : "...") + "\n                                        "))), React__default.createElement("div", {
+    }, "\n                                " + ((item === null || item === void 0 ? void 0 : item.user_comments.length) > 4 ? (item === null || item === void 0 ? void 0 : item.user_comments.length) - 4 + "+" : "...") + "\n                            "))), React__default.createElement("div", {
       className: styles.divNombreCommentaireSommaireForum
     }, React__default.createElement("p", {
       className: styles.nombreCommentaireSommaireForum
@@ -449,7 +429,31 @@ function Sommaire(props) {
     className: "col-12"
   }, React__default.createElement("h4", {
     className: "admin-contacts-title text-center"
-  }, "Pas de sujet de discussion"))))))))));
+  }, "Pas de sujet de discussion")))));
+}
+
+function Sommaire(props) {
+  console.log(props);
+  console.log('data forum', DatasForum);
+  return React__default.createElement("div", {
+    className: "component-liste-projet"
+  }, React__default.createElement("div", {
+    className: styles.contentViewStart
+  }, React__default.createElement("div", {
+    className: styles.containerCayore
+  }, React__default.createElement("div", {
+    className: "row align-items-center",
+    style: {
+      margin: "3rem 0"
+    }
+  }, React__default.createElement("div", {
+    className: "col-12"
+  }, React__default.createElement(reactRouterDom.NavLink, {
+    className: styles.navigationLink,
+    to: {
+      pathname: "/forum-discussion/" + 1
+    }
+  }, React__default.createElement(SommaireItem, null)))))));
 }
 
 var VolkenoForumy = function VolkenoForumy() {
