@@ -403,16 +403,14 @@ function Discussion() {
   }, React__default.createElement(AjoutComments, null))))))));
 }
 
-function Sommaire() {
+function Sommaire(props) {
+  console.log(props);
+  console.log('data forum', DatasForum);
   return React__default.createElement("div", {
     className: 'component-liste-projet'
   }, React__default.createElement("div", {
     className: styles.contentViewStart
   }, React__default.createElement("div", {
-    className: styles.bannerListeProjet
-  }, React__default.createElement("h3", {
-    className: styles.titreBannerListeProjet
-  }, "De la discussion, jaillit la lumi\u00E8re")), React__default.createElement("div", {
     className: styles.containerCayore
   }, React__default.createElement("div", {
     className: 'row align-items-center',
@@ -422,7 +420,7 @@ function Sommaire() {
   }, React__default.createElement("div", {
     className: 'col-12'
   }, React__default.createElement(NavLink, {
-    className: '',
+    className: styles.navigationLink,
     to: {
       pathname: `/forum-discussion/${1}`
     }
@@ -434,7 +432,7 @@ function Sommaire() {
       key: item === null || item === void 0 ? void 0 : item.id
     }, React__default.createElement("div", {
       className: styles.cardSommaireDateAjout
-    }, item === null || item === void 0 ? void 0 : item.created_at), React__default.createElement("div", {
+    }, "// eslint-disable-next-line camelcase", item === null || item === void 0 ? void 0 : item.created_at), React__default.createElement("div", {
       className: styles.sommaireAvatarTitre
     }, React__default.createElement("div", {
       className: ''

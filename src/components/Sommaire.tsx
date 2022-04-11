@@ -1,4 +1,5 @@
 /* eslint-disable camelcase */
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React from 'react'
 import styles from '../styles.module.css'
 import { DatasForum } from './DatasForum'
@@ -8,21 +9,31 @@ import { NavLink } from 'react-router-dom'
 // import avatar from './img/avatar.png'
 
 // interface Props {
-//     text: string
+//     // text: string,
+//     state:string[]
 // }
 
-function Sommaire() {
-  // console.log('data forum',DatasForum)
+function Sommaire(props: {}) {
+  console.log(props)
+
+  // const [forumData, setForumData] = useState();
+
+  console.log('data forum', DatasForum)
+
+  // const getForumData = (data: any) => {
+  //   setForumData(data);
+  //   console.log('forum',forumData)
+  // };
 
   return (
     <div className='component-liste-projet'>
       {/* <FrontHeaderV2 /> */}
       <div className={styles.contentViewStart}>
-        <div className={styles.bannerListeProjet}>
-          <h3 className={styles.titreBannerListeProjet}>
-            De la discussion, jaillit la lumière
-          </h3>
-        </div>
+        {/* <div className={styles.bannerListeProjet}>
+              <h3 className={styles.titreBannerListeProjet}>
+                De la discussion, jaillit la lumière
+              </h3>
+            </div> */}
         <div className={styles.containerCayore}>
           <div className='row align-items-center' style={{ margin: '3rem 0' }}>
             <div className='col-12'>
@@ -51,11 +62,11 @@ function Sommaire() {
                         <SommaireSkeleton key={index}/>
                     ))
                   
-                ) : forum_data.data.length > 0 ? (
-                  forum_data.data.map((item) => { */}
-              {/* return ( */}
+                ) : forum_data.data.length > 0 ? ( */}
+              {/* {DatasForum.map((item) => {
+                     return (  */}
               <NavLink
-                className=''
+                className={styles.navigationLink}
                 to={{
                   pathname: `/forum-discussion/${1}`
                   // state: { item },
@@ -77,6 +88,7 @@ function Sommaire() {
                         key={item?.id}
                       >
                         <div className={styles.cardSommaireDateAjout}>
+                          // eslint-disable-next-line camelcase
                           {item?.created_at}
                         </div>
                         <div className={styles.sommaireAvatarTitre}>
@@ -206,6 +218,7 @@ function Sommaire() {
                   </div>
                 )}
               </NavLink>
+              {/* )})} */}
             </div>
           </div>
         </div>
