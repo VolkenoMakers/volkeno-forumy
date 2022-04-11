@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useCallback } from 'react'
+import { useForm } from 'react-hook-form'
 import styles from '../styles.module.css'
 
+interface AddFormData {
+  titre?: string
+  contenu?: string
+  ref: any
+}
+
 const Ajoutersujet = () => {
+  const { register, handleSubmit } = useForm<AddFormData>()
+  const onSubmit = useCallback((formValues: AddFormData) => {
+    console.log(formValues)
+  }, [])
+
   return (
     <div className={styles.loginContainer}>
       <div className='auth-form-body'>
@@ -10,7 +22,10 @@ const Ajoutersujet = () => {
             <div className='log-div'>
               <h2 className={styles.forumTitle}>Ajoutez un sujet</h2>
             </div>
-            <form className={styles.loginForm}>
+            <form
+              className={styles.loginForm}
+              onSubmit={handleSubmit(onSubmit)}
+            >
               <div className={styles.authForm}>
                 <div className={styles.inputCol}>
                   <div className='form-group'>
@@ -19,6 +34,7 @@ const Ajoutersujet = () => {
                       type='text'
                       className={styles.formControl}
                       placeholder='Ajouter un titre'
+                      {...register('titre')}
                     />
                   </div>
                 </div>
@@ -29,19 +45,15 @@ const Ajoutersujet = () => {
                     <textarea
                       style={{ height: 150 }}
                       className={styles.formControl}
-                      id='riskAndChallenge'
-                      name='contenu'
-                      placeholder='Contenu'
+                      {...register('contenu')}
                     />
                   </div>
                 </div>
               </div>
               <div className={styles.submitBtnRow}>
-                <div className='col-md-12 auth-submit-col'>
-                  <button type='submit' className={styles.authSubmitBtn}>
-                    Ajouter
-                  </button>
-                </div>
+                <button type='submit' className={styles.authSubmitBtn}>
+                  Ajouter
+                </button>
               </div>
             </form>
           </div>
