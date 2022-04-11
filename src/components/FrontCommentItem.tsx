@@ -9,37 +9,19 @@ const FrontCommentItem: React.FC<any> = (
     { donnees, onAddResponseComment }
     ): JSX.Element => {
 
-        console.log('donnéee 5',donnees)
-       
-
 	return (
         
 		<div className={styles.cardParent}>
             {
                 donnees?.comments.map((donnee: any)=>{
                     return(
-                        <div>
+                        <div key={donnee.id}>
                         <div className="row" key={donnee.id}>
                             <div className="col-2">
                                 <div className={styles.sommaireAvatarTitre}>
                                     <div className="">
                                         <div className="p1">
                                             <img
-                                                // src={
-                                                // 	!item
-                                                // 		?.user
-                                                // 		?.avatar ||
-                                                // 		item
-                                                // 		?.user
-                                                // 		?.avatar?.includes(
-                                                // 				"default.png"
-                                                // 			)
-                                                // 			? ProjetImg
-                                                // 			: baseUrl +
-                                                // 			item
-                                                // 				?.user
-                                                // 				?.avatar
-                                                // }
                                                 src={donnee?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${donnee?.user?.fullname}` : `${donnee?.user?.avatar}`}
                                                 alt="user-avatar"
                                                 className={styles.imgSommaireForumDiscussion2}
@@ -49,7 +31,6 @@ const FrontCommentItem: React.FC<any> = (
                                     <div className=" d-flex align-item-md-center">
                                         <div className={
                                             styles.forumSommaireAuteurCard 
-                                            // mt-1
                                             }>
                                             {donnee?.user?.prenom +
                                                 " " +
@@ -66,7 +47,6 @@ const FrontCommentItem: React.FC<any> = (
                                             <div className="row">
                                                 <div className="col-12 pt-3 mb-md-4 mb-5">
                                                     <p className={
-                                                        // card-text 
                                                         styles.textSommaireForum}>
                                                         {donnee?.text}{" "}
                                                     </p>
@@ -208,8 +188,6 @@ const FrontCommentItem: React.FC<any> = (
                     )
                 })
             }
-
-
 			
 		</div>
 	);

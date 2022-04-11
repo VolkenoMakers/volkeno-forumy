@@ -193,13 +193,14 @@ var DatasUserSession = [{
 var FrontCommentItem = function FrontCommentItem(_ref) {
   var donnees = _ref.donnees,
       onAddResponseComment = _ref.onAddResponseComment;
-  console.log('donnéee 5', donnees);
   return React__default.createElement("div", {
     className: styles.cardParent
   }, donnees === null || donnees === void 0 ? void 0 : donnees.comments.map(function (donnee) {
     var _donnee$user, _donnee$user2, _donnee$user3, _donnee$user4, _donnee$user5, _donnee$reponse_comme, _donnee$reponse_comme2, _DatasUserSession$, _DatasUserSession$$us, _DatasUserSession$2, _DatasUserSession$2$u, _DatasUserSession$3, _DatasUserSession$3$u, _DatasUserSession$4, _DatasUserSession$4$u, _DatasUserSession$5, _DatasUserSession$5$u, _DatasUserSession$6, _DatasUserSession$6$u, _DatasUserSession$7, _DatasUserSession$7$u;
 
-    return React__default.createElement("div", null, React__default.createElement("div", {
+    return React__default.createElement("div", {
+      key: donnee.id
+    }, React__default.createElement("div", {
       className: "row",
       key: donnee.id
     }, React__default.createElement("div", {
@@ -311,10 +312,7 @@ var Discussion = function Discussion(_ref) {
   var onAddComment = _ref.onAddComment,
       onAddResponseComment = _ref.onAddResponseComment;
   var location = reactRouterDom.useLocation();
-  console.log('location', location);
   var donnees = location === null || location === void 0 ? void 0 : location.state;
-  console.log('donnééé', donnees);
-  console.log('user data', DatasUserSession);
   return React__default.createElement("div", {
     className: "component-liste-projet"
   }, React__default.createElement("div", {
@@ -443,7 +441,7 @@ var SommaireItem = function SommaireItem() {
         alt: "user-avatar",
         className: styles.divSommaireForumUserChat2
       });
-    }), console.log('user comment', item === null || item === void 0 ? void 0 : item.user_comments), React__default.createElement("div", {
+    }), React__default.createElement("div", {
       className: styles.divSommaireForumUserChat5
     }, React__default.createElement("div", {
       className: styles.troisPoints

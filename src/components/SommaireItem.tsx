@@ -82,9 +82,7 @@ const SommaireItem: React.FC<any> = (): JSX.Element => {
                                     styles.divSommaireForumUserChat2}
                                 />
                             ))} 
-                            {
-                                console.log( 'user comment',item?.user_comments)
-                            }
+                            
                             <div className={
                                 styles.divSommaireForumUserChat5
                                 }>

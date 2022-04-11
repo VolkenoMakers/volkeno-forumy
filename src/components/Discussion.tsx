@@ -19,12 +19,12 @@ const Discussion= ({
 }: discussionProps) => {
 
   let location = useLocation();
-  console.log('location',location)
+  // console.log('location',location)
 
   const donnees:any = location?.state;
-  console.log('donnééé',donnees)
+  // console.log('donnééé',donnees)
  
-  console.log( 'user data',DatasUserSession)
+  // console.log( 'user data',DatasUserSession)
 
   return (
 		<div className="component-liste-projet">
