@@ -8,9 +8,7 @@ type DatasType = {
     avatar: string,
     fullname: string,
     text: string,
-    // user
-    // author
-    // reponse_commentaire
-    // user_comments
-    // comments
+    item: [],
+    state: []
+    donnees: []
   };

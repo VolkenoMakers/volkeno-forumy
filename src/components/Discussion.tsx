@@ -4,23 +4,25 @@ import AjoutComments from './AjoutComments';
 import FrontCommentItem from './FrontCommentItem';
 import { IoReturnDownBackOutline } from 'react-icons/io5';
 import { AiOutlineClockCircle } from "react-icons/ai";
-import { DatasForum, DatasUserSession } from './DatasForum';
+import { DatasUserSession } from './DatasForum';
 import { useLocation } from 'react-router-dom';
 
-// interface forumProps {
-//   item: DatasType,
-// }
 
-function Discussion(props:{}) {
+type discussionProps = {
+  onAddComment: (subject: any, commentText: string)=> any
+  onAddResponseComment: (subject: any, comment:any, commentText: string )=> any
+}
 
-  console.log(props)
+const Discussion= ({
+  onAddComment,
+  onAddResponseComment
+}: discussionProps) => {
 
   let location = useLocation();
   console.log('location',location)
 
-  // const params = useParams();
-
-  // let id = params?.id;
+  const donnees:any = location?.state;
+  console.log('donnééé',donnees)
  
   console.log( 'user data',DatasUserSession)
 
@@ -33,67 +35,49 @@ function Discussion(props:{}) {
 						className="row align-items-center"
 						style={{ margin: "3rem 0" }}
 					>
-						{/* {isLoading ? (
-							<ArticleSkeleton />
-						) : ( */}
 							<div className={
-                // card card-body 
                 styles.forumCardSommaire
                 }>
 								<div className={styles.cardDiscussionHeureVu}>
 									<span>
 										<AiOutlineClockCircle className="mr-1" />{" "}
-										{DatasForum?.[0].created_at}
+										{donnees?.created_at}
 									</span>
 								</div>
 								<div className={styles.sommaireAvatarTitre}>
 									<div className="">
 										<div className="p1">
 											<img
-												// src={
-												// 	dataArticle
-												// 		?.author
-												// 		?.avatar
-												// 		? baseUrl +
-												// 		  dataArticle
-												// 				?.author
-												// 				?.avatar
-												// 		: ProjetImg
-												// }
-                        src={DatasForum?.[0]?.author?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${DatasForum?.[0]?.author?.fullname}` : `${DatasForum?.[0]?.author?.avatar}`}
+                        src={donnees?.author?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${donnees?.author?.fullname}` : `${donnees?.author?.avatar}`}
 												alt="user-avatar"
 												className={styles.imgSommaireForumDiscussion}
 											/>
 										</div>
 									</div>
 									<div className="">
-										{/* <h3 className='card-title titre-sommaire-forum pt-md-2'>Comment gérer son temps?</h3> */}
 										<h3 className={
-                      // card-title 
                       styles.titreSommaireForum 
-                      // pt-md-2
                       }>
-											{DatasForum?.[0].titre 
-                      // ??
-											// 	""
-                        } 
+											{
+                        donnees?.titre 
+                      } 
 										</h3>
 										<div className={styles.forumSommairAauteurCard}>
 											<IoReturnDownBackOutline className="mr-1" />{" "}
 											Par{" "}
-											{DatasForum?.[0]
+											{donnees
 												?.author
 												?.prenom !==
 												undefined ||
-                        DatasForum?.[0]
+                        donnees
 												?.author
 												?.nom !==
 												undefined
-												? DatasForum?.[0]
+												? donnees
 														?.author
 														?.prenom +
 												  " " +
-												  DatasForum?.[0]
+												  donnees
 														?.author
 														?.nom
 												: "Anonyme"}  
@@ -107,7 +91,7 @@ function Discussion(props:{}) {
                       styles.textSommaireForum
                       }>
 											{
-                        DatasForum?.[0].contenu
+                        donnees.contenu
 											} 
 										</p>
 									</div>
@@ -115,16 +99,13 @@ function Discussion(props:{}) {
 							</div>
 						{/* )} */}
             
-            <FrontCommentItem />
+            <FrontCommentItem donnees={donnees} onAddResponseComment={onAddResponseComment} />
 
 						{/* =========================================================== FIN COLLAPSE ============================================================================ */}
 
 						<span className={
               styles.divSeparateur
-              // w-100 mb-4
               }></span>
-              
-              {/* <hr className='divider'></hr> */}
 
 						<div className={
               // "row "
@@ -136,16 +117,6 @@ function Discussion(props:{}) {
 									<div className="">
 										<div className="p1">
 											<img
-												// src={
-												// 	user_data
-												// 		?.data
-												// 		?.avatar
-												// 		? baseUrl +
-												// 		  user_data
-												// 				?.data
-												// 				?.avatar
-												// 		: ProjetImg
-												// }
                         src={DatasUserSession?.[0]?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${DatasUserSession?.[0]?.user?.fullname}` : `${DatasUserSession?.[0]?.user?.avatar}`}
 												alt="user-avatar"
 												className={styles.imgSommaireForumDiscussion2}
@@ -155,7 +126,6 @@ function Discussion(props:{}) {
 									<div className=" d-flex align-item-md-center">
 										<div className={
                       styles.forumSommaireAuteurCard 
-                      // mt-1
                       }>
 											{DatasUserSession?.[0]
 												?.user
@@ -180,10 +150,9 @@ function Discussion(props:{}) {
 
 							<div className="col-10">
 								<AjoutComments
-									// articleID={id}
-									// fetchComments={
-									// 	fetchComments
-									// }
+                onSubmit={(comment: string)=>{
+                  onAddComment(donnees, comment)
+                }}
 								/>
 							</div>
               </div>
@@ -191,7 +160,6 @@ function Discussion(props:{}) {
 					</div>
 				</div>
 			</div>
-			{/* <FrontFooterV2 /> */}
 		</div>
 	);
 }

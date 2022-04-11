@@ -1,3 +1,3 @@
-/// <reference types="react" />
-declare function Sommaire(props: {}): JSX.Element;
+import React from 'react';
+declare const Sommaire: React.FC<DatasType>;
 export default Sommaire;

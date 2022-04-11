@@ -6,7 +6,7 @@ import Sommaire from './components/Sommaire'
 // import styles from './styles.module.css'
 
 // interface Props {
-//   text: string
+//   item: []
 // }
 
 export const VolkenoForumy: React.FC = () => {
@@ -18,11 +18,26 @@ export const VolkenoForumy: React.FC = () => {
 				<Routes>
 					<Route
 						path="/"
-						element={<Sommaire/>}
+						element={<Sommaire titre={''} Contenu={''} id={0} created_at={''} prenom={''} nom={''} avatar={''} fullname={''} text={''} item={[]} state={[]} donnees={[]}  />}
 					/>
 					<Route
 						path="/forum-discussion/:id"
-						element={<Discussion/>}
+						element={<Discussion onAddComment={(subject, commentText)=>{
+              console.log(
+                subject,
+                commentText
+              )
+              
+            }}
+            onAddResponseComment={(subject, comment, commentText)=>{
+              console.log(
+                subject,
+                comment,
+                commentText
+              )
+              
+            }}
+            />}
 					/>
         </Routes>
       </div>

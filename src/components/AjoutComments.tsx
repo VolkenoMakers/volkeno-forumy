@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '../styles.module.css'
 
 function AjoutComments(
-    // {articleID, fetchComments}
+    {onSubmit}: {onSubmit: ((comment: string)=>any)}
     ) {
 
     // const history = useHistory();
@@ -17,10 +17,12 @@ function AjoutComments(
     //     text: yup.string().required('This field is required'),
     //   });
 
+    const [comment, setComment] = useState('')
+
     //   const {
-    //     register,
+    //     // register,
     //     handleSubmit,
-    //     reset,
+    //     // reset,
     //   } = useForm({
     //     mode: "onBlur",
     //     resolver: yupResolver(validationSchema)
@@ -35,40 +37,22 @@ function AjoutComments(
       
       
 
-    // const submitReponse = (
-    //     // data
-    //     ) => {
+    const submitReponse = (
+        e: any
+        ) => {
+            e.preventDefault()
+            if(comment.trim().length > 0 ){
 
-    //     // setIsSuccessfullySubmittedForm(true);
-    //     // setSubmitedForm(true)
-        
-    //     data['user'] = userID ? userID : 'null'
-    //     data['article'] = articleID
-    //     var request = Axios.post(`${api}comment_article/`, data, config);
+                onSubmit(comment)
+            }
 
-    //     request
-    //     .then((res) => {
-    //         if (res.status === 201) {
-    //         // dispatch(fetchFrontForumComments());
-    //         fetchComments()
-    //         history.push(`/forum-discussion/${id}`)
-    //         reset();
-    //         setIsSuccessfullySubmittedForm(false);
-    //         // setSubmitedForm(false)
-    //         }
 
-           
-    //     })
-    //     .catch((error) => {
-    //         setIsSuccessfullySubmittedForm(false);
-    //     });
-
-    //   }
+      }
 
   return (
     
-        <form 
-        // onSubmit={handleSubmit(submitReponse)}
+        <div
+            // onSubmit={submitReponse}
         >
             <div className={
                 // card card-body 
@@ -79,7 +63,11 @@ function AjoutComments(
                     <div className='col-12 pt-3 mb-md-4 mb-5'>
                         <textarea className='form-control' 
                         // rows='4' 
-                        placeholder='Répondre' name='text'  
+                        placeholder='Répondre' name='text' 
+                        value={comment}
+                        onChange={(e)=>{
+                            setComment(e.target.value)
+                        }}
                         // {...register("text")}
                          ></textarea>                       
                     </div>                  
@@ -89,9 +77,8 @@ function AjoutComments(
             {/* {!isSuccessfullySubmittedForm ? ( */}
                 <button className={
                     styles.formAddCguButtonAjouter 
-                    // mt-0 mb-3 
                 }
-                    type='submit'
+                    onClick={submitReponse}
                 >
                     Ajouter
                 </button>
@@ -102,7 +89,7 @@ function AjoutComments(
                     &nbsp;&nbsp;&nbsp;In progress...
                 </button>
             )} */}
-        </form>
+        </div>
     )
 }
 
