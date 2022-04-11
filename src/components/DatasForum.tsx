@@ -107,7 +107,7 @@ export const DatasForum = [
                     user: {
                         prenom: "Alpha",
                         nom: "Diallo",
-                        user_avatar: "image5",
+                        user_avatar: "/mediafiles/avatars/default.png",
                         fullname: "AD"
                     },
                     contenu: "Reponse 3",
