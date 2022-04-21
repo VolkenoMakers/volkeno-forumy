@@ -201,8 +201,7 @@ var FrontCommentItem = function FrontCommentItem(_ref) {
     return React__default.createElement("div", {
       key: donnee.id
     }, React__default.createElement("div", {
-      className: "row",
-      key: donnee.id
+      className: "row"
     }, React__default.createElement("div", {
       className: "col-2"
     }, React__default.createElement("div", {

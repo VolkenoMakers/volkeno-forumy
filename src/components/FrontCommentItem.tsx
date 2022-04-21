@@ -16,7 +16,7 @@ const FrontCommentItem: React.FC<any> = (
                 donnees?.comments.map((donnee: any)=>{
                     return(
                         <div key={donnee.id}>
-                        <div className="row" key={donnee.id}>
+                        <div className="row">
                             <div className="col-2">
                                 <div className={styles.sommaireAvatarTitre}>
                                     <div className="">

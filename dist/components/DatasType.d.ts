@@ -8,4 +8,7 @@ declare type DatasType = {
     avatar: string;
     fullname: string;
     text: string;
+    item: [];
+    state: [];
+    donnees: [];
 };
