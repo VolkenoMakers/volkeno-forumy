@@ -4,7 +4,6 @@ import AjoutComments from './AjoutComments';
 import FrontCommentItem from './FrontCommentItem';
 import { IoReturnDownBackOutline } from 'react-icons/io5';
 import { AiOutlineClockCircle } from "react-icons/ai";
-// import { DatasUserSession } from './DatasForum';
 import { useLocation } from 'react-router-dom';
 
 
@@ -22,17 +21,14 @@ const Discussion= ({
   // console.log('location',location)
 
   const donnees:any = location?.state;
-  // console.log('donnééé',donnees)
  
-  // console.log( 'user data',DatasUserSession)
 
   const DatasUserSession = [
 	{
 		id: 1,
 		user: {
-			prenom: "Mes",
-			nom: "",
-			fullname: "Me",
+			firstName: "Me",
+			lastName: "",
 			avatar: '/mediafiles/avatars/default.png'
 		}
 	}
@@ -59,7 +55,7 @@ const Discussion= ({
 									<div className="">
 										<div className="p1">
 											<img
-                        						src={donnees?.author?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${donnees?.author?.fullname}` : `${donnees?.author?.avatar}`}
+                        						src={donnees?.author?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${donnees?.author?.firstName} + ${donnees?.author?.lastName}` : `${donnees?.author?.avatar}`}
 												alt="user-avatar"
 												className={styles.imgSommaireForumDiscussion}
 											/>
@@ -131,7 +127,7 @@ const Discussion= ({
 													<div className="">
 														<div className="p1">
 															<img
-																src={item?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item?.user?.fullname}` : `${item?.user?.avatar}`}
+																src={item?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item?.user?.firstName} + ${item?.user?.lastName}` : `${item?.user?.avatar}`}
 																alt="user-avatar"
 																className={styles.imgSommaireForumDiscussion2}
 															/>

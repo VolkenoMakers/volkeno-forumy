@@ -2,7 +2,6 @@ import React from 'react'
 import styles from '../styles.module.css'
 import { BsChat } from "react-icons/bs";
 import { IoReturnDownBackOutline } from "react-icons/io5";
-// import { DatasForum } from './DatasForum';
 import { NavLink } from 'react-router-dom';
 
 
@@ -13,22 +12,17 @@ const SommaireItem: React.FC<any> = ({ Datas }): JSX.Element => {
       <div>
 
         {
-            // DatasForum.length > 0  ? (
-            // DatasForum.map((item) => {
-                Datas.length > 0  ? (
-                    Datas.map((item: any) => {
+            Datas.length > 0  ? (
+            Datas.map((item: any) => {
                 return(
 
                     <NavLink
                         className={styles.navigationLink}
                         to={{
-                          pathname: `/forum-discussion/${item.id}`,
+                          pathname: `/forum-discussion/${item.slug}`,
                         }}
                         state={item}
                         key={item.id}
-                        // onClick={() => {
-                        //     getForumData(item);
-                        // }}
                       >
 
                     <div className={
@@ -41,7 +35,7 @@ const SommaireItem: React.FC<any> = ({ Datas }): JSX.Element => {
                         <div className="">
                         <div className="p1">
                             <img
-                            src={item?.author?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item?.author?.fullname}` : `${item?.author?.avatar}`}
+                            src={item?.author?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item?.author?.firstName} + ${item?.author?.lastName}` : `${item?.author?.avatar}`}
                             alt="user-avatar"
                             className={styles.imgSommaireForum}
                             />
@@ -77,7 +71,7 @@ const SommaireItem: React.FC<any> = ({ Datas }): JSX.Element => {
                             .slice(0, 4)
                             .map((comment:any) => (
                                 <img
-                                src={comment?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${comment?.user?.fullname}` : `${comment?.user?.avatar}`}
+                                src={comment?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${comment?.user?.firstName} + ${comment?.user?.lastName}` : `${comment?.user?.avatar}`}
                                 key={comment?.id}
                                 alt="user-avatar"
                                 className={
