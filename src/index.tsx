@@ -1,24 +1,26 @@
 import * as React from 'react'
 import { BrowserRouter, Route,  Routes } from 'react-router-dom'
 import Discussion from './components/Discussion'
-// import Discussion from './components/Discussion'
 import Sommaire from './components/Sommaire'
-// import styles from './styles.module.css'
 
-// interface Props {
-//   item: []
-// }
+interface ForumProps {
+  data: any;
+}
 
-export const VolkenoForumy: React.FC = () => {
+
+export const VolkenoForumy = ({...props}: ForumProps) => {
+
+  const {
+     data
+  } = props
+
   return (
-    // <div className={styles.test}>Example Component: {text}</div>
-
     <BrowserRouter>
 			<div className="router-container">
 				<Routes>
 					<Route
 						path="/"
-						element={<Sommaire titre={''} Contenu={''} id={0} created_at={''} prenom={''} nom={''} avatar={''} fullname={''} text={''} item={[]} state={[]} donnees={[]}  />}
+						element={<Sommaire Datas={data}  />}
 					/>
 					<Route
 						path="/forum-discussion/:id"
@@ -42,12 +44,5 @@ export const VolkenoForumy: React.FC = () => {
         </Routes>
       </div>
     </BrowserRouter>
-
-
-
-    // <div>
-    //   <Sommaire />
-    //   {/* <Discussion /> */}
-    // </div>
   )
 }

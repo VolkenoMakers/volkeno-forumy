@@ -2,19 +2,21 @@ import React from 'react'
 import styles from '../styles.module.css'
 import { BsChat } from "react-icons/bs";
 import { IoReturnDownBackOutline } from "react-icons/io5";
-import { DatasForum } from './DatasForum';
+// import { DatasForum } from './DatasForum';
 import { NavLink } from 'react-router-dom';
 
 
-const SommaireItem: React.FC<any> = (): JSX.Element => {
+const SommaireItem: React.FC<any> = ({ Datas }): JSX.Element => {
 
   
   return (
       <div>
 
         {
-            DatasForum.length > 0  ? (
-            DatasForum.map((item) => {
+            // DatasForum.length > 0  ? (
+            // DatasForum.map((item) => {
+                Datas.length > 0  ? (
+                    Datas.map((item: any) => {
                 return(
 
                     <NavLink

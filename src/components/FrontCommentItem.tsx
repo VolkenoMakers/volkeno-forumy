@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from '../styles.module.css'
-import { DatasUserSession } from './DatasForum';
+// import { DatasUserSession } from './DatasForum';
 import { BiComment } from "react-icons/bi";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import AjoutComments from './AjoutComments';
 
 const FrontCommentItem: React.FC<any> = (
-    { donnees, onAddResponseComment }
+    { donnees, onAddResponseComment, DatasUserSession }
     ): JSX.Element => {
 
 	return (
@@ -137,52 +137,60 @@ const FrontCommentItem: React.FC<any> = (
                                     );
                                 })}
 
-                                <div 
-                                    className='row'
-                                >
-                                    <div className="col-3">
-                                        <div className="row">
-                                            <div className="col-md-6">
-                                                <div className="p1 d-flex justify-content-end">
-                                                    <img
-                                                        src={DatasUserSession?.[0]?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${DatasUserSession?.[0]?.user?.fullname}` : `${DatasUserSession?.[0]?.user?.avatar}`}
-                                                        alt="user-avatar"
-                                                        className={styles.imgSommaireForumDiscussion2}
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div className="col-md-6 d-flex align-item-md-center">
-                                                <div className={
-                                                    styles.forumSommaireAuteurCard 
-                                                    }>
-                                                    {DatasUserSession?.[0]
-                                                        ?.user
-                                                        ?.prenom !==
-                                                        undefined ||
-                                                        DatasUserSession?.[0]
-                                                        ?.user
-                                                        ?.nom !==
-                                                        undefined
-                                                        ? DatasUserSession?.[0]
-                                                        ?.user
-                                                                ?.prenom +
-                                                            " " +
-                                                            DatasUserSession?.[0]
-                                                        ?.user
-                                                                ?.nom
-                                                        : "Anonyme"} 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                {
+                                    DatasUserSession.map((item: any) => {
+                                        return(
 
-                                    <div className="col-9">
-                                    <AjoutComments
-                                        onSubmit={(comment: string)=>{
-                                        onAddResponseComment(donnees, donnee, comment)
-                                        }} />
-                                    </div>
-                                </div>
+                                            <div 
+                                                className='row' key={item.id}
+                                            >
+                                                <div className="col-3">
+                                                    <div className="row">
+                                                        <div className="col-md-6">
+                                                            <div className="p1 d-flex justify-content-end">
+                                                                <img
+                                                                    src={item?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item?.user?.fullname}` : `${item?.user?.avatar}`}
+                                                                    alt="user-avatar"
+                                                                    className={styles.imgSommaireForumDiscussion2}
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                        <div className="col-md-6 d-flex align-item-md-center">
+                                                            <div className={
+                                                                styles.forumSommaireAuteurCard 
+                                                                }>
+                                                                {item
+                                                                    ?.user
+                                                                    ?.prenom !==
+                                                                    undefined ||
+                                                                    item
+                                                                    ?.user
+                                                                    ?.nom !==
+                                                                    undefined
+                                                                    ? item
+                                                                    ?.user
+                                                                            ?.prenom +
+                                                                        " " +
+                                                                        item
+                                                                    ?.user
+                                                                            ?.nom
+                                                                    : "Anonyme"} 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div className="col-9">
+                                                <AjoutComments
+                                                    onSubmit={(comment: string)=>{
+                                                    onAddResponseComment(donnees, donnee, comment)
+                                                    }} />
+                                                </div>
+                                            </div>
+
+                                        )
+                                    })
+                                }
                             </div>
                         </div>
                     )

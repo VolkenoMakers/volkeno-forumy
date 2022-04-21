@@ -3,7 +3,9 @@ import styles from '../styles.module.css'
 import SommaireItem from './SommaireItem';
 
 
-const Sommaire: React.FC<DatasType> = (): JSX.Element => {
+const Sommaire: React.FC<DatasType> = ({ Datas }): JSX.Element => {
+
+
   return (
       <div className="component-liste-projet">
         <div className={styles.contentViewStart}>
@@ -11,7 +13,7 @@ const Sommaire: React.FC<DatasType> = (): JSX.Element => {
             <div className="row align-items-center" style={{ margin: "3rem 0" }}>
             <div className="col-12">
               {
-                  <SommaireItem  />
+                  <SommaireItem Datas={Datas}  />
               } 
           </div>
           </div>

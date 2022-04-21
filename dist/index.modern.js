@@ -40,159 +40,15 @@ function AjoutComments({
   }, "Ajouter"));
 }
 
-const DatasForum = [{
-  titre: "Quels sont les avantages d'utiliser le vélo comme moyen de transport ?",
-  contenu: " Le vélo est un moyen de transport silencieux et écologique. C'est un engin qui ne présente pas beaucoup de danger. D'une part, le vélo ne nous fait pas respirer les vapeurs d'essence, mais les vapeurs du matin et du soir. D'autre part, il se moque des règlements, il ignore les interdits.",
-  id: 1,
-  created_at: "6/04/2022",
-  author: {
-    prenom: "Joël ",
-    nom: "Gomis",
-    avatar: '/mediafiles/avatars/default.png',
-    fullname: 'JG'
-  },
-  comments: [{
-    id: 1,
-    user: {
-      prenom: "Sadio",
-      nom: "Sanghare",
-      avatar: '/mediafiles/avatars/default.png',
-      fullname: "SS"
-    },
-    text: "Comment 1",
-    created_at: "6/04/2022",
-    reponse_commentaire: [{
-      user: {
-        prenom: "Ndeye",
-        nom: "Faye",
-        user_avatar: '/mediafiles/avatars/default.png',
-        fullname: "NF"
-      },
-      contenu: "Reponse 7 deus"
-    }]
-  }, {
-    id: 2,
-    user: {
-      prenom: "Amadou",
-      nom: "Sall",
-      avatar: '/mediafiles/avatars/default.png',
-      fullname: "AS"
-    },
-    text: "Reponse 2",
-    created_at: "6/04/2022",
-    reponse_commentaire: [{
-      user: {
-        prenom: "Fatou",
-        nom: "Samb",
-        user_avatar: '/mediafiles/avatars/default.png',
-        fullname: "FS"
-      },
-      contenu: "Reponse 10"
-    }]
-  }],
-  user_comments: [{
-    id: 1,
-    user: {
-      prenom: "Sadio",
-      nom: "Sanghare",
-      avatar: '/mediafiles/avatars/default.png',
-      fullname: 'SS'
-    }
-  }, {
-    id: 2,
-    user: {
-      prenom: "Paul",
-      nom: "Gomis",
-      avatar: '/mediafiles/avatars/default.png',
-      fullname: 'PG'
-    }
-  }]
-}, {
-  titre: "Quels sont les arguments du travail ?",
-  contenu: "Il éloigne l'ennui, le vice et le besoin. Il humanise par le lien social qu'il crée et maintient nos capacités intellectuelles en éveil. Il redresse le perverti, moralise le dévoyé, rend l'homme vertueux.",
-  id: 2,
-  created_at: "6/04/2022",
-  author: {
-    prenom: "Moussa",
-    nom: "Fall",
-    avatar: '/mediafiles/avatars/default.png',
-    fullname: 'MF'
-  },
-  comments: [{
-    id: 1,
-    user: {
-      prenom: "Paul",
-      nom: "Gomis",
-      avatar: '/mediafiles/avatars/default.png',
-      fullname: "PG"
-    },
-    text: "Reponse 1",
-    created_at: "6/04/2022",
-    reponse_commentaire: [{
-      user: {
-        prenom: "Alpha",
-        nom: "Diallo",
-        user_avatar: "/mediafiles/avatars/default.png",
-        fullname: "AD"
-      },
-      contenu: "Reponse 3"
-    }]
-  }, {
-    id: 2,
-    user: {
-      prenom: "Sadio",
-      nom: "Sangh",
-      avatar: '/mediafiles/avatars/default.png',
-      fullname: "SS"
-    },
-    text: "Reponse 2",
-    created_at: "6/04/2022",
-    reponse_commentaire: [{
-      user: {
-        prenom: "Cheikh",
-        nom: "Dieng",
-        user_avatar: '/mediafiles/avatars/default.png',
-        fullname: "FS"
-      },
-      contenu: "Reponse 6"
-    }]
-  }],
-  user_comments: [{
-    id: 1,
-    user: {
-      prenom: "Sadio",
-      nom: "Sanghare",
-      avatar: '/mediafiles/avatars/default.png',
-      fullname: 'SS'
-    }
-  }, {
-    id: 2,
-    user: {
-      prenom: "Paul",
-      nom: "Gomis",
-      avatar: '/mediafiles/avatars/default.png',
-      fullname: 'PG'
-    }
-  }]
-}];
-const DatasUserSession = [{
-  id: 1,
-  user: {
-    prenom: "Me",
-    nom: "",
-    fullname: "Me",
-    avatar: '/mediafiles/avatars/default.png'
-  }
-}];
-
 const FrontCommentItem = ({
   donnees,
-  onAddResponseComment
+  onAddResponseComment,
+  DatasUserSession
 }) => {
   return React__default.createElement("div", {
     className: styles.cardParent
   }, donnees === null || donnees === void 0 ? void 0 : donnees.comments.map(donnee => {
-    var _donnee$user, _donnee$user2, _donnee$user3, _donnee$user4, _donnee$user5, _donnee$reponse_comme, _donnee$reponse_comme2, _DatasUserSession$, _DatasUserSession$$us, _DatasUserSession$2, _DatasUserSession$2$u, _DatasUserSession$3, _DatasUserSession$3$u, _DatasUserSession$4, _DatasUserSession$4$u, _DatasUserSession$5, _DatasUserSession$5$u, _DatasUserSession$6, _DatasUserSession$6$u, _DatasUserSession$7, _DatasUserSession$7$u;
+    var _donnee$user, _donnee$user2, _donnee$user3, _donnee$user4, _donnee$user5, _donnee$reponse_comme, _donnee$reponse_comme2;
 
     return React__default.createElement("div", {
       key: donnee.id
@@ -273,31 +129,36 @@ const FrontCommentItem = ({
       }, React__default.createElement("p", {
         className: styles.textSommaireForum
       }, item === null || item === void 0 ? void 0 : item.contenu, " "))))));
-    }), React__default.createElement("div", {
-      className: 'row'
-    }, React__default.createElement("div", {
-      className: "col-3"
-    }, React__default.createElement("div", {
-      className: "row"
-    }, React__default.createElement("div", {
-      className: "col-md-6"
-    }, React__default.createElement("div", {
-      className: "p1 d-flex justify-content-end"
-    }, React__default.createElement("img", {
-      src: (DatasUserSession === null || DatasUserSession === void 0 ? void 0 : (_DatasUserSession$ = DatasUserSession[0]) === null || _DatasUserSession$ === void 0 ? void 0 : (_DatasUserSession$$us = _DatasUserSession$.user) === null || _DatasUserSession$$us === void 0 ? void 0 : _DatasUserSession$$us.avatar) === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${DatasUserSession === null || DatasUserSession === void 0 ? void 0 : (_DatasUserSession$2 = DatasUserSession[0]) === null || _DatasUserSession$2 === void 0 ? void 0 : (_DatasUserSession$2$u = _DatasUserSession$2.user) === null || _DatasUserSession$2$u === void 0 ? void 0 : _DatasUserSession$2$u.fullname}` : `${DatasUserSession === null || DatasUserSession === void 0 ? void 0 : (_DatasUserSession$3 = DatasUserSession[0]) === null || _DatasUserSession$3 === void 0 ? void 0 : (_DatasUserSession$3$u = _DatasUserSession$3.user) === null || _DatasUserSession$3$u === void 0 ? void 0 : _DatasUserSession$3$u.avatar}`,
-      alt: "user-avatar",
-      className: styles.imgSommaireForumDiscussion2
-    }))), React__default.createElement("div", {
-      className: "col-md-6 d-flex align-item-md-center"
-    }, React__default.createElement("div", {
-      className: styles.forumSommaireAuteurCard
-    }, (DatasUserSession === null || DatasUserSession === void 0 ? void 0 : (_DatasUserSession$4 = DatasUserSession[0]) === null || _DatasUserSession$4 === void 0 ? void 0 : (_DatasUserSession$4$u = _DatasUserSession$4.user) === null || _DatasUserSession$4$u === void 0 ? void 0 : _DatasUserSession$4$u.prenom) !== undefined || (DatasUserSession === null || DatasUserSession === void 0 ? void 0 : (_DatasUserSession$5 = DatasUserSession[0]) === null || _DatasUserSession$5 === void 0 ? void 0 : (_DatasUserSession$5$u = _DatasUserSession$5.user) === null || _DatasUserSession$5$u === void 0 ? void 0 : _DatasUserSession$5$u.nom) !== undefined ? (DatasUserSession === null || DatasUserSession === void 0 ? void 0 : (_DatasUserSession$6 = DatasUserSession[0]) === null || _DatasUserSession$6 === void 0 ? void 0 : (_DatasUserSession$6$u = _DatasUserSession$6.user) === null || _DatasUserSession$6$u === void 0 ? void 0 : _DatasUserSession$6$u.prenom) + " " + (DatasUserSession === null || DatasUserSession === void 0 ? void 0 : (_DatasUserSession$7 = DatasUserSession[0]) === null || _DatasUserSession$7 === void 0 ? void 0 : (_DatasUserSession$7$u = _DatasUserSession$7.user) === null || _DatasUserSession$7$u === void 0 ? void 0 : _DatasUserSession$7$u.nom) : "Anonyme")))), React__default.createElement("div", {
-      className: "col-9"
-    }, React__default.createElement(AjoutComments, {
-      onSubmit: comment => {
-        onAddResponseComment(donnees, donnee, comment);
-      }
-    })))));
+    }), DatasUserSession.map(item => {
+      var _item$user6, _item$user7, _item$user8, _item$user9, _item$user10, _item$user11, _item$user12;
+
+      return React__default.createElement("div", {
+        className: 'row',
+        key: item.id
+      }, React__default.createElement("div", {
+        className: "col-3"
+      }, React__default.createElement("div", {
+        className: "row"
+      }, React__default.createElement("div", {
+        className: "col-md-6"
+      }, React__default.createElement("div", {
+        className: "p1 d-flex justify-content-end"
+      }, React__default.createElement("img", {
+        src: (item === null || item === void 0 ? void 0 : (_item$user6 = item.user) === null || _item$user6 === void 0 ? void 0 : _item$user6.avatar) === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item === null || item === void 0 ? void 0 : (_item$user7 = item.user) === null || _item$user7 === void 0 ? void 0 : _item$user7.fullname}` : `${item === null || item === void 0 ? void 0 : (_item$user8 = item.user) === null || _item$user8 === void 0 ? void 0 : _item$user8.avatar}`,
+        alt: "user-avatar",
+        className: styles.imgSommaireForumDiscussion2
+      }))), React__default.createElement("div", {
+        className: "col-md-6 d-flex align-item-md-center"
+      }, React__default.createElement("div", {
+        className: styles.forumSommaireAuteurCard
+      }, (item === null || item === void 0 ? void 0 : (_item$user9 = item.user) === null || _item$user9 === void 0 ? void 0 : _item$user9.prenom) !== undefined || (item === null || item === void 0 ? void 0 : (_item$user10 = item.user) === null || _item$user10 === void 0 ? void 0 : _item$user10.nom) !== undefined ? (item === null || item === void 0 ? void 0 : (_item$user11 = item.user) === null || _item$user11 === void 0 ? void 0 : _item$user11.prenom) + " " + (item === null || item === void 0 ? void 0 : (_item$user12 = item.user) === null || _item$user12 === void 0 ? void 0 : _item$user12.nom) : "Anonyme")))), React__default.createElement("div", {
+        className: "col-9"
+      }, React__default.createElement(AjoutComments, {
+        onSubmit: comment => {
+          onAddResponseComment(donnees, donnee, comment);
+        }
+      })));
+    })));
   }));
 };
 
@@ -305,10 +166,19 @@ const Discussion = ({
   onAddComment,
   onAddResponseComment
 }) => {
-  var _donnees$author, _donnees$author2, _donnees$author3, _donnees$author4, _donnees$author5, _donnees$author6, _donnees$author7, _DatasUserSession$, _DatasUserSession$$us, _DatasUserSession$2, _DatasUserSession$2$u, _DatasUserSession$3, _DatasUserSession$3$u, _DatasUserSession$4, _DatasUserSession$4$u, _DatasUserSession$5, _DatasUserSession$5$u, _DatasUserSession$6, _DatasUserSession$6$u, _DatasUserSession$7, _DatasUserSession$7$u;
+  var _donnees$author, _donnees$author2, _donnees$author3, _donnees$author4, _donnees$author5, _donnees$author6, _donnees$author7;
 
   let location = useLocation();
   const donnees = location === null || location === void 0 ? void 0 : location.state;
+  const DatasUserSession = [{
+    id: 1,
+    user: {
+      prenom: "Mes",
+      nom: "",
+      fullname: "Me",
+      avatar: '/mediafiles/avatars/default.png'
+    }
+  }];
   return React__default.createElement("div", {
     className: "component-liste-projet"
   }, React__default.createElement("div", {
@@ -352,40 +222,48 @@ const Discussion = ({
     className: styles.textSommaireForum
   }, donnees.contenu)))), React__default.createElement(FrontCommentItem, {
     donnees: donnees,
-    onAddResponseComment: onAddResponseComment
+    onAddResponseComment: onAddResponseComment,
+    DatasUserSession: DatasUserSession
   }), React__default.createElement("span", {
     className: styles.divSeparateur
   }), React__default.createElement("div", {
     className: styles.rowReponse
-  }, React__default.createElement("div", {
-    className: 'row'
-  }, React__default.createElement("div", {
-    className: "col-2"
-  }, React__default.createElement("div", {
-    className: styles.sommaireAvatarTitre
-  }, React__default.createElement("div", {
-    className: ""
-  }, React__default.createElement("div", {
-    className: "p1"
-  }, React__default.createElement("img", {
-    src: (DatasUserSession === null || DatasUserSession === void 0 ? void 0 : (_DatasUserSession$ = DatasUserSession[0]) === null || _DatasUserSession$ === void 0 ? void 0 : (_DatasUserSession$$us = _DatasUserSession$.user) === null || _DatasUserSession$$us === void 0 ? void 0 : _DatasUserSession$$us.avatar) === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${DatasUserSession === null || DatasUserSession === void 0 ? void 0 : (_DatasUserSession$2 = DatasUserSession[0]) === null || _DatasUserSession$2 === void 0 ? void 0 : (_DatasUserSession$2$u = _DatasUserSession$2.user) === null || _DatasUserSession$2$u === void 0 ? void 0 : _DatasUserSession$2$u.fullname}` : `${DatasUserSession === null || DatasUserSession === void 0 ? void 0 : (_DatasUserSession$3 = DatasUserSession[0]) === null || _DatasUserSession$3 === void 0 ? void 0 : (_DatasUserSession$3$u = _DatasUserSession$3.user) === null || _DatasUserSession$3$u === void 0 ? void 0 : _DatasUserSession$3$u.avatar}`,
-    alt: "user-avatar",
-    className: styles.imgSommaireForumDiscussion2
-  }))), React__default.createElement("div", {
-    className: " d-flex align-item-md-center"
-  }, React__default.createElement("div", {
-    className: styles.forumSommaireAuteurCard
-  }, (DatasUserSession === null || DatasUserSession === void 0 ? void 0 : (_DatasUserSession$4 = DatasUserSession[0]) === null || _DatasUserSession$4 === void 0 ? void 0 : (_DatasUserSession$4$u = _DatasUserSession$4.user) === null || _DatasUserSession$4$u === void 0 ? void 0 : _DatasUserSession$4$u.prenom) !== undefined || (DatasUserSession === null || DatasUserSession === void 0 ? void 0 : (_DatasUserSession$5 = DatasUserSession[0]) === null || _DatasUserSession$5 === void 0 ? void 0 : (_DatasUserSession$5$u = _DatasUserSession$5.user) === null || _DatasUserSession$5$u === void 0 ? void 0 : _DatasUserSession$5$u.nom) !== undefined ? (DatasUserSession === null || DatasUserSession === void 0 ? void 0 : (_DatasUserSession$6 = DatasUserSession[0]) === null || _DatasUserSession$6 === void 0 ? void 0 : (_DatasUserSession$6$u = _DatasUserSession$6.user) === null || _DatasUserSession$6$u === void 0 ? void 0 : _DatasUserSession$6$u.prenom) + " " + (DatasUserSession === null || DatasUserSession === void 0 ? void 0 : (_DatasUserSession$7 = DatasUserSession[0]) === null || _DatasUserSession$7 === void 0 ? void 0 : (_DatasUserSession$7$u = _DatasUserSession$7.user) === null || _DatasUserSession$7$u === void 0 ? void 0 : _DatasUserSession$7$u.nom) : "Anonyme")))), React__default.createElement("div", {
-    className: "col-10"
-  }, React__default.createElement(AjoutComments, {
-    onSubmit: comment => {
-      onAddComment(donnees, comment);
-    }
-  }))))))));
+  }, DatasUserSession === null || DatasUserSession === void 0 ? void 0 : DatasUserSession.map(item => {
+    var _item$user, _item$user2, _item$user3, _item$user4, _item$user5, _item$user6, _item$user7;
+
+    return React__default.createElement("div", {
+      className: 'row',
+      key: item.id
+    }, React__default.createElement("div", {
+      className: "col-2"
+    }, React__default.createElement("div", {
+      className: styles.sommaireAvatarTitre
+    }, React__default.createElement("div", {
+      className: ""
+    }, React__default.createElement("div", {
+      className: "p1"
+    }, React__default.createElement("img", {
+      src: (item === null || item === void 0 ? void 0 : (_item$user = item.user) === null || _item$user === void 0 ? void 0 : _item$user.avatar) === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item === null || item === void 0 ? void 0 : (_item$user2 = item.user) === null || _item$user2 === void 0 ? void 0 : _item$user2.fullname}` : `${item === null || item === void 0 ? void 0 : (_item$user3 = item.user) === null || _item$user3 === void 0 ? void 0 : _item$user3.avatar}`,
+      alt: "user-avatar",
+      className: styles.imgSommaireForumDiscussion2
+    }))), React__default.createElement("div", {
+      className: " d-flex align-item-md-center"
+    }, React__default.createElement("div", {
+      className: styles.forumSommaireAuteurCard
+    }, (item === null || item === void 0 ? void 0 : (_item$user4 = item.user) === null || _item$user4 === void 0 ? void 0 : _item$user4.prenom) !== undefined || (item === null || item === void 0 ? void 0 : (_item$user5 = item.user) === null || _item$user5 === void 0 ? void 0 : _item$user5.nom) !== undefined ? (item === null || item === void 0 ? void 0 : (_item$user6 = item.user) === null || _item$user6 === void 0 ? void 0 : _item$user6.prenom) + " " + (item === null || item === void 0 ? void 0 : (_item$user7 = item.user) === null || _item$user7 === void 0 ? void 0 : _item$user7.nom) : "Anonyme")))), React__default.createElement("div", {
+      className: "col-10"
+    }, React__default.createElement(AjoutComments, {
+      onSubmit: comment => {
+        onAddComment(donnees, comment);
+      }
+    })));
+  }))))));
 };
 
-const SommaireItem = () => {
-  return React__default.createElement("div", null, DatasForum.length > 0 ? DatasForum.map(item => {
+const SommaireItem = ({
+  Datas
+}) => {
+  return React__default.createElement("div", null, Datas.length > 0 ? Datas.map(item => {
     var _item$author, _item$author2, _item$author3, _item$author4, _item$author5, _item$author6, _item$author7;
 
     return React__default.createElement(NavLink, {
@@ -461,7 +339,9 @@ const SommaireItem = () => {
   }, "Pas de sujet de discussion")))));
 };
 
-const Sommaire = () => {
+const Sommaire = ({
+  Datas
+}) => {
   return React__default.createElement("div", {
     className: "component-liste-projet"
   }, React__default.createElement("div", {
@@ -475,27 +355,22 @@ const Sommaire = () => {
     }
   }, React__default.createElement("div", {
     className: "col-12"
-  }, React__default.createElement(SommaireItem, null))))));
+  }, React__default.createElement(SommaireItem, {
+    Datas: Datas
+  }))))));
 };
 
-const VolkenoForumy = () => {
+const VolkenoForumy = ({ ...props
+}) => {
+  const {
+    data
+  } = props;
   return createElement(BrowserRouter, null, createElement("div", {
     className: "router-container"
   }, createElement(Routes, null, createElement(Route, {
     path: "/",
     element: createElement(Sommaire, {
-      titre: '',
-      Contenu: '',
-      id: 0,
-      created_at: '',
-      prenom: '',
-      nom: '',
-      avatar: '',
-      fullname: '',
-      text: '',
-      item: [],
-      state: [],
-      donnees: []
+      Datas: data
     })
   }), createElement(Route, {
     path: "/forum-discussion/:id",

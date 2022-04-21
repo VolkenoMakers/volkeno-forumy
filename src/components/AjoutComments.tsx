@@ -5,38 +5,9 @@ function AjoutComments(
     {onSubmit}: {onSubmit: ((comment: string)=>any)}
     ) {
 
-    // const history = useHistory();
-    // const [submitedForm, setSubmitedForm] = useState(false);
-    // const [isSuccessfullySubmittedForm, setIsSuccessfullySubmittedForm] = useState(false);
-
-    // const params=useParams()
-    // let id = params?.id;
-    // const dispatch = useDispatch();
-
-    // const validationSchema = yup.object().shape({
-    //     text: yup.string().required('This field is required'),
-    //   });
-
     const [comment, setComment] = useState('')
 
-    //   const {
-    //     // register,
-    //     handleSubmit,
-    //     // reset,
-    //   } = useForm({
-    //     mode: "onBlur",
-    //     resolver: yupResolver(validationSchema)
-    //   });
-
-    //   const config = {
-    //         headers: {
-    //         Authorization: `Bearer ${window.sessionStorage.getItem("userToken")}`,
-    //         },
-    //     };
-    //   const userID = window.sessionStorage.getItem("userID");
-      
-      
-
+   
     const submitReponse = (
         e: any
         ) => {
@@ -44,10 +15,8 @@ function AjoutComments(
             if(comment.trim().length > 0 ){
 
                 onSubmit(comment)
-            }
-
-
-      }
+        }
+    }
 
   return (
     
