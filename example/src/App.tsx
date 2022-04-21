@@ -110,11 +110,19 @@ const App = () => {
           {   
               id: 2,
               user: {
-                  firstName: "Paul",
-                  lastName: "Gomis",
+                  firstName: "Amadou",
+                  lastName: "Sall",
                   avatar: '/mediafiles/avatars/default.png',
               },
           },
+          {   
+              id: 3,
+              user: {
+                  firstName: "Aïssatou",
+                  lastName: "Diallo",
+                  avatar: '/mediafiles/avatars/default.png',
+              },
+          }
       ]
 
     },
@@ -182,7 +190,7 @@ const App = () => {
                 id: 1,
                 user: {
                     firstName: "Sadio",
-                    lastName: "Sanghare",
+                    lastName: "Sangh",
                     avatar: '/mediafiles/avatars/default.png',
                 },
             },
@@ -193,7 +201,7 @@ const App = () => {
                     lastName: "Gomis",
                     avatar: '/mediafiles/avatars/default.png',
                 },
-            },
+            }
         ]
 
     }
@@ -208,7 +216,7 @@ const App = () => {
           lastName: "Sarr",
           avatar: '/mediafiles/avatars/default.png',
       },
-      content: "Comment 1",
+      content: "Comment 2",
       created_at: "6/04/2022",
       second_level_response: [
       {
@@ -219,16 +227,14 @@ const App = () => {
               lastName: "Martial",
               avatar: '/mediafiles/avatars/default.png',
           },
-          content: "Reponse 7 deus",
+          content: "Reponse 7",
       }
       ]
   }
 
   Datas[0]?.first_level_response?.push(donnee)
-    console.log('data',Datas)
+    // console.log('data',Datas)
   }, [])
-
-  // const [donneInitial, setDonneInitial] = useState(Datas)
 
   
   return <VolkenoForumy data={Datas}  />

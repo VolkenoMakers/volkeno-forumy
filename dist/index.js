@@ -44,7 +44,7 @@ function AjoutComments(_ref) {
   };
 
   return React__default.createElement("form", null, React__default.createElement("div", {
-    className: styles.forumCardSommaire
+    className: "" + styles.forumCardSommaire
   }, React__default.createElement("div", {
     className: 'row'
   }, React__default.createElement("div", {

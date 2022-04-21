@@ -4,24 +4,19 @@ import styles from '../styles.module.css'
 function AjoutComments({onSubmit}: {onSubmit: ((comment: string)=>any)}) {
 
     const [comment, setComment] = useState('')
-
    
     const submitReponse = (e: any) => {
-            e.preventDefault()
-            if(comment.trim().length > 0 ){
-
-                onSubmit(comment)
-
+        e.preventDefault()
+        if(comment.trim().length > 0 ){
+            onSubmit(comment)
         }
     }
-
-    
 
   return (
     
         <form>
             <div className={
-                styles.forumCardSommaire 
+                `${styles.forumCardSommaire}` 
                 }>
                 <div className='row'>
                     <div className='col-12 pt-3 mb-md-4 mb-5'>

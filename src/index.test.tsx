@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import { VolkenoForumy } from '.'
 
 describe('ExampleComponent', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(VolkenoForumy).toBeTruthy()
   })
 })
