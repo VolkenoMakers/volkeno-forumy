@@ -205,9 +205,6 @@ const App = () => {
     }
   ]
 
-  
-
-
   return <VolkenoForumy data={Datas} />
 }
 

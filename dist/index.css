@@ -417,11 +417,10 @@ hr.divider {
 
 ._styles-module__formAddCguButtonAjouter__2H-xZ {
   background: #115C67;
-  border-radius: 4px;
+  border-radius: 8px !important;
   /* width: 86px;
   height: 38px; */
-  padding: 10px 15px;
-border-radius: 4px;
+border-radius: 8px !important;
 font-family: "Poppins";
 font-style: normal;
 font-weight: normal;
@@ -430,8 +429,25 @@ line-height: 22px;
 text-align: center;
 color: #fff;
 outline: none;
-  padding: 4px 10px;
+  padding: 8px 10px;
 }
+._styles-module__ButtonAjouter__2SDRe {
+  background: #115C67;
+  border-radius: 8px !important;
+  /* width: 86px;
+  height: 38px; */
+border-radius: 8px !important;
+font-family: "Poppins";
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 22px;
+text-align: center;
+color: #fff;
+outline: none;
+  padding: 8px 10px;
+}
+
 
 @media (max-width: 768px) {
   ._styles-module__sommaireForumUserChat__2fmvg {
@@ -468,6 +484,129 @@ outline: none;
       gap: 10px;
   }
 
+}
+._styles-module__ajouterSujet__3gpYW{
+display: flex;
+justify-content: end;
+align-items: flex-end;
+margin-bottom: 16px;
+}
+
+/* --------Ajouter Sujet------------- */
+
+._styles-module__ajouter__L83xr {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+._styles-module__forumContainer__1-B4b {
+  background: #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 20px 45px;
+  width: 60%;
+  margin: auto;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: relative;
+  min-width: 100% !important;
+  margin-bottom: 2rem;
+  /* padding: 0.5rem 1rem; */
+  margin-top: 12px;
+}
+
+._styles-module__forumTitle__1Tjly {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 27px;
+  line-height: 35px;
+  text-align: center;
+  letter-spacing: 0.3px;
+  margin-bottom: 50px;
+  color: #252733;
+}
+
+._styles-module__authForm__JFfPL {
+  display: flex;
+  flex-direction: column;
+
+}
+
+._styles-module__inputCol__9zGxr label {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #9FA2B4;
+  margin-top: 10px;
+}
+
+._styles-module__submitBtnRow__2wz7g {
+  display: flex;
+  flex-direction: column;
+}
+
+._styles-module__authSubmitBtn__1IFDi {
+  background: #115C67;
+  border-color: #115C67 !important;
+  width: 100%;
+  padding: 15px;
+  margin-top: 10%;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+._styles-module__authSubmitBtn__1IFDi:hover {
+  background: transparent !important;
+  color: #115C67 !important;
+}
+
+._styles-module__formAddCguInput__1ICK- {
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  box-sizing: border-box;
+  border-radius: 2px;
+  height: 46px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #2f3a4a;
+  width: 95%;
+  padding: 5px 10px;
+}
+
+._styles-module__formAddCguInput__1ICK-::-moz-placeholder {
+  color: #ababab;
+}
+
+._styles-module__formAddCguInput__1ICK-:-ms-input-placeholder {
+  color: #ababab;
+}
+
+._styles-module__formAddCguInput__1ICK-::placeholder {
+  color: #ababab;
+}
+
+._styles-module__formControl__1vyEq {
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
 }
 
 @media (min-width: 768px) and (max-width: 900px) {
