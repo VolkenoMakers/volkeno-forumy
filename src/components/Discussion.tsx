@@ -70,7 +70,7 @@ const Discussion= ({
 										styles.titreSommaireForum 
 										}>
 											{
-												donnees?.titre 
+												donnees?.initialTitle
 											} 
 										</h3>
 										<div className={styles.forumSommairAauteurCard}>
@@ -78,19 +78,19 @@ const Discussion= ({
 											Par{" "}
 											{donnees
 												?.author
-												?.prenom !==
+												?.firstName !==
 												undefined ||
                         						donnees
 												?.author
-												?.nom !==
+												?.lastName !==
 												undefined
 												? donnees
 														?.author
-														?.prenom +
+														?.firstName +
 												  " " +
 												  donnees
 														?.author
-														?.nom
+														?.lastName
 												: "Anonyme"}  
 										</div>
 									</div>
@@ -102,7 +102,7 @@ const Discussion= ({
 										styles.textSommaireForum
 										}>
 											{
-                        						donnees.contenu
+                        						donnees.initialContent
 											} 
 										</p>
 									</div>
@@ -143,19 +143,19 @@ const Discussion= ({
 															}>
 															{item
 																?.user
-																?.prenom !==
+																?.firstName !==
 																undefined ||
 																item
 																?.user
-																?.nom !==
+																?.lastName !==
 																undefined
 																? item
 																?.user
-																		?.prenom +
+																		?.firstName +
 																	" " +
 																	item
 																?.user
-																		?.nom
+																		?.lastName
 																: "Anonyme"} 
 														</div>
 													</div>

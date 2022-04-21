@@ -47,8 +47,8 @@ const FrontCommentItem = ({
 }) => {
   return React__default.createElement("div", {
     className: styles.cardParent
-  }, donnees === null || donnees === void 0 ? void 0 : donnees.comments.map(donnee => {
-    var _donnee$user, _donnee$user2, _donnee$user3, _donnee$user4, _donnee$user5, _donnee$reponse_comme, _donnee$reponse_comme2;
+  }, donnees === null || donnees === void 0 ? void 0 : donnees.first_level_response.map(donnee => {
+    var _donnee$user, _donnee$user2, _donnee$user3, _donnee$user4, _donnee$user5, _donnee$second_level_, _donnee$second_level_2;
 
     return React__default.createElement("div", {
       key: donnee.id
@@ -70,7 +70,7 @@ const FrontCommentItem = ({
       className: " d-flex align-item-md-center"
     }, React__default.createElement("div", {
       className: styles.forumSommaireAuteurCard
-    }, (donnee === null || donnee === void 0 ? void 0 : (_donnee$user4 = donnee.user) === null || _donnee$user4 === void 0 ? void 0 : _donnee$user4.prenom) + " " + (donnee === null || donnee === void 0 ? void 0 : (_donnee$user5 = donnee.user) === null || _donnee$user5 === void 0 ? void 0 : _donnee$user5.nom))))), React__default.createElement("div", {
+    }, (donnee === null || donnee === void 0 ? void 0 : (_donnee$user4 = donnee.user) === null || _donnee$user4 === void 0 ? void 0 : _donnee$user4.firstName) + " " + (donnee === null || donnee === void 0 ? void 0 : (_donnee$user5 = donnee.user) === null || _donnee$user5 === void 0 ? void 0 : _donnee$user5.lastName))))), React__default.createElement("div", {
       className: "col-10"
     }, React__default.createElement("div", {
       className: styles.forumCardSommaire
@@ -80,7 +80,7 @@ const FrontCommentItem = ({
       className: "col-12 pt-3 mb-md-4 mb-5"
     }, React__default.createElement("p", {
       className: styles.textSommaireForum
-    }, donnee === null || donnee === void 0 ? void 0 : donnee.text, " "))), React__default.createElement("div", {
+    }, donnee === null || donnee === void 0 ? void 0 : donnee.content, " "))), React__default.createElement("div", {
       className: styles.cardDiscussionHeureCommentaire
     }, React__default.createElement("a", {
       className: styles.cardDiscussionCommentaire,
@@ -91,12 +91,12 @@ const FrontCommentItem = ({
       "aria-controls": `collapseExample${donnee === null || donnee === void 0 ? void 0 : donnee.id}`
     }, React__default.createElement(BiComment, {
       className: "mr-1"
-    }), donnee === null || donnee === void 0 ? void 0 : (_donnee$reponse_comme = donnee.reponse_commentaire) === null || _donnee$reponse_comme === void 0 ? void 0 : _donnee$reponse_comme.length, " ", "commentaires"), React__default.createElement("span", null, React__default.createElement(AiOutlineClockCircle, {
+    }), donnee === null || donnee === void 0 ? void 0 : (_donnee$second_level_ = donnee.second_level_response) === null || _donnee$second_level_ === void 0 ? void 0 : _donnee$second_level_.length, " ", "commentaires"), React__default.createElement("span", null, React__default.createElement(AiOutlineClockCircle, {
       className: "mr-1"
     }), " ", donnee === null || donnee === void 0 ? void 0 : donnee.created_at))))), React__default.createElement("div", {
       className: "collapse",
       id: `collapseExample${donnee.id}`
-    }, (_donnee$reponse_comme2 = donnee.reponse_commentaire) === null || _donnee$reponse_comme2 === void 0 ? void 0 : _donnee$reponse_comme2.map(item => {
+    }, (_donnee$second_level_2 = donnee.second_level_response) === null || _donnee$second_level_2 === void 0 ? void 0 : _donnee$second_level_2.map(item => {
       var _item$user, _item$user2, _item$user3, _item$user4, _item$user5;
 
       return React__default.createElement("div", {
@@ -111,14 +111,14 @@ const FrontCommentItem = ({
       }, React__default.createElement("div", {
         className: "p1 d-flex justify-content-end"
       }, React__default.createElement("img", {
-        src: (item === null || item === void 0 ? void 0 : (_item$user = item.user) === null || _item$user === void 0 ? void 0 : _item$user.user_avatar) === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item === null || item === void 0 ? void 0 : (_item$user2 = item.user) === null || _item$user2 === void 0 ? void 0 : _item$user2.fullname}` : `${item === null || item === void 0 ? void 0 : (_item$user3 = item.user) === null || _item$user3 === void 0 ? void 0 : _item$user3.user_avatar}`,
+        src: (item === null || item === void 0 ? void 0 : (_item$user = item.user) === null || _item$user === void 0 ? void 0 : _item$user.avatar) === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item === null || item === void 0 ? void 0 : (_item$user2 = item.user) === null || _item$user2 === void 0 ? void 0 : _item$user2.fullname}` : `${item === null || item === void 0 ? void 0 : (_item$user3 = item.user) === null || _item$user3 === void 0 ? void 0 : _item$user3.avatar}`,
         alt: "user-avatar",
         className: styles.imgSommaireForumDiscussion2
       }))), React__default.createElement("div", {
         className: "col-md-6 d-flex align-item-md-center"
       }, React__default.createElement("div", {
         className: styles.forumSommaireAuteurCard
-      }, (item === null || item === void 0 ? void 0 : (_item$user4 = item.user) === null || _item$user4 === void 0 ? void 0 : _item$user4.prenom) + " " + (item === null || item === void 0 ? void 0 : (_item$user5 = item.user) === null || _item$user5 === void 0 ? void 0 : _item$user5.nom))))), React__default.createElement("div", {
+      }, (item === null || item === void 0 ? void 0 : (_item$user4 = item.user) === null || _item$user4 === void 0 ? void 0 : _item$user4.firstName) + " " + (item === null || item === void 0 ? void 0 : (_item$user5 = item.user) === null || _item$user5 === void 0 ? void 0 : _item$user5.lastName))))), React__default.createElement("div", {
         className: "col-9"
       }, React__default.createElement("div", {
         className: styles.forumCardSommaire
@@ -128,7 +128,7 @@ const FrontCommentItem = ({
         className: "col-12 pt-3 mb-md-4 mb-5"
       }, React__default.createElement("p", {
         className: styles.textSommaireForum
-      }, item === null || item === void 0 ? void 0 : item.contenu, " "))))));
+      }, item === null || item === void 0 ? void 0 : item.content, " "))))));
     }), DatasUserSession.map(item => {
       var _item$user6, _item$user7, _item$user8, _item$user9, _item$user10, _item$user11, _item$user12;
 
@@ -210,17 +210,17 @@ const Discussion = ({
     className: ""
   }, React__default.createElement("h3", {
     className: styles.titreSommaireForum
-  }, donnees === null || donnees === void 0 ? void 0 : donnees.titre), React__default.createElement("div", {
+  }, donnees === null || donnees === void 0 ? void 0 : donnees.initialTitle), React__default.createElement("div", {
     className: styles.forumSommairAauteurCard
   }, React__default.createElement(IoReturnDownBackOutline, {
     className: "mr-1"
-  }), " ", "Par", " ", (donnees === null || donnees === void 0 ? void 0 : (_donnees$author4 = donnees.author) === null || _donnees$author4 === void 0 ? void 0 : _donnees$author4.prenom) !== undefined || (donnees === null || donnees === void 0 ? void 0 : (_donnees$author5 = donnees.author) === null || _donnees$author5 === void 0 ? void 0 : _donnees$author5.nom) !== undefined ? (donnees === null || donnees === void 0 ? void 0 : (_donnees$author6 = donnees.author) === null || _donnees$author6 === void 0 ? void 0 : _donnees$author6.prenom) + " " + (donnees === null || donnees === void 0 ? void 0 : (_donnees$author7 = donnees.author) === null || _donnees$author7 === void 0 ? void 0 : _donnees$author7.nom) : "Anonyme"))), React__default.createElement("div", {
+  }), " ", "Par", " ", (donnees === null || donnees === void 0 ? void 0 : (_donnees$author4 = donnees.author) === null || _donnees$author4 === void 0 ? void 0 : _donnees$author4.firstName) !== undefined || (donnees === null || donnees === void 0 ? void 0 : (_donnees$author5 = donnees.author) === null || _donnees$author5 === void 0 ? void 0 : _donnees$author5.lastName) !== undefined ? (donnees === null || donnees === void 0 ? void 0 : (_donnees$author6 = donnees.author) === null || _donnees$author6 === void 0 ? void 0 : _donnees$author6.firstName) + " " + (donnees === null || donnees === void 0 ? void 0 : (_donnees$author7 = donnees.author) === null || _donnees$author7 === void 0 ? void 0 : _donnees$author7.lastName) : "Anonyme"))), React__default.createElement("div", {
     className: "row"
   }, React__default.createElement("div", {
     className: "col-12 pt-3"
   }, React__default.createElement("p", {
     className: styles.textSommaireForum
-  }, donnees.contenu)))), React__default.createElement(FrontCommentItem, {
+  }, donnees.initialContent)))), React__default.createElement(FrontCommentItem, {
     donnees: donnees,
     onAddResponseComment: onAddResponseComment,
     DatasUserSession: DatasUserSession
@@ -250,7 +250,7 @@ const Discussion = ({
       className: " d-flex align-item-md-center"
     }, React__default.createElement("div", {
       className: styles.forumSommaireAuteurCard
-    }, (item === null || item === void 0 ? void 0 : (_item$user4 = item.user) === null || _item$user4 === void 0 ? void 0 : _item$user4.prenom) !== undefined || (item === null || item === void 0 ? void 0 : (_item$user5 = item.user) === null || _item$user5 === void 0 ? void 0 : _item$user5.nom) !== undefined ? (item === null || item === void 0 ? void 0 : (_item$user6 = item.user) === null || _item$user6 === void 0 ? void 0 : _item$user6.prenom) + " " + (item === null || item === void 0 ? void 0 : (_item$user7 = item.user) === null || _item$user7 === void 0 ? void 0 : _item$user7.nom) : "Anonyme")))), React__default.createElement("div", {
+    }, (item === null || item === void 0 ? void 0 : (_item$user4 = item.user) === null || _item$user4 === void 0 ? void 0 : _item$user4.firstName) !== undefined || (item === null || item === void 0 ? void 0 : (_item$user5 = item.user) === null || _item$user5 === void 0 ? void 0 : _item$user5.lastName) !== undefined ? (item === null || item === void 0 ? void 0 : (_item$user6 = item.user) === null || _item$user6 === void 0 ? void 0 : _item$user6.firstName) + " " + (item === null || item === void 0 ? void 0 : (_item$user7 = item.user) === null || _item$user7 === void 0 ? void 0 : _item$user7.lastName) : "Anonyme")))), React__default.createElement("div", {
       className: "col-10"
     }, React__default.createElement(AjoutComments, {
       onSubmit: comment => {
@@ -292,17 +292,17 @@ const SommaireItem = ({
       className: ""
     }, React__default.createElement("h3", {
       className: styles.titreSommaireForum
-    }, item === null || item === void 0 ? void 0 : item.titre), React__default.createElement("div", {
+    }, item === null || item === void 0 ? void 0 : item.initialTitle), React__default.createElement("div", {
       className: styles.forumSommaireAuteurCard
     }, React__default.createElement(IoReturnDownBackOutline, {
       className: "mr-1"
-    }), "Par", " ", (item === null || item === void 0 ? void 0 : (_item$author4 = item.author) === null || _item$author4 === void 0 ? void 0 : _item$author4.prenom) !== undefined || (item === null || item === void 0 ? void 0 : (_item$author5 = item.author) === null || _item$author5 === void 0 ? void 0 : _item$author5.nom) !== undefined ? (item === null || item === void 0 ? void 0 : (_item$author6 = item.author) === null || _item$author6 === void 0 ? void 0 : _item$author6.prenom) + " " + (item === null || item === void 0 ? void 0 : (_item$author7 = item.author) === null || _item$author7 === void 0 ? void 0 : _item$author7.nom) : "Anonyme"))), React__default.createElement("div", {
+    }), "Par", " ", (item === null || item === void 0 ? void 0 : (_item$author4 = item.author) === null || _item$author4 === void 0 ? void 0 : _item$author4.firstName) !== undefined || (item === null || item === void 0 ? void 0 : (_item$author5 = item.author) === null || _item$author5 === void 0 ? void 0 : _item$author5.lastName) !== undefined ? (item === null || item === void 0 ? void 0 : (_item$author6 = item.author) === null || _item$author6 === void 0 ? void 0 : _item$author6.firstName) + " " + (item === null || item === void 0 ? void 0 : (_item$author7 = item.author) === null || _item$author7 === void 0 ? void 0 : _item$author7.lastName) : "Anonyme"))), React__default.createElement("div", {
       className: "row"
     }, React__default.createElement("div", {
       className: "col-lg-9 pt-3"
     }, React__default.createElement("p", {
       className: styles.textSommaireForum
-    }, item === null || item === void 0 ? void 0 : item.contenu)), React__default.createElement("div", {
+    }, item === null || item === void 0 ? void 0 : item.initialContent)), React__default.createElement("div", {
       className: "col-lg-3"
     }, React__default.createElement("div", {
       className: styles.sommaireForumUserChat
@@ -327,7 +327,7 @@ const SommaireItem = ({
       className: styles.nombreCommentaireSommaireForum
     }, React__default.createElement(BsChat, {
       className: "mr-1"
-    }), " ", item === null || item === void 0 ? void 0 : item.comments.length, " Commentaires"))))));
+    }), " ", item === null || item === void 0 ? void 0 : item.first_level_response.length, " Commentaires"))))));
   }) : React__default.createElement("div", {
     className: "card-contacts-main-content"
   }, React__default.createElement("div", {

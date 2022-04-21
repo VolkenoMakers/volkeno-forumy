@@ -51,14 +51,14 @@ const SommaireItem: React.FC<any> = ({ Datas }): JSX.Element => {
                         <h3 className={
                             styles.titreSommaireForum 
                             }>
-                            {item?.titre} 
+                            {item?.initialTitle} 
                         </h3>
                         <div className={styles.forumSommaireAuteurCard}>
                             <IoReturnDownBackOutline className="mr-1" /> 
                             Par{" "}
-                            {item?.author?.prenom !== undefined ||
-                            item?.author?.nom !== undefined
-                            ? item?.author?.prenom + " " + item?.author?.nom
+                            {item?.author?.firstName !== undefined ||
+                            item?.author?.lastName !== undefined
+                            ? item?.author?.firstName + " " + item?.author?.lastName
                             : "Anonyme"}
                         </div>
                         </div>
@@ -68,7 +68,7 @@ const SommaireItem: React.FC<any> = ({ Datas }): JSX.Element => {
                         <p className={
                             styles.textSommaireForum
                             }>
-                            {item?.contenu} 
+                            {item?.initialContent} 
                         </p>
                         </div>
                         <div className="col-lg-3">
@@ -98,7 +98,7 @@ const SommaireItem: React.FC<any> = ({ Datas }): JSX.Element => {
                         <div className={styles.divNombreCommentaireSommaireForum}>
                             <p className={styles.nombreCommentaireSommaireForum}>
                             <BsChat className="mr-1" />{" "}
-                            {item?.comments.length} Commentaires
+                            {item?.first_level_response.length} Commentaires
                             </p>
                         </div>
                         </div>

@@ -13,7 +13,7 @@ const FrontCommentItem: React.FC<any> = (
         
 		<div className={styles.cardParent}>
             {
-                donnees?.comments.map((donnee: any)=>{
+                donnees?.first_level_response.map((donnee: any)=>{
                     return(
                         <div key={donnee.id}>
                         <div className="row">
@@ -32,9 +32,9 @@ const FrontCommentItem: React.FC<any> = (
                                         <div className={
                                             styles.forumSommaireAuteurCard 
                                             }>
-                                            {donnee?.user?.prenom +
+                                            {donnee?.user?.firstName +
                                                 " " +
-                                                donnee?.user?.nom}
+                                                donnee?.user?.lastName}
                                         </div>
                                     </div>
                                 </div>
@@ -48,7 +48,7 @@ const FrontCommentItem: React.FC<any> = (
                                                 <div className="col-12 pt-3 mb-md-4 mb-5">
                                                     <p className={
                                                         styles.textSommaireForum}>
-                                                        {donnee?.text}{" "}
+                                                        {donnee?.content}{" "}
                                                     </p>
                                                 </div>
                                             </div>
@@ -64,7 +64,7 @@ const FrontCommentItem: React.FC<any> = (
                                                     aria-controls={`collapseExample${donnee?.id}`}
                                                 >
                                                     <BiComment className="mr-1" />
-                                                    {donnee?.reponse_commentaire?.length}{" "}
+                                                    {donnee?.second_level_response?.length}{" "}
                                                     commentaires
                                                 </a>
                                                 <span>
@@ -82,7 +82,7 @@ const FrontCommentItem: React.FC<any> = (
                                 <div className="collapse" 
                                     id={`collapseExample${donnee.id}`}
                                 >
-                                {donnee.reponse_commentaire?.map((item:any) => {
+                                {donnee.second_level_response?.map((item:any) => {
                                     return (
                                         <div
                                             key={item.id}
@@ -95,7 +95,7 @@ const FrontCommentItem: React.FC<any> = (
                                                     <div className="col-md-6">
                                                         <div className="p1 d-flex justify-content-end">
                                                             <img
-                                                                src={item?.user?.user_avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item?.user?.fullname}` : `${item?.user?.user_avatar}`}
+                                                                src={item?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item?.user?.fullname}` : `${item?.user?.avatar}`}
                                                                 alt="user-avatar"
                                                                 className={styles.imgSommaireForumDiscussion2}
                                                             />
@@ -106,11 +106,11 @@ const FrontCommentItem: React.FC<any> = (
                                                             styles.forumSommaireAuteurCard 
                                                             }>
                                                             {item?.user
-                                                                ?.prenom +
+                                                                ?.firstName +
                                                                 " " +
                                                                 item
                                                                     ?.user
-                                                                    ?.nom} 
+                                                                    ?.lastName} 
                                                         </div>
                                                     </div>
                                                 </div>
@@ -126,7 +126,7 @@ const FrontCommentItem: React.FC<any> = (
                                                                 styles.textSommaireForum
                                                                 }>
                                                                 {
-                                                                    item?.contenu
+                                                                    item?.content
                                                                 }{" "}
                                                             </p>
                                                         </div>
