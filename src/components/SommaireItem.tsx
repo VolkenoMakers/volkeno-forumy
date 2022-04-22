@@ -2,31 +2,27 @@ import React from 'react'
 import styles from '../styles.module.css'
 import { BsChat } from "react-icons/bs";
 import { IoReturnDownBackOutline } from "react-icons/io5";
-import { DatasForum } from './DatasForum';
 import { NavLink } from 'react-router-dom';
 
 
-const SommaireItem: React.FC<any> = (): JSX.Element => {
+const SommaireItem: React.FC<any> = ({ Datas }): JSX.Element => {
 
   
   return (
       <div>
 
         {
-            DatasForum.length > 0  ? (
-            DatasForum.map((item) => {
+            Datas?.length > 0  ? (
+            Datas.map((item: any) => {
                 return(
 
                     <NavLink
                         className={styles.navigationLink}
                         to={{
-                          pathname: `/forum-discussion/${item.id}`,
+                          pathname: `/forum-discussion/${item.slug}`,
                         }}
                         state={item}
                         key={item.id}
-                        // onClick={() => {
-                        //     getForumData(item);
-                        // }}
                       >
 
                     <div className={
@@ -39,7 +35,7 @@ const SommaireItem: React.FC<any> = (): JSX.Element => {
                         <div className="">
                         <div className="p1">
                             <img
-                            src={item?.author?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item?.author?.fullname}` : `${item?.author?.avatar}`}
+                            src={item?.author?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item?.author?.firstName} + ${item?.author?.lastName}` : `${item?.author?.avatar}`}
                             alt="user-avatar"
                             className={styles.imgSommaireForum}
                             />
@@ -49,14 +45,14 @@ const SommaireItem: React.FC<any> = (): JSX.Element => {
                         <h3 className={
                             styles.titreSommaireForum 
                             }>
-                            {item?.titre} 
+                            {item?.initialTitle} 
                         </h3>
                         <div className={styles.forumSommaireAuteurCard}>
                             <IoReturnDownBackOutline className="mr-1" /> 
                             Par{" "}
-                            {item?.author?.prenom !== undefined ||
-                            item?.author?.nom !== undefined
-                            ? item?.author?.prenom + " " + item?.author?.nom
+                            {item?.author?.firstName !== undefined ||
+                            item?.author?.lastName !== undefined
+                            ? item?.author?.firstName + " " + item?.author?.lastName
                             : "Anonyme"}
                         </div>
                         </div>
@@ -66,16 +62,15 @@ const SommaireItem: React.FC<any> = (): JSX.Element => {
                         <p className={
                             styles.textSommaireForum
                             }>
-                            {item?.contenu} 
+                            {item?.initialContent} 
                         </p>
                         </div>
                         <div className="col-lg-3">
                         <div className={styles.sommaireForumUserChat}>
-                            {item?.user_comments
-                            .slice(0, 4)
+                            {item?.user_comments?.slice(0, 4)
                             .map((comment:any) => (
                                 <img
-                                src={comment?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${comment?.user?.fullname}` : `${comment?.user?.avatar}`}
+                                src={comment?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${comment?.user?.firstName} + ${comment?.user?.lastName}` : `${comment?.user?.avatar}`}
                                 key={comment?.id}
                                 alt="user-avatar"
                                 className={
@@ -88,7 +83,7 @@ const SommaireItem: React.FC<any> = (): JSX.Element => {
                                 }>
                             <div className={styles.troisPoints}>
                                 {`
-                                    ${item?.user_comments.length > 4 ?  item?.user_comments.length - 4 + "+"  : "..."}
+                                    ${item?.user_comments?.length > 4 ?  item?.user_comments?.length - 4 + "+"  : "..."}
                                 `}
                             </div>
                             </div>
@@ -96,7 +91,7 @@ const SommaireItem: React.FC<any> = (): JSX.Element => {
                         <div className={styles.divNombreCommentaireSommaireForum}>
                             <p className={styles.nombreCommentaireSommaireForum}>
                             <BsChat className="mr-1" />{" "}
-                            {item?.comments.length} Commentaires
+                            {item?.first_level_response?.length} Commentaires
                             </p>
                         </div>
                         </div>
@@ -112,7 +107,7 @@ const SommaireItem: React.FC<any> = (): JSX.Element => {
                     <div className="row div-card">
                     <div className="col-12">
                         <h4 className="admin-contacts-title text-center">
-                        Pas de sujet de discussion
+                            Pas de sujet de discussion
                         </h4>
                     </div>
                     </div>

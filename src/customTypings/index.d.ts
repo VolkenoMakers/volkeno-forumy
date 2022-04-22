@@ -1,14 +1,15 @@
 declare module 'myTypes' {
     type DatasType = {
-        titre: string,
-        Contenu: string,
+        initialTitle: string,
+        initialContent: string,
         id: number,
+        slug: string | number,
         created_at: string,
-        prenom: string,
-        nom: string,
+        firstName: string,
+        lastName: string,
         avatar: string,
-        fullname: string,
-        text: string,
+        // fullname: string,
+        content: string,
     };
     export {DatasType}
   
@@ -18,7 +19,3 @@ declare module 'myTypes' {
     export {DatasProps}
   }
   
-//   module.exports = {
-//     DatasType,
-//     DatasProps,
-//   };
