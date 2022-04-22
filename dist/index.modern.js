@@ -342,18 +342,18 @@ const Sommaire = ({
   Datas
 }) => {
   return React__default.createElement("div", {
-    className: "component-liste-projet"
+    className: 'component-liste-projet'
   }, React__default.createElement("div", {
     className: styles.contentViewStart
   }, React__default.createElement("div", {
     className: styles.containerCayore
   }, React__default.createElement("div", {
-    className: "row align-items-center",
+    className: 'row align-items-center',
     style: {
-      margin: "3rem 0"
+      margin: '3rem 0'
     }
   }, React__default.createElement("div", {
-    className: "col-12"
+    className: 'col-12'
   }, React__default.createElement(SommaireItem, {
     Datas: Datas
   }))))));
