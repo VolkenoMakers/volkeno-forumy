@@ -45,9 +45,11 @@ const FrontCommentItem = ({
   onAddResponseComment,
   DatasUserSession
 }) => {
+  var _donnees$first_level_;
+
   return React__default.createElement("div", {
     className: styles.cardParent
-  }, donnees === null || donnees === void 0 ? void 0 : donnees.first_level_response.map(donnee => {
+  }, donnees === null || donnees === void 0 ? void 0 : (_donnees$first_level_ = donnees.first_level_response) === null || _donnees$first_level_ === void 0 ? void 0 : _donnees$first_level_.map(donnee => {
     var _donnee$user, _donnee$user2, _donnee$user3, _donnee$user4, _donnee$user5, _donnee$user6, _donnee$second_level_, _donnee$second_level_2;
 
     return React__default.createElement("div", {
@@ -262,8 +264,8 @@ const Discussion = ({
 const SommaireItem = ({
   Datas
 }) => {
-  return React__default.createElement("div", null, Datas.length > 0 ? Datas.map(item => {
-    var _item$author, _item$author2, _item$author3, _item$author4, _item$author5, _item$author6, _item$author7, _item$author8;
+  return React__default.createElement("div", null, (Datas === null || Datas === void 0 ? void 0 : Datas.length) > 0 ? Datas.map(item => {
+    var _item$author, _item$author2, _item$author3, _item$author4, _item$author5, _item$author6, _item$author7, _item$author8, _item$user_comments, _item$user_comments2, _item$user_comments3, _item$first_level_res;
 
     return React__default.createElement(NavLink, {
       className: styles.navigationLink,
@@ -305,7 +307,7 @@ const SommaireItem = ({
       className: "col-lg-3"
     }, React__default.createElement("div", {
       className: styles.sommaireForumUserChat
-    }, item === null || item === void 0 ? void 0 : item.user_comments.slice(0, 4).map(comment => {
+    }, item === null || item === void 0 ? void 0 : (_item$user_comments = item.user_comments) === null || _item$user_comments === void 0 ? void 0 : _item$user_comments.slice(0, 4).map(comment => {
       var _comment$user, _comment$user2, _comment$user3, _comment$user4;
 
       return React__default.createElement("img", {
@@ -319,14 +321,14 @@ const SommaireItem = ({
     }, React__default.createElement("div", {
       className: styles.troisPoints
     }, `
-                                    ${(item === null || item === void 0 ? void 0 : item.user_comments.length) > 4 ? (item === null || item === void 0 ? void 0 : item.user_comments.length) - 4 + "+" : "..."}
+                                    ${(item === null || item === void 0 ? void 0 : (_item$user_comments2 = item.user_comments) === null || _item$user_comments2 === void 0 ? void 0 : _item$user_comments2.length) > 4 ? (item === null || item === void 0 ? void 0 : (_item$user_comments3 = item.user_comments) === null || _item$user_comments3 === void 0 ? void 0 : _item$user_comments3.length) - 4 + "+" : "..."}
                                 `))), React__default.createElement("div", {
       className: styles.divNombreCommentaireSommaireForum
     }, React__default.createElement("p", {
       className: styles.nombreCommentaireSommaireForum
     }, React__default.createElement(BsChat, {
       className: "mr-1"
-    }), " ", item === null || item === void 0 ? void 0 : item.first_level_response.length, " Commentaires"))))));
+    }), " ", item === null || item === void 0 ? void 0 : (_item$first_level_res = item.first_level_response) === null || _item$first_level_res === void 0 ? void 0 : _item$first_level_res.length, " Commentaires"))))));
   }) : React__default.createElement("div", {
     className: "card-contacts-main-content"
   }, React__default.createElement("div", {
@@ -356,7 +358,12 @@ const Sommaire = ({
     className: "col-12"
   }, React__default.createElement(SommaireItem, {
     Datas: Datas
-  }))))));
+  }), React__default.createElement("button", {
+    type: "button",
+    className: "btn btn-primary btn-ajout-sujet",
+    "data-toggle": "modal",
+    "data-target": "#exampleModal"
+  }, "Ajouter un sujet"))))));
 };
 
 const VolkenoForumy = ({ ...props

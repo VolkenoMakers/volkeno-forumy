@@ -12,7 +12,7 @@ const SommaireItem: React.FC<any> = ({ Datas }): JSX.Element => {
       <div>
 
         {
-            Datas.length > 0  ? (
+            Datas?.length > 0  ? (
             Datas.map((item: any) => {
                 return(
 
@@ -67,8 +67,7 @@ const SommaireItem: React.FC<any> = ({ Datas }): JSX.Element => {
                         </div>
                         <div className="col-lg-3">
                         <div className={styles.sommaireForumUserChat}>
-                            {item?.user_comments
-                            .slice(0, 4)
+                            {item?.user_comments?.slice(0, 4)
                             .map((comment:any) => (
                                 <img
                                 src={comment?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${comment?.user?.firstName} + ${comment?.user?.lastName}` : `${comment?.user?.avatar}`}
@@ -84,7 +83,7 @@ const SommaireItem: React.FC<any> = ({ Datas }): JSX.Element => {
                                 }>
                             <div className={styles.troisPoints}>
                                 {`
-                                    ${item?.user_comments.length > 4 ?  item?.user_comments.length - 4 + "+"  : "..."}
+                                    ${item?.user_comments?.length > 4 ?  item?.user_comments?.length - 4 + "+"  : "..."}
                                 `}
                             </div>
                             </div>
@@ -92,7 +91,7 @@ const SommaireItem: React.FC<any> = ({ Datas }): JSX.Element => {
                         <div className={styles.divNombreCommentaireSommaireForum}>
                             <p className={styles.nombreCommentaireSommaireForum}>
                             <BsChat className="mr-1" />{" "}
-                            {item?.first_level_response.length} Commentaires
+                            {item?.first_level_response?.length} Commentaires
                             </p>
                         </div>
                         </div>
@@ -108,7 +107,7 @@ const SommaireItem: React.FC<any> = ({ Datas }): JSX.Element => {
                     <div className="row div-card">
                     <div className="col-12">
                         <h4 className="admin-contacts-title text-center">
-                        Pas de sujet de discussion
+                            Pas de sujet de discussion
                         </h4>
                     </div>
                     </div>

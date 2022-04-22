@@ -13,7 +13,7 @@ const FrontCommentItem: React.FC<any> = (
         
 		<div className={styles.cardParent}>
             {
-                donnees?.first_level_response.map((donnee: any)=>{
+                donnees?.first_level_response?.map((donnee: any)=>{
                     return(
                         <div key={donnee.id}>
                         <div className="row">

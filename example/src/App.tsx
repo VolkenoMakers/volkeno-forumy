@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import { VolkenoForumy } from 'volkeno-forumy'
 import 'volkeno-forumy/dist/index.css'
 
 const App = () => {
 
-  const Datas = [
+    
+
+  let datas = [
     {
       initialTitle: "Quels sont les avantages d'utiliser le vélo comme moyen de transport ?",
       initialContent: " Le vélo est un moyen de transport silencieux et écologique. C'est un engin qui ne présente pas beaucoup de danger. D'une part, le vélo ne nous fait pas respirer les vapeurs d'essence, mais les vapeurs du matin et du soir. D'autre part, il se moque des règlements, il ignore les interdits.",
@@ -207,58 +209,71 @@ const App = () => {
     }
   ]
 
-  useEffect(() => {
-    const donnee = {
-      id: 4,
-      slug: 'initial_message_slug',
-      user: {
-          firstName: "Joachim",
-          lastName: "Sarr",
-          avatar: '/mediafiles/avatars/default.png',
-      },
-      content: "Comment 2",
-      created_at: "6/04/2022",
-      second_level_response: [
-      {
-        id: 1,
-        slug: 'first_level_message_slug',
-          user: {
-              firstName: "Merry",
-              lastName: "Martial",
-              avatar: '/mediafiles/avatars/default.png',
-          },
-          content: "Reponse 7",
-      }
-      ]
-  }
+  const [Datas, setData] = useState(datas)
 
-  Datas[0]?.first_level_response?.push(donnee)
-    // console.log('data',Datas)
-  }, [])
+//======================= AJOUT SUJET ===================================
 
+  const [initialContent, setInitialContent] = useState('')
+  const [initialTitle, setInitialTitle] = useState('')
+  let id = 3
 
-  const [contenu, setContenu] = useState('')
-  const [titre, setTitre] = useState('')
+    const onAdd = (e:any) => {
+        e.preventDefault()
+        if(initialTitle.trim().length > 0 &&  initialContent.trim().length > 0){
 
-  const onAdd = (e: any) => {
-    e.preventDefault()
-    // if(contenu.trim().length > 0 &&  titre.trim().length > 0){
-    //     console.log(contenu)
-    // }
-    console.log(titre)
-    console.log(contenu)
-  }
+            let author = {
+                "firstName": "Paul",
+                "lastName": "Gomis",
+                "avatar": "/mediafiles/avatars/default.png"
+            }
+            let response = [{
+
+                id: 1,
+                slug: 'initial_message_slug',
+                user: {
+                    firstName: "Sadio",
+                    lastName: "Sanghare",
+                    avatar: '/mediafiles/avatars/default.png',
+                },
+                content: "Comment 1",
+                created_at: "6/04/2022",
+                second_level_response: [
+                    {
+                        id: 1,
+                        slug: 'first_level_message_slug',
+                        user: {
+                            firstName: "Ndeye",
+                            lastName: "Faye",
+                            avatar: '/mediafiles/avatars/default.png',
+                        },
+                        content: "Reponse 7 deus",
+                    }
+                ]
+                
+            }]
+
+            let newSujet = {
+                initialTitle: initialTitle,
+                initialContent: initialContent,
+                id: id,
+                created_at: "22/04/2022",
+                author: author,
+                slug: 'test_slug',
+                first_level_response: response
+            }
+
+            let newDonnee:any = [...datas, newSujet]
+            setData(newDonnee)
+            console.log('new data',newDonnee)
+        }
+    }
 
   
 
   
   return (
-      <div>
+      <div className='forum-container'>
           <VolkenoForumy data={Datas}  />
-
-            <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-              Ajouter un sujet
-            </button>
 
             <div className="modal fade" id="exampleModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div className="modal-dialog">
@@ -275,18 +290,18 @@ const App = () => {
                     <div className="form-group">
                       <label htmlFor="examphtmlFor=''mControlInput1">Titre</label>
                       <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Titre du sujet"
-                      value={titre}
+                      value={initialTitle}
                       onChange={(e)=>{
-                          setTitre(e.target.value)
+                        setInitialTitle(e.target.value)
                       }}
                        />
                     </div>
                     <div className="form-group">
                       <label htmlFor="exampleFormControlTextarea1">Contenu</label>
                       <textarea className="form-control" id="exampleFormControlTextarea1" rows={3}
-                       value={contenu}
+                       value={initialContent}
                        onChange={(e)=>{
-                           setContenu(e.target.value)
+                        setInitialContent(e.target.value)
                        }}
                       ></textarea>
                     </div>
@@ -296,7 +311,8 @@ const App = () => {
                   <div className="modal-footer">
                     <button type="button" className="btn btn-secondary" data-dismiss="modal">Annuler</button>
                     <button type="submit" className="btn btn-primary"
-                    onClick={onAdd}
+                        onClick={onAdd}
+                        data-dismiss="modal"
                     >Enrégistrer</button>
                   </div>
                 </div>
