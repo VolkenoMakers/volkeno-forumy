@@ -14,6 +14,20 @@ export const VolkenoForumy = ({...props}: ForumProps) => {
      data
   } = props
 
+  const onAddComment = (subject: any, commentText:any) =>{
+    console.log(
+    subject,
+    commentText
+  )}
+
+  const onAddResponseComment = (subject:any, comment:any, commentText:any) => {
+    console.log(
+      subject,
+      comment,
+      commentText
+    )
+  }
+
   return (
     <BrowserRouter>
 			<div className="router-container">
@@ -24,21 +38,8 @@ export const VolkenoForumy = ({...props}: ForumProps) => {
 					/>
 					<Route
 						path="/forum-discussion/:id"
-						element={<Discussion onAddComment={(subject, commentText)=>{
-              console.log(
-                subject,
-                commentText
-              )
-              
-            }}
-            onAddResponseComment={(subject, comment, commentText)=>{
-              console.log(
-                subject,
-                comment,
-                commentText
-              )
-              
-            }}
+						element={<Discussion onAddComment={onAddComment}
+            onAddResponseComment={onAddResponseComment}
             />}
 					/>
         </Routes>

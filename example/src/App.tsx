@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { VolkenoForumy } from 'volkeno-forumy'
 import 'volkeno-forumy/dist/index.css'
 
 const App = () => {
+
   const Datas = [
     {
       initialTitle: "Quels sont les avantages d'utiliser le vélo comme moyen de transport ?",
@@ -15,28 +16,26 @@ const App = () => {
           firstName: "Joël ",
           lastName: "Gomis",
           avatar: '/mediafiles/avatars/default.png',
-          fullname: 'JG'
       },
       first_level_response: [
           {
               id: 1,
-
+              slug: 'initial_message_slug',
               user: {
                   firstName: "Sadio",
                   lastName: "Sanghare",
                   avatar: '/mediafiles/avatars/default.png',
-                  fullname: "SS"
               },
               content: "Comment 1",
               created_at: "6/04/2022",
               second_level_response: [
               {
                 id: 1,
+                slug: 'first_level_message_slug',
                   user: {
                       firstName: "Ndeye",
                       lastName: "Faye",
                       avatar: '/mediafiles/avatars/default.png',
-                      fullname: "NF"
                   },
                   content: "Reponse 7 deus",
               }
@@ -44,32 +43,32 @@ const App = () => {
           },
           {
               id: 2,
+              slug: 'initial_message_slug',
               user: {
                   firstName: "Amadou",
                   lastName: "Sall",
                   avatar: '/mediafiles/avatars/default.png',
-                  fullname: "AS"
               },
               content: "Reponse 2",
               created_at: "6/04/2022",
               second_level_response: [
               {
                   id: 1,
+                  slug: 'first_level_message_slug',
                   user: {
                       firstName: "Fatou",
                       lastName: "Samb",
                       avatar: '/mediafiles/avatars/default.png',
-                      fullname: "FS"
                   },
                   content: "Reponse 10",
               },
               {
                   id: 2,
+                  slug: 'first_level_message_slug',
                   user: {
                       firstName: "Modou",
                       lastName: "Ndiaye",
                       avatar: '/mediafiles/avatars/default.png',
-                      fullname: "MN"
                   },
                   content: "Reponse 18",
               }
@@ -77,22 +76,22 @@ const App = () => {
           },
           {
               id: 3,
+              slug: 'initial_message_slug',
               user: {
                   firstName: "Aïssatou",
                   lastName: "Diallo",
                   avatar: '/mediafiles/avatars/default.png',
-                  fullname: "AD"
               },
               content: "Reponse 12",
               created_at: "21/04/2022",
               second_level_response: [
               {
                   id: 1,
+                  slug: 'first_level_message_slug',
                   user: {
                       firstName: "Fatou",
                       lastName: "Samb",
                       avatar: '/mediafiles/avatars/default.png',
-                      fullname: "FS"
                   },
                   content: "Reponse 10",
               }
@@ -106,18 +105,24 @@ const App = () => {
                   firstName: "Sadio",
                   lastName: "Sanghare",
                   avatar: '/mediafiles/avatars/default.png',
-                  fullname: 'SS'
               },
           },
           {   
               id: 2,
               user: {
-                  firstName: "Paul",
-                  lastName: "Gomis",
+                  firstName: "Amadou",
+                  lastName: "Sall",
                   avatar: '/mediafiles/avatars/default.png',
-                  fullname: 'PG'
               },
           },
+          {   
+              id: 3,
+              user: {
+                  firstName: "Aïssatou",
+                  lastName: "Diallo",
+                  avatar: '/mediafiles/avatars/default.png',
+              },
+          }
       ]
 
     },
@@ -131,27 +136,26 @@ const App = () => {
             firstName: "Moussa",
             lastName: "Fall",
             avatar: '/mediafiles/avatars/default.png',
-            fullname: 'MF'
         },
         first_level_response: [
             {
                 id: 1,
+                slug: 'initial_message_slug',
                 user: {
                     firstName: "Paul",
                     lastName: "Gomis",
                     avatar: '/mediafiles/avatars/default.png',
-                    fullname: "PG"
                 },
                 content: "Reponse 1",
                 created_at: "6/04/2022",
                 second_level_response: [
                 {
                     id: 1,
+                    slug: 'first_level_message_slug',
                     user: {
                         firstName: "Alpha",
                         lastName: "Diallo",
-                        avatar: "/mediafiles/avatars/default.png",
-                        fullname: "AD"
+                        avatar: '/mediafiles/avatars/default.png',
                     },
                     content: "Reponse 3",
                 }
@@ -159,22 +163,22 @@ const App = () => {
             },
             {
                 id: 2,
+                slug: 'initial_message_slug',
                 user: {
                     firstName: "Sadio",
                     lastName: "Sangh",
                     avatar: '/mediafiles/avatars/default.png',
-                    fullname: "SS"
                 },
                 content: "Reponse 2",
                 created_at: "6/04/2022",
                 second_level_response: [
                 {
                     id: 1,
+                    slug: 'first_level_message_slug',
                     user: {
                         firstName: "Cheikh",
                         lastName: "Dieng",
                         avatar: '/mediafiles/avatars/default.png',
-                        fullname: "FS"
                     },
                     content: "Reponse 6",
                 }
@@ -186,9 +190,8 @@ const App = () => {
                 id: 1,
                 user: {
                     firstName: "Sadio",
-                    lastName: "Sanghare",
+                    lastName: "Sangh",
                     avatar: '/mediafiles/avatars/default.png',
-                    fullname: 'SS'
                 },
             },
             {   
@@ -197,15 +200,45 @@ const App = () => {
                     firstName: "Paul",
                     lastName: "Gomis",
                     avatar: '/mediafiles/avatars/default.png',
-                    fullname: 'PG'
                 },
-            },
+            }
         ]
 
     }
   ]
 
-  return <VolkenoForumy data={Datas} />
+  useEffect(() => {
+    const donnee = {
+      id: 4,
+      slug: 'initial_message_slug',
+      user: {
+          firstName: "Joachim",
+          lastName: "Sarr",
+          avatar: '/mediafiles/avatars/default.png',
+      },
+      content: "Comment 2",
+      created_at: "6/04/2022",
+      second_level_response: [
+      {
+        id: 1,
+        slug: 'first_level_message_slug',
+          user: {
+              firstName: "Merry",
+              lastName: "Martial",
+              avatar: '/mediafiles/avatars/default.png',
+          },
+          content: "Reponse 7",
+      }
+      ]
+  }
+
+  Datas[0]?.first_level_response?.push(donnee)
+    // console.log('data',Datas)
+  }, [Datas])
+
+  
+  return <VolkenoForumy data={Datas}  />
+
 }
 
 export default App

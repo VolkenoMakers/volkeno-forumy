@@ -22,7 +22,7 @@ const FrontCommentItem: React.FC<any> = (
                                     <div className="">
                                         <div className="p1">
                                             <img
-                                                src={donnee?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${donnee?.user?.fullname}` : `${donnee?.user?.avatar}`}
+                                                src={donnee?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${donnee?.user?.firstName} + ${donnee?.user?.lastName}` : `${donnee?.user?.avatar}`}
                                                 alt="user-avatar"
                                                 className={styles.imgSommaireForumDiscussion2}
                                             />
@@ -95,7 +95,7 @@ const FrontCommentItem: React.FC<any> = (
                                                     <div className="col-md-6">
                                                         <div className="p1 d-flex justify-content-end">
                                                             <img
-                                                                src={item?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item?.user?.fullname}` : `${item?.user?.avatar}`}
+                                                                src={item?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item?.user?.firstName} + ${item?.user?.lastName}` : `${item?.user?.avatar}`}
                                                                 alt="user-avatar"
                                                                 className={styles.imgSommaireForumDiscussion2}
                                                             />
@@ -149,7 +149,7 @@ const FrontCommentItem: React.FC<any> = (
                                                         <div className="col-md-6">
                                                             <div className="p1 d-flex justify-content-end">
                                                                 <img
-                                                                    src={item?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item?.user?.fullname}` : `${item?.user?.avatar}`}
+                                                                    src={item?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item?.user?.firstName} + ${item?.user?.lastName}` : `${item?.user?.avatar}`}
                                                                     alt="user-avatar"
                                                                     className={styles.imgSommaireForumDiscussion2}
                                                                 />
@@ -161,19 +161,19 @@ const FrontCommentItem: React.FC<any> = (
                                                                 }>
                                                                 {item
                                                                     ?.user
-                                                                    ?.prenom !==
+                                                                    ?.firstName !==
                                                                     undefined ||
                                                                     item
                                                                     ?.user
-                                                                    ?.nom !==
+                                                                    ?.lastName !==
                                                                     undefined
                                                                     ? item
                                                                     ?.user
-                                                                            ?.prenom +
+                                                                            ?.firstName +
                                                                         " " +
                                                                         item
                                                                     ?.user
-                                                                            ?.nom
+                                                                            ?.lastName
                                                                     : "Anonyme"} 
                                                             </div>
                                                         </div>
