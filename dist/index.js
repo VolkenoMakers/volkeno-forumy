@@ -373,44 +373,7 @@ var Sommaire = function Sommaire(_ref) {
     className: "col-12"
   }, React__default.createElement(SommaireItem, {
     Datas: Datas
-  }), React__default.createElement("button", {
-    type: "button",
-    className: "btn btn-primary",
-    "data-toggle": "modal",
-    "data-target": "#exampleModal"
-  }, "Ajouter un sujet"), React__default.createElement("div", {
-    className: "modal fade",
-    id: "exampleModal",
-    "aria-labelledby": "exampleModalLabel",
-    "aria-hidden": "true"
-  }, React__default.createElement("div", {
-    className: "modal-dialog"
-  }, React__default.createElement("div", {
-    className: "modal-content"
-  }, React__default.createElement("div", {
-    className: "modal-header"
-  }, React__default.createElement("h5", {
-    className: "modal-title",
-    id: "exampleModalLabel"
-  }, "Modal title"), React__default.createElement("button", {
-    type: "button",
-    className: "close",
-    "data-dismiss": "modal",
-    "aria-label": "Close"
-  }, React__default.createElement("span", {
-    "aria-hidden": "true"
-  }, "\xD7"))), React__default.createElement("div", {
-    className: "modal-body"
-  }, "..."), React__default.createElement("div", {
-    className: "modal-footer"
-  }, React__default.createElement("button", {
-    type: "button",
-    className: "btn btn-secondary",
-    "data-dismiss": "modal"
-  }, "Annuler"), React__default.createElement("button", {
-    type: "button",
-    className: "btn btn-primary"
-  }, "Enr\xE9gistrer"))))))))));
+  }))))));
 };
 
 var VolkenoForumy = function VolkenoForumy(_ref) {

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { VolkenoForumy } from 'volkeno-forumy'
 import 'volkeno-forumy/dist/index.css'
@@ -236,8 +236,76 @@ const App = () => {
     // console.log('data',Datas)
   }, [])
 
+
+  const [contenu, setContenu] = useState('')
+  const [titre, setTitre] = useState('')
+
+  const onAdd = (e: any) => {
+    e.preventDefault()
+    // if(contenu.trim().length > 0 &&  titre.trim().length > 0){
+    //     console.log(contenu)
+    // }
+    console.log(titre)
+    console.log(contenu)
+  }
+
   
-  return <VolkenoForumy data={Datas}  />
+
+  
+  return (
+      <div>
+          <VolkenoForumy data={Datas}  />
+
+            <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+              Ajouter un sujet
+            </button>
+
+            <div className="modal fade" id="exampleModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div className="modal-body">
+
+                  <form>
+                    <div className="form-group">
+                      <label htmlFor="examphtmlFor=''mControlInput1">Titre</label>
+                      <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Titre du sujet"
+                      value={titre}
+                      onChange={(e)=>{
+                          setTitre(e.target.value)
+                      }}
+                       />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="exampleFormControlTextarea1">Contenu</label>
+                      <textarea className="form-control" id="exampleFormControlTextarea1" rows={3}
+                       value={contenu}
+                       onChange={(e)=>{
+                           setContenu(e.target.value)
+                       }}
+                      ></textarea>
+                    </div>
+                  </form>
+                    
+                  </div>
+                  <div className="modal-footer">
+                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                    <button type="submit" className="btn btn-primary"
+                    onClick={onAdd}
+                    >Enrégistrer</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+      </div>
+  )
 
 }
 

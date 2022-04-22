@@ -18,7 +18,7 @@ const Sommaire: React.FC<DatasType> = ({ Datas }): JSX.Element => {
 
 
 
-            <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            {/* <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
               Ajouter un sujet
             </button>
 
@@ -32,7 +32,18 @@ const Sommaire: React.FC<DatasType> = ({ Datas }): JSX.Element => {
                     </button>
                   </div>
                   <div className="modal-body">
-                    ...
+
+                  <form>
+                    <div className="form-group">
+                      <label htmlFor="examphtmlFor=''mControlInput1">Titre</label>
+                      <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Titre du sujet" />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="exampleFormControlTextarea1">Contenu</label>
+                      <textarea className="form-control" id="exampleFormControlTextarea1" rows={3}></textarea>
+                    </div>
+                  </form>
+                    
                   </div>
                   <div className="modal-footer">
                     <button type="button" className="btn btn-secondary" data-dismiss="modal">Annuler</button>
@@ -40,7 +51,7 @@ const Sommaire: React.FC<DatasType> = ({ Datas }): JSX.Element => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
           </div>
           </div>
