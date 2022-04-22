@@ -20,7 +20,7 @@
 
 .containerCayore {
   padding-left: 4rem !important;
-  padding-right: 4rem ;
+  padding-right: 4rem;
   max-width: 1500px;
   margin-right: auto;
   margin-left: auto;
@@ -28,8 +28,8 @@
 }
 
 .bannerListeProjet {
-	background: #e9f3f4;
-	padding: 2rem;
+  background: #e9f3f4;
+  padding: 2rem;
   text-align: center;
 }
 
@@ -55,13 +55,16 @@
   margin-bottom: 2rem;
   padding: 0.5rem 1rem;
 }
-.forum-card-taille{
+
+.forum-card-taille {
   width: 65vw;
 }
+
 .forumCardSommaireFixWidth {
   /* width: 90vw; */
   width: 100% !important;
 }
+
 .forum-card-skeleton-fix-width {
   width: 80vw;
   background: #FFFFFF;
@@ -72,21 +75,26 @@
   position: relative;
   min-width: 100% !important;
 }
+
 .avatarSkeleton {
   width: 50px !important;
   height: 80px !important;
   border-radius: 50% !important;
 }
+
 .avatarArticleSkeleton {
   width: 80px !important;
   height: 130px !important;
   border-radius: 50% !important;
   margin-top: -20px;
 }
-.contentSkeleton, .contentSkeleton2 {
+
+.contentSkeleton,
+.contentSkeleton2 {
   width: 100px !important;
   height: 20px !important;
 }
+
 /* .contentSkeleton {
   width: 100px !important;
   height: 20px !important;
@@ -95,10 +103,12 @@
   width: 120px !important;
   height: 20px !important;
 }
+
 .contentSkeletonPara {
   width: 600px !important;
   height: 20px !important;
 }
+
 .contentSkeletonPara2 {
   width: 500px !important;
   height: 20px !important;
@@ -127,7 +137,7 @@
   color: #5E5B5B;
 }
 
-.imgSommaireForum, 
+.imgSommaireForum,
 .imgSommaireForumDiscussion {
   width: 80px;
   height: 80px;
@@ -149,6 +159,7 @@
   padding-top: 15px;
 
 }
+
 .forumSommaireAuteurCard {
   font-family: 'Poppins';
   font-style: normal;
@@ -173,29 +184,36 @@
   letter-spacing: -0.025em;
   color: #5E5B5B;
 }
-.sommaireForumUserChat, 
+
+.sommaireForumUserChat,
 .divNombreCommentaireSommaireForum {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
+
 .sommaireForumUserChat {
   margin-top: -38px;
 }
+
 .divSommaireForumUserChat1 {
   z-index: 1000;
   border-radius: 50%;
   border: 1px solid #CCCCCC !important;
 }
+
 .divSommaireSorumUserChat2 {
   z-index: 900;
 }
+
 .divSommaireForumUserChat3 {
   z-index: 800;
 }
+
 .divSommaireForumUserChat4 {
   z-index: 700;
 }
+
 .divSommaireForumUserChat5 {
   z-index: 600;
   font-family: 'Poppins';
@@ -268,20 +286,20 @@
   gap: 5px;
 }
 
-.imgSommaireForum{
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 1px solid #FFFFFF;
-    /* max-width: 100%; */
+.imgSommaireForum {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid #FFFFFF;
+  /* max-width: 100%; */
 }
 
 /* ===================== discussion =================== */
 
-.cardDiscussionHeureVu, 
+.cardDiscussionHeureVu,
 .cardDiscussionHeureCommentaire,
 .cardDiscussionHeureVuLaurhille {
-  
+
   padding: 5px 15px;
   font-family: 'Poppins';
   font-style: normal;
@@ -294,25 +312,27 @@
   color: #5E5B5B;
   gap: 15px;
 }
-.cardDiscussionHeureCommentaire{
+
+.cardDiscussionHeureCommentaire {
   position: absolute;
   right: 0px;
   bottom: 0px;
 }
+
 .cardDiscussionHeureVu {
   position: absolute;
   right: 0px;
   top: 0px;
 }
+
 .cardDiscussionCommentaire,
 .cardDiscussionCommentaire:hover,
-.cardDiscussionCommentaire:focus
-{
+.cardDiscussionCommentaire:focus {
   color: #5E5B5B;
   text-decoration: none;
 }
 
-.imgSommaireForumDiscussion2{
+.imgSommaireForumDiscussion2 {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -333,6 +353,7 @@
 .rowReponse {
   width: 100%;
 }
+
 .row-reponse-ligne-union,
 .row-reponse-ligne-union1,
 .forum-discussion-ligne-union {
@@ -349,6 +370,7 @@
   left: 40px;
   z-index: -1;
 }
+
 .row-reponse-ligne-union1::after {
   content: '';
   width: 20%;
@@ -359,6 +381,7 @@
   left: 40px;
   z-index: -1;
 }
+
 /* 
 hr.divider {
   margin:0;
@@ -384,15 +407,18 @@ hr.divider {
   left: 40px;
   z-index: -1;
 }
+
 .offline-alert-card {
   background: #ff980020 !important;
 }
+
 .offline-alert-textual {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center !important;
 }
+
 .redirect-to-login-btn {
   width: 20%;
   margin: auto;
@@ -402,9 +428,11 @@ hr.divider {
   border-radius: 10px;
   font-weight: 600;
 }
+
 .offline-alert-textual span {
   margin-bottom: 15px;
 }
+
 .redirect-to-login-btn:hover {
   background: transparent !important;
   color: #115c67 !important;
@@ -417,30 +445,31 @@ hr.divider {
 
 .formAddCguButtonAjouter {
   background: #115C67;
-  border-radius: 4px;
   /* width: 86px;
   height: 38px; */
-  padding: 10px 15px;
-border-radius: 4px;
-font-family: "Poppins";
-font-style: normal;
-font-weight: normal;
-font-size: 15px;
-line-height: 22px;
-text-align: center;
-color: #fff;
-outline: none;
+  padding: 10px 15px !important;
+  border-radius: 4px !important;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 22px;
+  text-align: center;
+  color: #fff;
+  outline: none;
   padding: 4px 10px;
 }
 
 @media (max-width: 768px) {
   .sommaireForumUserChat {
-      margin-top: 10px;
+    margin-top: 10px;
   }
+
   .imgSommaireForumDiscussion {
-      margin-top: 15px;
+    margin-top: 15px;
   }
 }
+
 @media (max-width: 767px) {
   .containerCayore {
     padding-left: 1rem !important;
@@ -448,42 +477,44 @@ outline: none;
   }
 
   .rowReponse {
-      width: 100%;
+    width: 100%;
   }
 
   .cardDiscussionHeureCommentaire {
-      font-size: 16px;
-      line-height: 22px;
-      gap: 5px;
+    font-size: 16px;
+    line-height: 22px;
+    gap: 5px;
   }
 
   .row-reponse-ligne-union::after,
   .forum-discussion-ligne-union::after {
-      display: none;
+    display: none;
   }
+
   .sommaireAvatarTitre {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      gap: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
 }
 
 @media (min-width: 768px) and (max-width: 900px) {
+
   /* .titre-sommaire-forum,
   .forum-sommaire-auteur-card {
       padding-left: 30px;
   } */
   .img-sommaire-forum {
-      width: 70px;
-      height: 70px;
+    width: 70px;
+    height: 70px;
   }
 }
 
 @media (max-width: 425px) {
   .contentSkeleton2 {
-  width: 50px !important;
-  height: 20px !important;
+    width: 50px !important;
+    height: 20px !important;
   }
 }
