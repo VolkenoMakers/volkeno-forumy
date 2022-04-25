@@ -102,18 +102,18 @@ const FrontCommentItem: React.FC<any> = (
                                             key={item.id}
                                             className={`row ${
                                                 showLinks
-                                                        ? styles.forumDiscussionLigneUnion
-                                                        : `
+                                                    ? styles.forumDiscussionLigneUnion
+                                                    : `
                                                 } `}
-                                            }`}
+                                            } mb-3`}
                                             
                                         >
                                             <div className="col-3">
                                                 <div 
                                                 className={`row ${
                                                     showLinks
-                                                            ? styles.rowReponseLigneUnion1
-                                                            : `
+                                                        ? styles.rowReponseLigneUnion1
+                                                        : `
                                                     } `}
                                                 }`}
                                                 >
@@ -141,7 +141,7 @@ const FrontCommentItem: React.FC<any> = (
                                                 </div>
                                             </div>
 
-                                            <div className="col-9">
+                                            <div className={`col-9`}>
                                                 <div className={
                                                     styles.forumCardSommaire
                                                     }>
@@ -169,8 +169,8 @@ const FrontCommentItem: React.FC<any> = (
                                             <div 
                                                 className={`row ${
                                                     showLinks
-                                                            ? styles.rowReponseLigneUnion
-                                                            : `
+                                                        ? styles.rowReponseLigneUnion
+                                                        : `
                                                     } `}
                                                 }`} key={item.id}
                                             >

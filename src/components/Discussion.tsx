@@ -24,7 +24,7 @@ const Discussion= ({
 
 //   const [donneess, setDonneess]:any = useState(donnees)
 //   console.log('donn',donneess, setDonneess)
-  let donneess = donnees
+  let donneesInt = donnees
 
   const [responseContent, setResponseContent] = useState('')
   const [firstNameUser, setFirstNameUser] = useState('')
@@ -48,7 +48,6 @@ const Discussion= ({
 
   const onAddComments = (e:any) => {
 	e.preventDefault()
-	console.log(firstNameUser, lastNameUser , responseContent)
 
 	let fields: any = {
 	  content: responseContent,
@@ -62,20 +61,13 @@ const Discussion= ({
 	  }
 	}
 
-	// console.log(fields)
-	donneess.first_level_response.push(fields)
-	// console.log('after',donneess)
-	setDonnees(donneess)
+	donneesInt.first_level_response.push(fields)
+	setDonnees(donneesInt)
 	// console.log('value',donnees)
-
-
 	resetForm()
-
 	setFirstNameUser('')
 	setLastNameUser('')
 	setResponseContent('')
-	
-	
   }
 
  
@@ -170,57 +162,57 @@ const Discussion= ({
 						</button>
 
 						<div className="modal fade" id="exampleModal2"  aria-labelledby="exampleModalLabel2" aria-hidden="true">
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <h5 className="modal-title" id="exampleModalLabel2">Modal title</h5>
-                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <form>
-                  <div className="modal-body">
+							<div className="modal-dialog">
+								<div className="modal-content">
+								<div className="modal-header">
+									<h5 className="modal-title" id="exampleModalLabel2">Modal title</h5>
+									<button type="button" className="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<form>
+								<div className="modal-body">
 
-                    <div className="form-group">
-                      <label htmlFor="exampleFormControlInputcinq">First name</label>
-                      <input type="text" className="form-control" id="exampleFormControlInputcinq" placeholder="FirstName"
-                      value={firstNameUser}
-                      onChange={(e)=>{
-                        setFirstNameUser(e.target.value)
-                      }}
-                       />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="exampleFormControlInputsix">Last name</label>
-                      <input type="text" className="form-control" id="exampleFormControlInputsix" placeholder="LastName"
-                      value={lastNameUser}
-                      onChange={(e)=>{
-                        setLastNameUser(e.target.value)
-                      }}
-                       />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="exampleFormControlTextareaquatre">Contenu</label>
-                      <textarea className="form-control" id="exampleFormControlTextareaquatre" rows={3}
-                       value={responseContent}
-                       onChange={(e)=>{
-                        setResponseContent(e.target.value)
-                       }}
-                      ></textarea>
-                    </div>
-                    
-                  </div>
-                  <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                    <button type="submit" className="btn btn-primary"
-                        onClick={onAddComments}
-                        data-dismiss="modal"
-                    >Enrégistrer</button>
-                  </div>
-                  </form>
-                </div>
-              </div>
-            </div>
+									<div className="form-group">
+									<label htmlFor="exampleFormControlInputcinq">First name</label>
+									<input type="text" className="form-control" id="exampleFormControlInputcinq" placeholder="FirstName"
+									value={firstNameUser}
+									onChange={(e)=>{
+										setFirstNameUser(e.target.value)
+									}}
+									/>
+									</div>
+									<div className="form-group">
+									<label htmlFor="exampleFormControlInputsix">Last name</label>
+									<input type="text" className="form-control" id="exampleFormControlInputsix" placeholder="LastName"
+									value={lastNameUser}
+									onChange={(e)=>{
+										setLastNameUser(e.target.value)
+									}}
+									/>
+									</div>
+									<div className="form-group">
+									<label htmlFor="exampleFormControlTextareaquatre">Contenu</label>
+									<textarea className="form-control" id="exampleFormControlTextareaquatre" rows={3}
+									value={responseContent}
+									onChange={(e)=>{
+										setResponseContent(e.target.value)
+									}}
+									></textarea>
+									</div>
+									
+								</div>
+								<div className="modal-footer">
+									<button type="button" className="btn btn-secondary" data-dismiss="modal">Annuler</button>
+									<button type="submit" className="btn btn-primary"
+										onClick={onAddComments}
+										data-dismiss="modal"
+									>Enrégistrer</button>
+								</div>
+								</form>
+								</div>
+							</div>
+						</div>
 
 
 
@@ -228,10 +220,10 @@ const Discussion= ({
 						styles.divSeparateur
 						}></span>
 
-						<div className={
-						// "row "
-						styles.rowReponse
-						}>
+						<div className={`
+						row
+						${styles.rowReponse}
+						`}>
 							{
 								DatasUserSession?.map((item: any)=>{
 									return(

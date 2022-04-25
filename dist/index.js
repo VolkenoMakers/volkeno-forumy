@@ -137,7 +137,7 @@ var FrontCommentItem = function FrontCommentItem(_ref) {
 
       return React__default.createElement("div", {
         key: item.id,
-        className: "row " + (showLinks ? styles.forumDiscussionLigneUnion : "\n                                                } ") + "\n                                            }"
+        className: "row " + (showLinks ? styles.forumDiscussionLigneUnion : "\n                                                } ") + "\n                                            } mb-3"
       }, React__default.createElement("div", {
         className: "col-3"
       }, React__default.createElement("div", {
@@ -209,7 +209,7 @@ var Discussion = function Discussion(_ref) {
       donnees = _useState[0],
       setDonnees = _useState[1];
 
-  var donneess = donnees;
+  var donneesInt = donnees;
 
   var _useState2 = React.useState(''),
       responseContent = _useState2[0],
@@ -240,7 +240,6 @@ var Discussion = function Discussion(_ref) {
 
   var onAddComments = function onAddComments(e) {
     e.preventDefault();
-    console.log(firstNameUser, lastNameUser, responseContent);
     var fields = {
       content: responseContent,
       id: generateUniqueID(),
@@ -252,8 +251,8 @@ var Discussion = function Discussion(_ref) {
         avatar: '/mediafiles/avatars/default.png'
       }
     };
-    donneess.first_level_response.push(fields);
-    setDonnees(donneess);
+    donneesInt.first_level_response.push(fields);
+    setDonnees(donneesInt);
     resetForm();
     setFirstNameUser('');
     setLastNameUser('');
@@ -393,7 +392,7 @@ var Discussion = function Discussion(_ref) {
   }, "Enr\xE9gistrer")))))), React__default.createElement("span", {
     className: styles.divSeparateur
   }), React__default.createElement("div", {
-    className: styles.rowReponse
+    className: "\n\t\t\t\t\t\trow\n\t\t\t\t\t\t" + styles.rowReponse + "\n\t\t\t\t\t\t"
   }, DatasUserSession === null || DatasUserSession === void 0 ? void 0 : DatasUserSession.map(function (item) {
     var _item$user, _item$user2, _item$user3, _item$user4, _item$user5, _item$user6, _item$user7, _item$user8;
 

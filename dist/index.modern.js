@@ -116,7 +116,7 @@ const FrontCommentItem = ({
         key: item.id,
         className: `row ${showLinks ? styles.forumDiscussionLigneUnion : `
                                                 } `}
-                                            }`
+                                            } mb-3`
       }, React__default.createElement("div", {
         className: "col-3"
       }, React__default.createElement("div", {
@@ -136,7 +136,7 @@ const FrontCommentItem = ({
       }, React__default.createElement("div", {
         className: styles.forumSommaireAuteurCard
       }, (item === null || item === void 0 ? void 0 : (_item$user5 = item.user) === null || _item$user5 === void 0 ? void 0 : _item$user5.firstName) + " " + (item === null || item === void 0 ? void 0 : (_item$user6 = item.user) === null || _item$user6 === void 0 ? void 0 : _item$user6.lastName))))), React__default.createElement("div", {
-        className: "col-9"
+        className: `col-9`
       }, React__default.createElement("div", {
         className: styles.forumCardSommaire
       }, React__default.createElement("div", {
@@ -189,7 +189,7 @@ const Discussion = ({
 
   let location = useLocation();
   const [donnees, setDonnees] = useState(location === null || location === void 0 ? void 0 : location.state);
-  let donneess = donnees;
+  let donneesInt = donnees;
   const [responseContent, setResponseContent] = useState('');
   const [firstNameUser, setFirstNameUser] = useState('');
   const [lastNameUser, setLastNameUser] = useState('');
@@ -209,7 +209,6 @@ const Discussion = ({
 
   const onAddComments = e => {
     e.preventDefault();
-    console.log(firstNameUser, lastNameUser, responseContent);
     let fields = {
       content: responseContent,
       id: generateUniqueID(),
@@ -221,8 +220,8 @@ const Discussion = ({
         avatar: '/mediafiles/avatars/default.png'
       }
     };
-    donneess.first_level_response.push(fields);
-    setDonnees(donneess);
+    donneesInt.first_level_response.push(fields);
+    setDonnees(donneesInt);
     resetForm();
     setFirstNameUser('');
     setLastNameUser('');
@@ -362,7 +361,10 @@ const Discussion = ({
   }, "Enr\u00E9gistrer")))))), React__default.createElement("span", {
     className: styles.divSeparateur
   }), React__default.createElement("div", {
-    className: styles.rowReponse
+    className: `
+						row
+						${styles.rowReponse}
+						`
   }, DatasUserSession === null || DatasUserSession === void 0 ? void 0 : DatasUserSession.map(item => {
     var _item$user, _item$user2, _item$user3, _item$user4, _item$user5, _item$user6, _item$user7, _item$user8;
 
