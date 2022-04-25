@@ -204,7 +204,62 @@ var Discussion = function Discussion(_ref) {
   var onAddComment = _ref.onAddComment,
       onAddResponseComment = _ref.onAddResponseComment;
   var location = reactRouterDom.useLocation();
-  var donnees = location === null || location === void 0 ? void 0 : location.state;
+
+  var _useState = React.useState(location === null || location === void 0 ? void 0 : location.state),
+      donnees = _useState[0],
+      setDonnees = _useState[1];
+
+  var donneess = donnees;
+
+  var _useState2 = React.useState(''),
+      responseContent = _useState2[0],
+      setResponseContent = _useState2[1];
+
+  var _useState3 = React.useState(''),
+      firstNameUser = _useState3[0],
+      setFirstNameUser = _useState3[1];
+
+  var _useState4 = React.useState(''),
+      lastNameUser = _useState4[0],
+      setLastNameUser = _useState4[1];
+
+  function generateUniqueID() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (var i = 0; i < 5; i++) {
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+
+    return text;
+  }
+
+  var resetForm = function resetForm() {
+    document.getElementById('add_msg_form').reset();
+  };
+
+  var onAddComments = function onAddComments(e) {
+    e.preventDefault();
+    console.log(firstNameUser, lastNameUser, responseContent);
+    var fields = {
+      content: responseContent,
+      id: generateUniqueID(),
+      slug: generateUniqueID(),
+      created_at: '22/04/2022',
+      user: {
+        firstName: firstNameUser,
+        lastName: lastNameUser,
+        avatar: '/mediafiles/avatars/default.png'
+      }
+    };
+    donneess.first_level_response.push(fields);
+    setDonnees(donneess);
+    resetForm();
+    setFirstNameUser('');
+    setLastNameUser('');
+    setResponseContent('');
+  };
+
   var DatasUserSession = [{
     id: 1,
     user: {
@@ -263,7 +318,79 @@ var Discussion = function Discussion(_ref) {
     className: "btn " + styles.btnAjoutResponse,
     "data-toggle": "modal",
     "data-target": "#exampleModal2"
-  }, "+"), React__default.createElement("span", {
+  }, "+"), React__default.createElement("div", {
+    className: "modal fade",
+    id: "exampleModal2",
+    "aria-labelledby": "exampleModalLabel2",
+    "aria-hidden": "true"
+  }, React__default.createElement("div", {
+    className: "modal-dialog"
+  }, React__default.createElement("div", {
+    className: "modal-content"
+  }, React__default.createElement("div", {
+    className: "modal-header"
+  }, React__default.createElement("h5", {
+    className: "modal-title",
+    id: "exampleModalLabel2"
+  }, "Modal title"), React__default.createElement("button", {
+    type: "button",
+    className: "close",
+    "data-dismiss": "modal",
+    "aria-label": "Close"
+  }, React__default.createElement("span", {
+    "aria-hidden": "true"
+  }, "\xD7"))), React__default.createElement("form", null, React__default.createElement("div", {
+    className: "modal-body"
+  }, React__default.createElement("div", {
+    className: "form-group"
+  }, React__default.createElement("label", {
+    htmlFor: "exampleFormControlInputcinq"
+  }, "First name"), React__default.createElement("input", {
+    type: "text",
+    className: "form-control",
+    id: "exampleFormControlInputcinq",
+    placeholder: "FirstName",
+    value: firstNameUser,
+    onChange: function onChange(e) {
+      setFirstNameUser(e.target.value);
+    }
+  })), React__default.createElement("div", {
+    className: "form-group"
+  }, React__default.createElement("label", {
+    htmlFor: "exampleFormControlInputsix"
+  }, "Last name"), React__default.createElement("input", {
+    type: "text",
+    className: "form-control",
+    id: "exampleFormControlInputsix",
+    placeholder: "LastName",
+    value: lastNameUser,
+    onChange: function onChange(e) {
+      setLastNameUser(e.target.value);
+    }
+  })), React__default.createElement("div", {
+    className: "form-group"
+  }, React__default.createElement("label", {
+    htmlFor: "exampleFormControlTextareaquatre"
+  }, "Contenu"), React__default.createElement("textarea", {
+    className: "form-control",
+    id: "exampleFormControlTextareaquatre",
+    rows: 3,
+    value: responseContent,
+    onChange: function onChange(e) {
+      setResponseContent(e.target.value);
+    }
+  }))), React__default.createElement("div", {
+    className: "modal-footer"
+  }, React__default.createElement("button", {
+    type: "button",
+    className: "btn btn-secondary",
+    "data-dismiss": "modal"
+  }, "Annuler"), React__default.createElement("button", {
+    type: "submit",
+    className: "btn btn-primary",
+    onClick: onAddComments,
+    "data-dismiss": "modal"
+  }, "Enr\xE9gistrer")))))), React__default.createElement("span", {
     className: styles.divSeparateur
   }), React__default.createElement("div", {
     className: styles.rowReponse

@@ -54,13 +54,13 @@ const App = () => {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
 
-  const [responseContent, setResponseContent] = useState('')
-  const [firstNameUser, setFirstNameUser] = useState('')
-  const [lastNameUser, setLastNameUser] = useState('')
+  // const [responseContent, setResponseContent] = useState('')
+  // const [firstNameUser, setFirstNameUser] = useState('')
+  // const [lastNameUser, setLastNameUser] = useState('')
 
-  const [responseContent2, setResponseContent2] = useState('')
-  const [firstNameUser2, setFirstNameUser2] = useState('')
-  const [lastNameUser2, setLastNameUser2] = useState('')
+  // const [responseContent2, setResponseContent2] = useState('')
+  // const [firstNameUser2, setFirstNameUser2] = useState('')
+  // const [lastNameUser2, setLastNameUser2] = useState('')
 
 
   function generateUniqueID() {
@@ -92,27 +92,27 @@ const App = () => {
                     lastName: lastName,
                     avatar: '/mediafiles/avatars/default.png',
                 }
-                
+
                 ,
                 first_level_response: [
-                  {
-                    user: {
-                      firstName: firstNameUser,
-                      lastName: lastNameUser,
-                      avatar: '/mediafiles/avatars/default.png',
-                    },
-                    content: responseContent,
-                    second_level_response: [
-                      {
-                        user: {
-                        firstName: firstNameUser2,
-                        lastName: lastNameUser2,
-                        avatar: '/mediafiles/avatars/default.png',
-                      },
-                      content: responseContent2,
-                      }
-                    ]
-                  }
+                  // {
+                  //   user: {
+                  //     firstName: firstNameUser,
+                  //     lastName: lastNameUser,
+                  //     avatar: '/mediafiles/avatars/default.png',
+                  //   },
+                  //   content: responseContent,
+                  //   second_level_response: [
+                  //     {
+                  //       user: {
+                  //       firstName: firstNameUser2,
+                  //       lastName: lastNameUser2,
+                  //       avatar: '/mediafiles/avatars/default.png',
+                  //     },
+                  //     content: responseContent2,
+                  //     }
+                  //   ]
+                  // }
                 ]
             }
 
@@ -123,39 +123,39 @@ const App = () => {
             setFirstName('')
             setLastName('')
 
-            setFirstNameUser('')
-            setLastNameUser('')
-            setResponseContent('')
+            // setFirstNameUser('')
+            // setLastNameUser('')
+            // setResponseContent('')
 
-            setFirstNameUser2('')
-            setLastNameUser2('')
-            setResponseContent2('')
+            // setFirstNameUser2('')
+            // setLastNameUser2('')
+            // setResponseContent2('')
             
             
         }
     }
 
-    const onAddComment = (e:any) => {
-      e.preventDefault()
-      console.log(firstName, lastName , responseContent)
+    // const onAddComment = (e:any) => {
+    //   e.preventDefault()
+    //   console.log(firstName, lastName , responseContent)
 
-      let fields: any = {
-        content: responseContent,
-        id: generateUniqueID(),
-        slug: generateUniqueID(),
-        created_at: '22/04/2022',
-        user: {
-            firstName: firstName,
-            lastName: lastName,
-            avatar: '/mediafiles/avatars/default.png',
-        }
-      }
+    //   let fields: any = {
+    //     content: responseContent,
+    //     id: generateUniqueID(),
+    //     slug: generateUniqueID(),
+    //     created_at: '22/04/2022',
+    //     user: {
+    //         firstName: firstName,
+    //         lastName: lastName,
+    //         avatar: '/mediafiles/avatars/default.png',
+    //     }
+    //   }
 
-      let interm = Datas
-      console.log(interm, fields)
+    //   let interm = Datas
+    //   console.log(interm, fields)
       
       
-    }
+    // }
   
   return (
       <div className='forum-container'>
@@ -221,7 +221,7 @@ const App = () => {
 
                   {/* ============================================================ */}
 
-                  <div className={`addSubjectFormGroup mb-3`}>
+                  {/* <div className={`addSubjectFormGroup mb-3`}>
                     <div className={`addSubjectTitle`}>Add comment</div>
 
                     <div className='d-flex w-100'>
@@ -257,11 +257,11 @@ const App = () => {
                       ></textarea>
                     </div>
 
-                  </div>
+                  </div> */}
 
                   {/* ========================================= */}
 
-                  <div className={`addSubjectFormGroup`}>
+                  {/* <div className={`addSubjectFormGroup`}>
                     <div className={`addSubjectTitle`}>Add response</div>
 
                     <div className='d-flex w-100'>
@@ -297,7 +297,7 @@ const App = () => {
                       ></textarea>
                     </div>
 
-                  </div>
+                  </div> */}
                     
                   </div>
                   <div className="modal-footer">
@@ -316,7 +316,7 @@ const App = () => {
             {/* ============================ AJOUT COMMENT ============================ */}
 
 
-            <div className="modal fade" id="exampleModal2"  aria-labelledby="exampleModalLabel2" aria-hidden="true">
+            {/* <div className="modal fade" id="exampleModal2"  aria-labelledby="exampleModalLabel2" aria-hidden="true">
               <div className="modal-dialog">
                 <div className="modal-content">
                   <div className="modal-header">
@@ -367,7 +367,7 @@ const App = () => {
                   </form>
                 </div>
               </div>
-            </div>
+            </div> */}
 
 
       </div>

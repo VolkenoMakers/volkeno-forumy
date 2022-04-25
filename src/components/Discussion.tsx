@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '../styles.module.css'
 import AjoutComments from './AjoutComments';
 import FrontCommentItem from './FrontCommentItem';
@@ -18,9 +18,66 @@ const Discussion= ({
 }: discussionProps) => {
 
   let location = useLocation();
-  // console.log('location',location)
 
-  const donnees:any = location?.state;
+//   const donnees:any = location?.state;
+  const [donnees, setDonnees]:any = useState(location?.state)
+
+//   const [donneess, setDonneess]:any = useState(donnees)
+//   console.log('donn',donneess, setDonneess)
+  let donneess = donnees
+
+  const [responseContent, setResponseContent] = useState('')
+  const [firstNameUser, setFirstNameUser] = useState('')
+  const [lastNameUser, setLastNameUser] = useState('')
+
+
+  function generateUniqueID() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  
+    for (var i = 0; i < 5; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+  
+    return text;
+  }
+
+  const resetForm = () => {
+    (document.getElementById('add_msg_form') as HTMLFormElement).reset();
+  }
+
+
+  const onAddComments = (e:any) => {
+	e.preventDefault()
+	console.log(firstNameUser, lastNameUser , responseContent)
+
+	let fields: any = {
+	  content: responseContent,
+	  id: generateUniqueID(),
+	  slug: generateUniqueID(),
+	  created_at: '22/04/2022',
+	  user: {
+		  firstName: firstNameUser,
+		  lastName: lastNameUser,
+		  avatar: '/mediafiles/avatars/default.png',
+	  }
+	}
+
+	// console.log(fields)
+	donneess.first_level_response.push(fields)
+	// console.log('after',donneess)
+	setDonnees(donneess)
+	// console.log('value',donnees)
+
+
+	resetForm()
+
+	setFirstNameUser('')
+	setLastNameUser('')
+	setResponseContent('')
+	
+	
+  }
+
  
 
   const DatasUserSession = [
@@ -111,6 +168,62 @@ const Discussion= ({
 						<button type="button" className={`btn ${styles.btnAjoutResponse}` }data-toggle="modal" data-target="#exampleModal2">
 							+
 						</button>
+
+						<div className="modal fade" id="exampleModal2"  aria-labelledby="exampleModalLabel2" aria-hidden="true">
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLabel2">Modal title</h5>
+                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <form>
+                  <div className="modal-body">
+
+                    <div className="form-group">
+                      <label htmlFor="exampleFormControlInputcinq">First name</label>
+                      <input type="text" className="form-control" id="exampleFormControlInputcinq" placeholder="FirstName"
+                      value={firstNameUser}
+                      onChange={(e)=>{
+                        setFirstNameUser(e.target.value)
+                      }}
+                       />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="exampleFormControlInputsix">Last name</label>
+                      <input type="text" className="form-control" id="exampleFormControlInputsix" placeholder="LastName"
+                      value={lastNameUser}
+                      onChange={(e)=>{
+                        setLastNameUser(e.target.value)
+                      }}
+                       />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="exampleFormControlTextareaquatre">Contenu</label>
+                      <textarea className="form-control" id="exampleFormControlTextareaquatre" rows={3}
+                       value={responseContent}
+                       onChange={(e)=>{
+                        setResponseContent(e.target.value)
+                       }}
+                      ></textarea>
+                    </div>
+                    
+                  </div>
+                  <div className="modal-footer">
+                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                    <button type="submit" className="btn btn-primary"
+                        onClick={onAddComments}
+                        data-dismiss="modal"
+                    >Enrégistrer</button>
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+
+
 						<span className={
 						styles.divSeparateur
 						}></span>
