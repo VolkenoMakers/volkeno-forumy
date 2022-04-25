@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '../styles.module.css'
 // import { DatasUserSession } from './DatasForum';
 import { BiComment } from "react-icons/bi";
@@ -9,6 +9,12 @@ const FrontCommentItem: React.FC<any> = (
     { donnees, onAddResponseComment, DatasUserSession }
     ): JSX.Element => {
 
+        const [showLinks, setShowLinks] = useState(false);
+
+        const toogleShowLinks = () => {
+            setShowLinks(!showLinks)
+        }
+
 	return (
         
 		<div className={styles.cardParent}>
@@ -16,7 +22,12 @@ const FrontCommentItem: React.FC<any> = (
                 donnees?.first_level_response?.map((donnee: any)=>{
                     return(
                         <div key={donnee.id}>
-                        <div className="row">
+                        <div className={`row ${
+                                showLinks
+                                    ? styles.forumDiscussionLigneUnion
+                                    : `
+                                } `}
+                            }`}>
                             <div className="col-2">
                                 <div className={styles.sommaireAvatarTitre}>
                                     <div className="">
@@ -62,6 +73,9 @@ const FrontCommentItem: React.FC<any> = (
                                                     role="button"
                                                     aria-expanded="false"
                                                     aria-controls={`collapseExample${donnee?.id}`}
+                                                    onClick={() => {
+                                                        toogleShowLinks();
+                                                    }}
                                                 >
                                                     <BiComment className="mr-1" />
                                                     {donnee?.second_level_response?.length}{" "}
@@ -86,11 +100,22 @@ const FrontCommentItem: React.FC<any> = (
                                     return (
                                         <div
                                             key={item.id}
-                                            className='row'
+                                            className={`row ${
+                                                showLinks
+                                                        ? styles.forumDiscussionLigneUnion
+                                                        : `
+                                                } `}
+                                            }`}
+                                            
                                         >
                                             <div className="col-3">
                                                 <div 
-                                                className='row'
+                                                className={`row ${
+                                                    showLinks
+                                                            ? styles.rowReponseLigneUnion1
+                                                            : `
+                                                    } `}
+                                                }`}
                                                 >
                                                     <div className="col-md-6">
                                                         <div className="p1 d-flex justify-content-end">
@@ -142,7 +167,12 @@ const FrontCommentItem: React.FC<any> = (
                                         return(
 
                                             <div 
-                                                className='row' key={item.id}
+                                                className={`row ${
+                                                    showLinks
+                                                            ? styles.rowReponseLigneUnion
+                                                            : `
+                                                    } `}
+                                                }`} key={item.id}
                                             >
                                                 <div className="col-3">
                                                     <div className="row">

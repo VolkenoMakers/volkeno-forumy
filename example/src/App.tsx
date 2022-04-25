@@ -55,6 +55,12 @@ const App = () => {
   const [lastName, setLastName] = useState('')
 
   const [responseContent, setResponseContent] = useState('')
+  const [firstNameUser, setFirstNameUser] = useState('')
+  const [lastNameUser, setLastNameUser] = useState('')
+
+  const [responseContent2, setResponseContent2] = useState('')
+  const [firstNameUser2, setFirstNameUser2] = useState('')
+  const [lastNameUser2, setLastNameUser2] = useState('')
 
 
   function generateUniqueID() {
@@ -73,7 +79,7 @@ const App = () => {
 
     const onAdd = (e:any) => {
         e.preventDefault()
-        if(initialTitle.trim().length > 0 &&  initialContent.trim().length > 0){
+        if(initialTitle.trim().length > 0 ){
             
             let fields: any = {
                 initialTitle: initialTitle,
@@ -86,6 +92,28 @@ const App = () => {
                     lastName: lastName,
                     avatar: '/mediafiles/avatars/default.png',
                 }
+                
+                ,
+                first_level_response: [
+                  {
+                    user: {
+                      firstName: firstNameUser,
+                      lastName: lastNameUser,
+                      avatar: '/mediafiles/avatars/default.png',
+                    },
+                    content: responseContent,
+                    second_level_response: [
+                      {
+                        user: {
+                        firstName: firstNameUser2,
+                        lastName: lastNameUser2,
+                        avatar: '/mediafiles/avatars/default.png',
+                      },
+                      content: responseContent2,
+                      }
+                    ]
+                  }
+                ]
             }
 
             setDatas([...Datas, fields])
@@ -94,6 +122,14 @@ const App = () => {
             setInitialTitle('')
             setFirstName('')
             setLastName('')
+
+            setFirstNameUser('')
+            setLastNameUser('')
+            setResponseContent('')
+
+            setFirstNameUser2('')
+            setLastNameUser2('')
+            setResponseContent2('')
             
             
         }
@@ -103,19 +139,22 @@ const App = () => {
       e.preventDefault()
       console.log(firstName, lastName , responseContent)
 
-      // let fields: any = {
-      //   responseContent: responseContent,
-      //   id: generateUniqueID(),
-      //   slug: generateUniqueID(),
-      //   created_at: '22/04/2022',
-      //   author: {
-      //       firstName: firstName,
-      //       lastName: lastName,
-      //       avatar: '/mediafiles/avatars/default.png',
-      //   }
+      let fields: any = {
+        content: responseContent,
+        id: generateUniqueID(),
+        slug: generateUniqueID(),
+        created_at: '22/04/2022',
+        user: {
+            firstName: firstName,
+            lastName: lastName,
+            avatar: '/mediafiles/avatars/default.png',
+        }
+      }
 
-      // }
-
+      let interm = Datas
+      console.log(interm, fields)
+      
+      
     }
   
   return (
@@ -125,7 +164,7 @@ const App = () => {
           {/* ======================== AJOUT SUJET ========================= */}
 
             <div className="modal fade" id="exampleModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div className="modal-dialog">
+              <div className='modal-dialog' role="document">
                 <div className="modal-content">
                   <div className="modal-header">
                     <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
@@ -136,24 +175,28 @@ const App = () => {
                   <form id='add_msg_form'> 
                   <div className="modal-body">
 
-                  
-                    <div className="form-group">
-                      <label htmlFor="exampleFormControlInputdeux">First name</label>
-                      <input type="text" className="form-control" id="exampleFormControlInputdeux" placeholder="FirstName"
-                      value={firstName}
-                      onChange={(e)=>{
-                        setFirstName(e.target.value)
-                      }}
-                       />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="exampleFormControlInputtrois">Last name</label>
-                      <input type="text" className="form-control" id="exampleFormControlInputtrois" placeholder="LastName"
-                      value={lastName}
-                      onChange={(e)=>{
-                        setLastName(e.target.value)
-                      }}
-                       />
+                  <div className={`addSubjectFormGroup mb-3`}>
+                    <div className={`addSubjectTitle`}>Add subject</div>
+
+                    <div className='d-flex w-100'>
+                      <div className="form-group mr-3 w-100">
+                        <label htmlFor="exampleFormControlInputdeux">First name</label>
+                        <input type="text" className="form-control" id="exampleFormControlInputdeux" placeholder="FirstName"
+                        value={firstName}
+                        onChange={(e)=>{
+                          setFirstName(e.target.value)
+                        }}
+                        />
+                      </div>
+                      <div className="form-group w-100">
+                        <label htmlFor="exampleFormControlInputtrois">Last name</label>
+                        <input type="text" className="form-control" id="exampleFormControlInputtrois" placeholder="LastName"
+                        value={lastName}
+                        onChange={(e)=>{
+                          setLastName(e.target.value)
+                        }}
+                        />
+                      </div>
                     </div>
                     <div className="form-group">
                       <label htmlFor="examphtmlFor=''mControlInput1">Titre</label>
@@ -166,14 +209,95 @@ const App = () => {
                     </div>
                     <div className="form-group">
                       <label htmlFor="exampleFormControlTextarea1">Contenu</label>
-                      <textarea className="form-control" id="exampleFormControlTextarea1" rows={3}
+                      <textarea className="form-control" id="exampleFormControlTextarea1" rows={1}
                        value={initialContent}
                        onChange={(e)=>{
                         setInitialContent(e.target.value)
                        }}
                       ></textarea>
                     </div>
-                  
+
+                  </div>
+
+                  {/* ============================================================ */}
+
+                  <div className={`addSubjectFormGroup mb-3`}>
+                    <div className={`addSubjectTitle`}>Add comment</div>
+
+                    <div className='d-flex w-100'>
+
+                      <div className="form-group w-100 mr-3">
+                        <label htmlFor="exampleFormControlInputcinq">First name</label>
+                        <input type="text" className="form-control" id="exampleFormControlInputcinq" placeholder="FirstName"
+                        value={firstNameUser}
+                        onChange={(e)=>{
+                          setFirstNameUser(e.target.value)
+                        }}
+                        />
+                      </div>
+                      <div className="form-group w-100">
+                        <label htmlFor="exampleFormControlInputsix">Last name</label>
+                        <input type="text" className="form-control" id="exampleFormControlInputsix" placeholder="LastName"
+                        value={lastNameUser}
+                        onChange={(e)=>{
+                          setLastNameUser(e.target.value)
+                        }}
+                        />
+                      </div>
+
+                    </div>
+                    
+                    <div className="form-group">
+                      <label htmlFor="exampleFormControlTextareaquatre">Contenu</label>
+                      <textarea className="form-control" id="exampleFormControlTextareaquatre" rows={1}
+                       value={responseContent}
+                       onChange={(e)=>{
+                        setResponseContent(e.target.value)
+                       }}
+                      ></textarea>
+                    </div>
+
+                  </div>
+
+                  {/* ========================================= */}
+
+                  <div className={`addSubjectFormGroup`}>
+                    <div className={`addSubjectTitle`}>Add response</div>
+
+                    <div className='d-flex w-100'>
+
+                      <div className="form-group w-100 mr-3">
+                        <label htmlFor="exampleFormControlInputsept">First name</label>
+                        <input type="text" className="form-control" id="exampleFormControlInputsept" placeholder="FirstName"
+                        value={firstNameUser2}
+                        onChange={(e)=>{
+                          setFirstNameUser2(e.target.value)
+                        }}
+                        />
+                      </div>
+                      <div className="form-group w-100">
+                        <label htmlFor="exampleFormControlInputhuit">Last name</label>
+                        <input type="text" className="form-control" id="exampleFormControlInputhuit" placeholder="LastName"
+                        value={lastNameUser2}
+                        onChange={(e)=>{
+                          setLastNameUser2(e.target.value)
+                        }}
+                        />
+                      </div>
+
+                    </div>
+                    
+                    <div className="form-group">
+                      <label htmlFor="exampleFormControlTextareaneuf">Contenu</label>
+                      <textarea className="form-control" id="exampleFormControlTextareaneuf" rows={1}
+                       value={responseContent2}
+                       onChange={(e)=>{
+                        setResponseContent2(e.target.value)
+                       }}
+                      ></textarea>
+                    </div>
+
+                  </div>
                     
                   </div>
                   <div className="modal-footer">

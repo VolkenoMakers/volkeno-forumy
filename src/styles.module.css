@@ -522,6 +522,43 @@ outline: none;
   color: #000;
 }
 
+.forumDiscussionLigneUnion,
+.rowReponseLigneUnion,
+.rowReponseLigneUnion1 {
+  position: relative;
+}
+.forumDiscussionLigneUnion::after {
+  content: '';
+  width: 0;
+  height: 100%;
+  position: absolute;
+  border: 1px solid #C4C4C4;
+  top: 27px;
+  left: 40px;
+  z-index: -1;
+}
+.rowReponseLigneUnion1::after {
+  content: '';
+  width: 20%;
+  height: 0;
+  position: absolute;
+  border: 1px solid #C4C4C4;
+  top: 25px;
+  left: 40px;
+  z-index: -1;
+}
+
+.rowReponseLigneUnion::after {
+  content: '';
+  width: 4%;
+  height: 0;
+  position: absolute;
+  border: 1px solid #C4C4C4;
+  top: 25px;
+  left: 40px;
+  z-index: -1;
+}
+
 @media (min-width: 768px) and (max-width: 900px) {
   /* .titre-sommaire-forum,
   .forum-sommaire-auteur-card {
@@ -537,5 +574,14 @@ outline: none;
   .contentSkeleton2 {
   width: 50px !important;
   height: 20px !important;
+  }
+}
+
+@media (max-width: 767px) {
+
+
+  .rowReponseLigneUnion::after,
+  .forumDiscussionLigneUnion::after {
+      display: none;
   }
 }

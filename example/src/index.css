@@ -13,14 +13,27 @@ code {
     monospace;
 }
 
-/* .component-liste-projet {
+.addSubjectFormGroup {
+  padding: 15px 8px 10px 8px;
+  border: 1px solid grey;
+  border-radius: 5px;
   position: relative;
-  height: auto;
-  min-height: 90vh;
+}
 
-} */
-/* .btn-ajout-sujet {
+.addSubjectTitle {
   position: absolute;
-  right: 10px;
-  bottom: 50px;
-} */
+  top: -12px;
+  background-color: #fff;
+  padding: 0px 5px;
+  font-weight: 600;
+}
+.modal-dialog {
+  overflow: scroll !important;
+}
+
+.modal-body {
+  overflow: scroll !important;
+}
+.modal {
+  width: 95% !important;
+}
