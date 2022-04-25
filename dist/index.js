@@ -240,23 +240,27 @@ var Discussion = function Discussion(_ref) {
 
   var onAddComments = function onAddComments(e) {
     e.preventDefault();
-    var fields = {
-      content: responseContent,
-      id: generateUniqueID(),
-      slug: generateUniqueID(),
-      created_at: '22/04/2022',
-      user: {
-        firstName: firstNameUser,
-        lastName: lastNameUser,
-        avatar: '/mediafiles/avatars/default.png'
-      }
-    };
-    donneesInt.first_level_response.push(fields);
-    setDonnees(donneesInt);
-    resetForm();
-    setFirstNameUser('');
-    setLastNameUser('');
-    setResponseContent('');
+
+    if (responseContent.trim().length > 0 && firstNameUser.trim().length > 0) {
+      var fields = {
+        content: responseContent,
+        id: generateUniqueID(),
+        slug: generateUniqueID(),
+        created_at: '22/04/2022',
+        user: {
+          firstName: firstNameUser,
+          lastName: lastNameUser,
+          avatar: '/mediafiles/avatars/default.png'
+        },
+        second_level_response: []
+      };
+      donneesInt.first_level_response.push(fields);
+      setDonnees(donneesInt);
+      resetForm();
+      setFirstNameUser('');
+      setLastNameUser('');
+      setResponseContent('');
+    }
   };
 
   var DatasUserSession = [{
@@ -331,7 +335,7 @@ var Discussion = function Discussion(_ref) {
   }, React__default.createElement("h5", {
     className: "modal-title",
     id: "exampleModalLabel2"
-  }, "Modal title"), React__default.createElement("button", {
+  }, "Ajouter un commentaire"), React__default.createElement("button", {
     type: "button",
     className: "close",
     "data-dismiss": "modal",
@@ -389,7 +393,7 @@ var Discussion = function Discussion(_ref) {
     className: "btn btn-primary",
     onClick: onAddComments,
     "data-dismiss": "modal"
-  }, "Enr\xE9gistrer")))))), React__default.createElement("span", {
+  }, "Ajouter")))))), React__default.createElement("span", {
     className: styles.divSeparateur
   }), React__default.createElement("div", {
     className: "\n\t\t\t\t\t\trow\n\t\t\t\t\t\t" + styles.rowReponse + "\n\t\t\t\t\t\t"
@@ -427,7 +431,6 @@ var Discussion = function Discussion(_ref) {
 
 var SommaireItem = function SommaireItem(_ref) {
   var Datas = _ref.Datas;
-  console.log(Datas.length);
   return React__default.createElement("div", null, Datas.length > 0 ? Datas.map(function (item) {
     var _item$author, _item$author2, _item$author3, _item$author4, _item$author5, _item$author6, _item$author7, _item$author8, _item$user_comments, _item$user_comments2, _item$user_comments3, _item$first_level_res;
 
@@ -507,7 +510,6 @@ var SommaireItem = function SommaireItem(_ref) {
 
 var Sommaire = function Sommaire(_ref) {
   var Datas = _ref.Datas;
-  console.log(Datas);
   return React__default.createElement("div", {
     className: styles.componentListeProjet
   }, React__default.createElement("div", {

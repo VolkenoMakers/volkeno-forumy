@@ -18,12 +18,7 @@ const Discussion= ({
 }: discussionProps) => {
 
   let location = useLocation();
-
-//   const donnees:any = location?.state;
   const [donnees, setDonnees]:any = useState(location?.state)
-
-//   const [donneess, setDonneess]:any = useState(donnees)
-//   console.log('donn',donneess, setDonneess)
   let donneesInt = donnees
 
   const [responseContent, setResponseContent] = useState('')
@@ -45,29 +40,29 @@ const Discussion= ({
     (document.getElementById('add_msg_form') as HTMLFormElement).reset();
   }
 
-
   const onAddComments = (e:any) => {
 	e.preventDefault()
-
-	let fields: any = {
-	  content: responseContent,
-	  id: generateUniqueID(),
-	  slug: generateUniqueID(),
-	  created_at: '22/04/2022',
-	  user: {
-		  firstName: firstNameUser,
-		  lastName: lastNameUser,
-		  avatar: '/mediafiles/avatars/default.png',
-	  }
+	if(responseContent.trim().length > 0 && firstNameUser.trim().length > 0 ){
+		let fields: any = {
+			content: responseContent,
+			id: generateUniqueID(),
+			slug: generateUniqueID(),
+			created_at: '22/04/2022',
+			user: {
+				firstName: firstNameUser,
+				lastName: lastNameUser,
+				avatar: '/mediafiles/avatars/default.png',
+			},
+			second_level_response: []
+		}
+	
+		donneesInt.first_level_response.push(fields)
+		setDonnees(donneesInt)
+		resetForm()
+		setFirstNameUser('')
+		setLastNameUser('')
+		setResponseContent('')
 	}
-
-	donneesInt.first_level_response.push(fields)
-	setDonnees(donneesInt)
-	// console.log('value',donnees)
-	resetForm()
-	setFirstNameUser('')
-	setLastNameUser('')
-	setResponseContent('')
   }
 
  
@@ -165,14 +160,13 @@ const Discussion= ({
 							<div className="modal-dialog">
 								<div className="modal-content">
 								<div className="modal-header">
-									<h5 className="modal-title" id="exampleModalLabel2">Modal title</h5>
+									<h5 className="modal-title" id="exampleModalLabel2">Ajouter un commentaire</h5>
 									<button type="button" className="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
 								<form>
 								<div className="modal-body">
-
 									<div className="form-group">
 									<label htmlFor="exampleFormControlInputcinq">First name</label>
 									<input type="text" className="form-control" id="exampleFormControlInputcinq" placeholder="FirstName"
@@ -202,19 +196,18 @@ const Discussion= ({
 									</div>
 									
 								</div>
+
 								<div className="modal-footer">
 									<button type="button" className="btn btn-secondary" data-dismiss="modal">Annuler</button>
 									<button type="submit" className="btn btn-primary"
 										onClick={onAddComments}
 										data-dismiss="modal"
-									>Enrégistrer</button>
+									>Ajouter</button>
 								</div>
 								</form>
 								</div>
 							</div>
 						</div>
-
-
 
 						<span className={
 						styles.divSeparateur

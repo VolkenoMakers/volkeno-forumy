@@ -5,8 +5,6 @@ import SommaireItem from './SommaireItem';
 
 const Sommaire: React.FC<DatasType> = ({ Datas }): JSX.Element => {
 
-  console.log(Datas)
-
   return (
       <div className={styles.componentListeProjet}>
         <div className={styles.contentViewStart}>
