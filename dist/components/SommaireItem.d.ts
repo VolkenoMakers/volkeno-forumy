@@ -1,3 +1,3 @@
-import React from 'react';
-declare const SommaireItem: React.FC<any>;
+/// <reference types="react" />
+declare const SommaireItem: ({ Datas }: any) => JSX.Element;
 export default SommaireItem;

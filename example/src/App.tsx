@@ -54,6 +54,8 @@ const App = () => {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
 
+  const [responseContent, setResponseContent] = useState('')
+
 
   function generateUniqueID() {
     var text = "";
@@ -95,6 +97,25 @@ const App = () => {
             
             
         }
+    }
+
+    const onAddComment = (e:any) => {
+      e.preventDefault()
+      console.log(firstName, lastName , responseContent)
+
+      // let fields: any = {
+      //   responseContent: responseContent,
+      //   id: generateUniqueID(),
+      //   slug: generateUniqueID(),
+      //   created_at: '22/04/2022',
+      //   author: {
+      //       firstName: firstName,
+      //       lastName: lastName,
+      //       avatar: '/mediafiles/avatars/default.png',
+      //   }
+
+      // }
+
     }
   
   return (
@@ -171,7 +192,7 @@ const App = () => {
             {/* ============================ AJOUT COMMENT ============================ */}
 
 
-            {/* <div className="modal fade" id="exampleModal2"  aria-labelledby="exampleModalLabel2" aria-hidden="true">
+            <div className="modal fade" id="exampleModal2"  aria-labelledby="exampleModalLabel2" aria-hidden="true">
               <div className="modal-dialog">
                 <div className="modal-content">
                   <div className="modal-header">
@@ -180,28 +201,36 @@ const App = () => {
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
+                  <form>
                   <div className="modal-body">
 
-                  <form>
                     <div className="form-group">
-                      <label htmlFor="examphtmlFor=''mControlInput1">Titre</label>
-                      <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Titre du sujet"
-                      value={initialTitle}
+                      <label htmlFor="exampleFormControlInputcinq">First name</label>
+                      <input type="text" className="form-control" id="exampleFormControlInputcinq" placeholder="FirstName"
+                      value={firstName}
                       onChange={(e)=>{
-                        setInitialTitle(e.target.value)
+                        setFirstName(e.target.value)
                       }}
                        />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="exampleFormControlTextarea1">Contenu</label>
-                      <textarea className="form-control" id="exampleFormControlTextarea1" rows={3}
+                      <label htmlFor="exampleFormControlInputsix">Last name</label>
+                      <input type="text" className="form-control" id="exampleFormControlInputsix" placeholder="LastName"
+                      value={lastName}
+                      onChange={(e)=>{
+                        setLastName(e.target.value)
+                      }}
+                       />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="exampleFormControlTextareaquatre">Contenu</label>
+                      <textarea className="form-control" id="exampleFormControlTextareaquatre" rows={3}
                        value={responseContent}
                        onChange={(e)=>{
                         setResponseContent(e.target.value)
                        }}
                       ></textarea>
                     </div>
-                  </form>
                     
                   </div>
                   <div className="modal-footer">
@@ -211,9 +240,10 @@ const App = () => {
                         data-dismiss="modal"
                     >Enrégistrer</button>
                   </div>
+                  </form>
                 </div>
               </div>
-            </div> */}
+            </div>
 
 
       </div>

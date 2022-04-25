@@ -108,7 +108,9 @@ const Discussion= ({
             			<FrontCommentItem donnees={donnees} onAddResponseComment={onAddResponseComment} DatasUserSession={DatasUserSession} />
 
 						{/* =========================================================== FIN COLLAPSE ============================================================================ */}
-
+						<button type="button" className={`btn ${styles.btnAjoutResponse}` }data-toggle="modal" data-target="#exampleModal2">
+							+
+						</button>
 						<span className={
 						styles.divSeparateur
 						}></span>

@@ -5,9 +5,10 @@ import SommaireItem from './SommaireItem';
 
 const Sommaire: React.FC<DatasType> = ({ Datas }): JSX.Element => {
 
+  console.log(Datas)
 
   return (
-      <div className="component-liste-projet">
+      <div className={styles.componentListeProjet}>
         <div className={styles.contentViewStart}>
           <div className={styles.containerCayore}>
             <div className="row align-items-center" style={{ margin: "3rem 0" }}>
@@ -16,8 +17,8 @@ const Sommaire: React.FC<DatasType> = ({ Datas }): JSX.Element => {
                   <SommaireItem Datas={Datas}  />
               } 
 
-              <button type="button" className="btn btn-primary btn-ajout-sujet" data-toggle="modal" data-target="#exampleModal">
-                Ajouter un sujet
+              <button type="button" className={`btn ${styles.btnAjoutSujet}` }data-toggle="modal" data-target="#exampleModal">
+                +
               </button>
 
           </div>

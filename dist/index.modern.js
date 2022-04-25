@@ -5,7 +5,7 @@ import { AiOutlineClockCircle } from 'react-icons/ai';
 import { IoReturnDownBackOutline } from 'react-icons/io5';
 import { BsChat } from 'react-icons/bs';
 
-var styles = {"test":"_styles-module__test__3ybTi","contentViewStart":"_styles-module__contentViewStart__vMiGT","navigationLink":"_styles-module__navigationLink__3BNu_","containerCayore":"_styles-module__containerCayore__zRBck","bannerListeProjet":"_styles-module__bannerListeProjet__zERCC","titreBannerListeProjet":"_styles-module__titreBannerListeProjet__cjRbQ","forumCardSommaire":"_styles-module__forumCardSommaire__3HiKz","forum-card-taille":"_styles-module__forum-card-taille__1eBJ7","forumCardSommaireFixWidth":"_styles-module__forumCardSommaireFixWidth__2uXL-","forum-card-skeleton-fix-width":"_styles-module__forum-card-skeleton-fix-width__2V2Qy","avatarSkeleton":"_styles-module__avatarSkeleton__1jx2o","avatarArticleSkeleton":"_styles-module__avatarArticleSkeleton__vRP36","contentSkeleton":"_styles-module__contentSkeleton__3H1kl","contentSkeleton2":"_styles-module__contentSkeleton2__10yh-","contentSkeletonUser":"_styles-module__contentSkeletonUser__zGOQu","contentSkeletonPara":"_styles-module__contentSkeletonPara__186w2","contentSkeletonPara2":"_styles-module__contentSkeletonPara2__3ncCE","cardSommaireDateAjout":"_styles-module__cardSommaireDateAjout__3TZlv","imgSommaireForum":"_styles-module__imgSommaireForum__3wJ3U","imgSommaireForumDiscussion":"_styles-module__imgSommaireForumDiscussion__10Qyd","titreSommaireForum":"_styles-module__titreSommaireForum__lypzQ","forumSommaireAuteurCard":"_styles-module__forumSommaireAuteurCard__3ovWR","textSommaireForum":"_styles-module__textSommaireForum__R0WUA","sommaireForumUserChat":"_styles-module__sommaireForumUserChat__2fmvg","divNombreCommentaireSommaireForum":"_styles-module__divNombreCommentaireSommaireForum__3VGq1","divSommaireForumUserChat1":"_styles-module__divSommaireForumUserChat1__3AK7B","divSommaireSorumUserChat2":"_styles-module__divSommaireSorumUserChat2__2fhuF","divSommaireForumUserChat3":"_styles-module__divSommaireForumUserChat3__1qa_i","divSommaireForumUserChat4":"_styles-module__divSommaireForumUserChat4__2PTKK","divSommaireForumUserChat5":"_styles-module__divSommaireForumUserChat5__Ms10U","divSommaireForumUserChat2":"_styles-module__divSommaireForumUserChat2__n-NHS","imgSommaireForumUserChat":"_styles-module__imgSommaireForumUserChat__WUnJj","nombreCommentaireSommaireForum":"_styles-module__nombreCommentaireSommaireForum__CZnT8","troisPoints":"_styles-module__troisPoints__1NUMh","sommaireAvatarTitre":"_styles-module__sommaireAvatarTitre__pLURL","cardDiscussionHeureVu":"_styles-module__cardDiscussionHeureVu__2l2Yb","cardDiscussionHeureCommentaire":"_styles-module__cardDiscussionHeureCommentaire__1W3UV","cardDiscussionHeureVuLaurhille":"_styles-module__cardDiscussionHeureVuLaurhille__prVaz","cardDiscussionCommentaire":"_styles-module__cardDiscussionCommentaire__8e0yO","imgSommaireForumDiscussion2":"_styles-module__imgSommaireForumDiscussion2__1nB31","divSeparateur":"_styles-module__divSeparateur__3S7lS","row-input":"_styles-module__row-input__GLjv2","rowReponse":"_styles-module__rowReponse__15pjE","row-reponse-ligne-union":"_styles-module__row-reponse-ligne-union__2905Z","row-reponse-ligne-union1":"_styles-module__row-reponse-ligne-union1__2_YyU","forum-discussion-ligne-union":"_styles-module__forum-discussion-ligne-union___ranC","offline-alert-card":"_styles-module__offline-alert-card__wh7If","offline-alert-textual":"_styles-module__offline-alert-textual__3oC-v","redirect-to-login-btn":"_styles-module__redirect-to-login-btn__1ZnBs","cardParent":"_styles-module__cardParent__nRyJj","formAddCguButtonAjouter":"_styles-module__formAddCguButtonAjouter__2H-xZ","img-sommaire-forum":"_styles-module__img-sommaire-forum__CKiSb"};
+var styles = {"test":"_styles-module__test__3ybTi","contentViewStart":"_styles-module__contentViewStart__vMiGT","navigationLink":"_styles-module__navigationLink__3BNu_","containerCayore":"_styles-module__containerCayore__zRBck","bannerListeProjet":"_styles-module__bannerListeProjet__zERCC","titreBannerListeProjet":"_styles-module__titreBannerListeProjet__cjRbQ","forumCardSommaire":"_styles-module__forumCardSommaire__3HiKz","forum-card-taille":"_styles-module__forum-card-taille__1eBJ7","forumCardSommaireFixWidth":"_styles-module__forumCardSommaireFixWidth__2uXL-","forum-card-skeleton-fix-width":"_styles-module__forum-card-skeleton-fix-width__2V2Qy","avatarSkeleton":"_styles-module__avatarSkeleton__1jx2o","avatarArticleSkeleton":"_styles-module__avatarArticleSkeleton__vRP36","contentSkeleton":"_styles-module__contentSkeleton__3H1kl","contentSkeleton2":"_styles-module__contentSkeleton2__10yh-","contentSkeletonUser":"_styles-module__contentSkeletonUser__zGOQu","contentSkeletonPara":"_styles-module__contentSkeletonPara__186w2","contentSkeletonPara2":"_styles-module__contentSkeletonPara2__3ncCE","cardSommaireDateAjout":"_styles-module__cardSommaireDateAjout__3TZlv","imgSommaireForum":"_styles-module__imgSommaireForum__3wJ3U","imgSommaireForumDiscussion":"_styles-module__imgSommaireForumDiscussion__10Qyd","titreSommaireForum":"_styles-module__titreSommaireForum__lypzQ","forumSommaireAuteurCard":"_styles-module__forumSommaireAuteurCard__3ovWR","textSommaireForum":"_styles-module__textSommaireForum__R0WUA","sommaireForumUserChat":"_styles-module__sommaireForumUserChat__2fmvg","divNombreCommentaireSommaireForum":"_styles-module__divNombreCommentaireSommaireForum__3VGq1","divSommaireForumUserChat1":"_styles-module__divSommaireForumUserChat1__3AK7B","divSommaireSorumUserChat2":"_styles-module__divSommaireSorumUserChat2__2fhuF","divSommaireForumUserChat3":"_styles-module__divSommaireForumUserChat3__1qa_i","divSommaireForumUserChat4":"_styles-module__divSommaireForumUserChat4__2PTKK","divSommaireForumUserChat5":"_styles-module__divSommaireForumUserChat5__Ms10U","divSommaireForumUserChat2":"_styles-module__divSommaireForumUserChat2__n-NHS","imgSommaireForumUserChat":"_styles-module__imgSommaireForumUserChat__WUnJj","nombreCommentaireSommaireForum":"_styles-module__nombreCommentaireSommaireForum__CZnT8","troisPoints":"_styles-module__troisPoints__1NUMh","sommaireAvatarTitre":"_styles-module__sommaireAvatarTitre__pLURL","cardDiscussionHeureVu":"_styles-module__cardDiscussionHeureVu__2l2Yb","cardDiscussionHeureCommentaire":"_styles-module__cardDiscussionHeureCommentaire__1W3UV","cardDiscussionHeureVuLaurhille":"_styles-module__cardDiscussionHeureVuLaurhille__prVaz","cardDiscussionCommentaire":"_styles-module__cardDiscussionCommentaire__8e0yO","imgSommaireForumDiscussion2":"_styles-module__imgSommaireForumDiscussion2__1nB31","divSeparateur":"_styles-module__divSeparateur__3S7lS","row-input":"_styles-module__row-input__GLjv2","rowReponse":"_styles-module__rowReponse__15pjE","row-reponse-ligne-union":"_styles-module__row-reponse-ligne-union__2905Z","row-reponse-ligne-union1":"_styles-module__row-reponse-ligne-union1__2_YyU","forum-discussion-ligne-union":"_styles-module__forum-discussion-ligne-union___ranC","offline-alert-card":"_styles-module__offline-alert-card__wh7If","offline-alert-textual":"_styles-module__offline-alert-textual__3oC-v","redirect-to-login-btn":"_styles-module__redirect-to-login-btn__1ZnBs","cardParent":"_styles-module__cardParent__nRyJj","formAddCguButtonAjouter":"_styles-module__formAddCguButtonAjouter__2H-xZ","componentListeProjet":"_styles-module__componentListeProjet__2kuVE","btnAjoutResponse":"_styles-module__btnAjoutResponse__3QrOw","btnAjoutSujet":"_styles-module__btnAjoutSujet__21AVM","emptySubjectMessage":"_styles-module__emptySubjectMessage__sJRRl","emptySubjectMessageBtnPlus":"_styles-module__emptySubjectMessageBtnPlus__3XTjZ","img-sommaire-forum":"_styles-module__img-sommaire-forum__CKiSb"};
 
 function AjoutComments({
   onSubmit
@@ -225,7 +225,12 @@ const Discussion = ({
     donnees: donnees,
     onAddResponseComment: onAddResponseComment,
     DatasUserSession: DatasUserSession
-  }), React__default.createElement("span", {
+  }), React__default.createElement("button", {
+    type: "button",
+    className: `btn ${styles.btnAjoutResponse}`,
+    "data-toggle": "modal",
+    "data-target": "#exampleModal2"
+  }, "+"), React__default.createElement("span", {
     className: styles.divSeparateur
   }), React__default.createElement("div", {
     className: styles.rowReponse
@@ -264,7 +269,8 @@ const Discussion = ({
 const SommaireItem = ({
   Datas
 }) => {
-  return React__default.createElement("div", null, (Datas === null || Datas === void 0 ? void 0 : Datas.length) > 0 ? Datas.map(item => {
+  console.log(Datas.length);
+  return React__default.createElement("div", null, Datas.length > 0 ? Datas.map(item => {
     var _item$author, _item$author2, _item$author3, _item$author4, _item$author5, _item$author6, _item$author7, _item$author8, _item$user_comments, _item$user_comments2, _item$user_comments3, _item$first_level_res;
 
     return React__default.createElement(NavLink, {
@@ -334,17 +340,21 @@ const SommaireItem = ({
   }, React__default.createElement("div", {
     className: "row div-card"
   }, React__default.createElement("div", {
-    className: "col-12"
+    className: `col-12 ${styles.emptySubjectMessage} alert alert-warning`,
+    role: "alert"
   }, React__default.createElement("h4", {
     className: "admin-contacts-title text-center"
-  }, "Pas de sujet de discussion")))));
+  }, "Pas de sujet de discussion"), React__default.createElement("p", null, "Appuyer sur le boutton ", React__default.createElement("span", {
+    className: `${styles.emptySubjectMessageBtnPlus}`
+  }, "+"), " en bas pour ajouter des sujet !!")))));
 };
 
 const Sommaire = ({
   Datas
 }) => {
+  console.log(Datas);
   return React__default.createElement("div", {
-    className: "component-liste-projet"
+    className: styles.componentListeProjet
   }, React__default.createElement("div", {
     className: styles.contentViewStart
   }, React__default.createElement("div", {
@@ -360,16 +370,16 @@ const Sommaire = ({
     Datas: Datas
   }), React__default.createElement("button", {
     type: "button",
-    className: "btn btn-primary btn-ajout-sujet",
+    className: `btn ${styles.btnAjoutSujet}`,
     "data-toggle": "modal",
     "data-target": "#exampleModal"
-  }, "Ajouter un sujet"))))));
+  }, "+"))))));
 };
 
 const VolkenoForumy = ({ ...props
 }) => {
   const {
-    data
+    Datas
   } = props;
 
   const onAddComment = (subject, commentText) => {
@@ -385,7 +395,7 @@ const VolkenoForumy = ({ ...props
   }, createElement(Routes, null, createElement(Route, {
     path: "/",
     element: createElement(Sommaire, {
-      Datas: data
+      Datas: Datas
     })
   }), createElement(Route, {
     path: "/forum-discussion/:id",

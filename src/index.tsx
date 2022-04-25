@@ -4,14 +4,14 @@ import Discussion from './components/Discussion'
 import Sommaire from './components/Sommaire'
 
 interface ForumProps {
-  data: any;
+  Datas: any;
 }
 
 
 export const VolkenoForumy = ({...props}: ForumProps) => {
 
   const {
-     data
+    Datas
   } = props
 
   const onAddComment = (subject: any, commentText:any) =>{
@@ -34,7 +34,7 @@ export const VolkenoForumy = ({...props}: ForumProps) => {
 				<Routes>
 					<Route
 						path="/"
-						element={<Sommaire Datas={data}  />}
+						element={<Sommaire Datas={Datas}  />}
 					/>
 					<Route
 						path="/forum-discussion/:id"
