@@ -7,61 +7,56 @@ import { BsChat } from 'react-icons/bs';
 
 var styles = {"test":"_styles-module__test__3ybTi","contentViewStart":"_styles-module__contentViewStart__vMiGT","navigationLink":"_styles-module__navigationLink__3BNu_","containerCayore":"_styles-module__containerCayore__zRBck","bannerListeProjet":"_styles-module__bannerListeProjet__zERCC","titreBannerListeProjet":"_styles-module__titreBannerListeProjet__cjRbQ","forumCardSommaire":"_styles-module__forumCardSommaire__3HiKz","forum-card-taille":"_styles-module__forum-card-taille__1eBJ7","forumCardSommaireFixWidth":"_styles-module__forumCardSommaireFixWidth__2uXL-","forum-card-skeleton-fix-width":"_styles-module__forum-card-skeleton-fix-width__2V2Qy","avatarSkeleton":"_styles-module__avatarSkeleton__1jx2o","avatarArticleSkeleton":"_styles-module__avatarArticleSkeleton__vRP36","contentSkeleton":"_styles-module__contentSkeleton__3H1kl","contentSkeleton2":"_styles-module__contentSkeleton2__10yh-","contentSkeletonUser":"_styles-module__contentSkeletonUser__zGOQu","contentSkeletonPara":"_styles-module__contentSkeletonPara__186w2","contentSkeletonPara2":"_styles-module__contentSkeletonPara2__3ncCE","cardSommaireDateAjout":"_styles-module__cardSommaireDateAjout__3TZlv","imgSommaireForum":"_styles-module__imgSommaireForum__3wJ3U","imgSommaireForumDiscussion":"_styles-module__imgSommaireForumDiscussion__10Qyd","titreSommaireForum":"_styles-module__titreSommaireForum__lypzQ","forumSommaireAuteurCard":"_styles-module__forumSommaireAuteurCard__3ovWR","textSommaireForum":"_styles-module__textSommaireForum__R0WUA","sommaireForumUserChat":"_styles-module__sommaireForumUserChat__2fmvg","divNombreCommentaireSommaireForum":"_styles-module__divNombreCommentaireSommaireForum__3VGq1","divSommaireForumUserChat1":"_styles-module__divSommaireForumUserChat1__3AK7B","divSommaireSorumUserChat2":"_styles-module__divSommaireSorumUserChat2__2fhuF","divSommaireForumUserChat3":"_styles-module__divSommaireForumUserChat3__1qa_i","divSommaireForumUserChat4":"_styles-module__divSommaireForumUserChat4__2PTKK","divSommaireForumUserChat5":"_styles-module__divSommaireForumUserChat5__Ms10U","divSommaireForumUserChat2":"_styles-module__divSommaireForumUserChat2__n-NHS","imgSommaireForumUserChat":"_styles-module__imgSommaireForumUserChat__WUnJj","nombreCommentaireSommaireForum":"_styles-module__nombreCommentaireSommaireForum__CZnT8","troisPoints":"_styles-module__troisPoints__1NUMh","sommaireAvatarTitre":"_styles-module__sommaireAvatarTitre__pLURL","cardDiscussionHeureVu":"_styles-module__cardDiscussionHeureVu__2l2Yb","cardDiscussionHeureCommentaire":"_styles-module__cardDiscussionHeureCommentaire__1W3UV","cardDiscussionHeureVuLaurhille":"_styles-module__cardDiscussionHeureVuLaurhille__prVaz","cardDiscussionCommentaire":"_styles-module__cardDiscussionCommentaire__8e0yO","imgSommaireForumDiscussion2":"_styles-module__imgSommaireForumDiscussion2__1nB31","divSeparateur":"_styles-module__divSeparateur__3S7lS","row-input":"_styles-module__row-input__GLjv2","rowReponse":"_styles-module__rowReponse__15pjE","row-reponse-ligne-union":"_styles-module__row-reponse-ligne-union__2905Z","row-reponse-ligne-union1":"_styles-module__row-reponse-ligne-union1__2_YyU","forum-discussion-ligne-union":"_styles-module__forum-discussion-ligne-union___ranC","offline-alert-card":"_styles-module__offline-alert-card__wh7If","offline-alert-textual":"_styles-module__offline-alert-textual__3oC-v","redirect-to-login-btn":"_styles-module__redirect-to-login-btn__1ZnBs","cardParent":"_styles-module__cardParent__nRyJj","formAddCguButtonAjouter":"_styles-module__formAddCguButtonAjouter__2H-xZ","componentListeProjet":"_styles-module__componentListeProjet__2kuVE","btnAjoutResponse":"_styles-module__btnAjoutResponse__3QrOw","btnAjoutSujet":"_styles-module__btnAjoutSujet__21AVM","emptySubjectMessage":"_styles-module__emptySubjectMessage__sJRRl","emptySubjectMessageBtnPlus":"_styles-module__emptySubjectMessageBtnPlus__3XTjZ","forumDiscussionLigneUnion":"_styles-module__forumDiscussionLigneUnion__3LwA7","rowReponseLigneUnion":"_styles-module__rowReponseLigneUnion__1ZzMD","rowReponseLigneUnion1":"_styles-module__rowReponseLigneUnion1__kbaQR","img-sommaire-forum":"_styles-module__img-sommaire-forum__CKiSb"};
 
-function AjoutComments({ ...props
-}) {
-  const [comment, setComment] = useState('');
-  const {
-    onSubmitMessageResponse
-  } = props;
+const FrontCommentItem = ({
+  donnees,
+  DatasUserSession
+}) => {
+  var _DataInt$first_level_;
+
+  const [DataInt, setDataInt] = useState(donnees);
+  const [showLinks, setShowLinks] = useState(false);
+
+  function generateUniqueID() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (var i = 0; i < 5; i++) text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+  }
+
+  const resetForm = () => {
+    document.getElementById('form-response').reset();
+  };
+
+  const [response, setResponse] = useState('');
 
   const submitReponse = e => {
     e.preventDefault();
 
-    if (comment.trim().length > 0) {
-      if (onSubmitMessageResponse) {
-        onSubmitMessageResponse(comment);
-      }
+    if (response.trim().length > 0) {
+      let field = {
+        content: response,
+        id: generateUniqueID(),
+        slug: generateUniqueID(),
+        created_at: '22/04/2022',
+        user: {
+          firstName: "Bamba",
+          lastName: "Fall",
+          avatar: '/mediafiles/avatars/default.png'
+        }
+      };
+      let foundItem = DataInt.first_level_response.find(element => element.id);
+      foundItem.second_level_response.push(field);
+      setDataInt(DataInt);
+      resetForm();
+      setResponse('');
     }
-  };
-
-  return React__default.createElement("form", {
-    className: 'mb-3'
-  }, React__default.createElement("div", {
-    className: `${styles.forumCardSommaire}`
-  }, React__default.createElement("div", {
-    className: 'row'
-  }, React__default.createElement("div", {
-    className: 'col-12 pt-3 mb-md-4 mb-5'
-  }, React__default.createElement("textarea", {
-    className: 'form-control',
-    placeholder: 'R\u00E9pondre',
-    name: 'content',
-    value: comment,
-    onChange: e => {
-      setComment(e.target.value);
-    }
-  })))), React__default.createElement("button", {
-    className: styles.formAddCguButtonAjouter,
-    onClick: submitReponse
-  }, "Ajouter"));
-}
-
-const FrontCommentItem = ({
-  donnees,
-  onAddResponseComment,
-  DatasUserSession
-}) => {
-  var _donnees$first_level_;
-
-  const [showLinks, setShowLinks] = useState(false);
-
-  const toogleShowLinks = () => {
-    setShowLinks(!showLinks);
   };
 
   return React__default.createElement("div", {
     className: styles.cardParent
-  }, donnees === null || donnees === void 0 ? void 0 : (_donnees$first_level_ = donnees.first_level_response) === null || _donnees$first_level_ === void 0 ? void 0 : _donnees$first_level_.map(donnee => {
+  }, DataInt === null || DataInt === void 0 ? void 0 : (_DataInt$first_level_ = DataInt.first_level_response) === null || _DataInt$first_level_ === void 0 ? void 0 : _DataInt$first_level_.map(donnee => {
     var _donnee$user, _donnee$user2, _donnee$user3, _donnee$user4, _donnee$user5, _donnee$user6, _donnee$second_level_, _donnee$second_level_2;
 
     return React__default.createElement("div", {
@@ -104,7 +99,6 @@ const FrontCommentItem = ({
       "aria-expanded": "false",
       "aria-controls": `collapseExample${donnee === null || donnee === void 0 ? void 0 : donnee.id}`,
       onClick: () => {
-        toogleShowLinks();
       }
     }, React__default.createElement(BiComment, {
       className: "mr-1"
@@ -171,11 +165,27 @@ const FrontCommentItem = ({
         className: styles.forumSommaireAuteurCard
       }, (item === null || item === void 0 ? void 0 : (_item$user11 = item.user) === null || _item$user11 === void 0 ? void 0 : _item$user11.firstName) !== undefined || (item === null || item === void 0 ? void 0 : (_item$user12 = item.user) === null || _item$user12 === void 0 ? void 0 : _item$user12.lastName) !== undefined ? (item === null || item === void 0 ? void 0 : (_item$user13 = item.user) === null || _item$user13 === void 0 ? void 0 : _item$user13.firstName) + " " + (item === null || item === void 0 ? void 0 : (_item$user14 = item.user) === null || _item$user14 === void 0 ? void 0 : _item$user14.lastName) : "Anonyme")))), React__default.createElement("div", {
         className: "col-9"
-      }, React__default.createElement(AjoutComments, {
-        onSubmitMessageResponse: comment => {
-          onAddResponseComment(donnees, donnee, comment);
+      }, React__default.createElement("form", {
+        className: 'mb-3',
+        id: 'form-response'
+      }, React__default.createElement("div", {
+        className: `${styles.forumCardSommaire}`
+      }, React__default.createElement("div", {
+        className: 'row'
+      }, React__default.createElement("div", {
+        className: 'col-12 pt-3 mb-md-4 mb-5'
+      }, React__default.createElement("textarea", {
+        className: 'form-control',
+        placeholder: 'R\u00E9pondre',
+        name: 'content',
+        value: response,
+        onChange: e => {
+          setResponse(e.target.value);
         }
-      })));
+      })))), React__default.createElement("button", {
+        className: styles.formAddCguButtonAjouter,
+        onClick: submitReponse
+      }, "Ajouter"))));
     })));
   }));
 };
@@ -188,9 +198,6 @@ const Discussion = ({
   let location = useLocation();
   const [donnees, setDonnees] = useState(location === null || location === void 0 ? void 0 : location.state);
   let donneesInt = donnees;
-  const [responseContent, setResponseContent] = useState('');
-  const [firstNameUser, setFirstNameUser] = useState('');
-  const [lastNameUser, setLastNameUser] = useState('');
 
   function generateUniqueID() {
     var text = "";
@@ -203,31 +210,6 @@ const Discussion = ({
 
   const resetForm = () => {
     document.getElementById('add_msg_form').reset();
-  };
-
-  const onAddComments = e => {
-    e.preventDefault();
-
-    if (responseContent.trim().length > 0 && firstNameUser.trim().length > 0) {
-      let fields = {
-        content: responseContent,
-        id: generateUniqueID(),
-        slug: generateUniqueID(),
-        created_at: '22/04/2022',
-        user: {
-          firstName: firstNameUser,
-          lastName: lastNameUser,
-          avatar: '/mediafiles/avatars/default.png'
-        },
-        second_level_response: []
-      };
-      donneesInt.first_level_response.push(fields);
-      setDonnees(donneesInt);
-      resetForm();
-      setFirstNameUser('');
-      setLastNameUser('');
-      setResponseContent('');
-    }
   };
 
   const DatasUserSession = [{
@@ -308,89 +290,12 @@ const Discussion = ({
     donnees: donnees,
     onAddResponseComment: onAddResponseComment,
     DatasUserSession: DatasUserSession
-  }), React__default.createElement("button", {
-    type: "button",
-    className: `btn ${styles.btnAjoutResponse}`,
-    "data-toggle": "modal",
-    "data-target": "#exampleModal2"
-  }, "+"), React__default.createElement("div", {
-    className: "modal fade",
-    id: "exampleModal2",
-    "aria-labelledby": "exampleModalLabel2",
-    "aria-hidden": "true"
-  }, React__default.createElement("div", {
-    className: "modal-dialog"
-  }, React__default.createElement("div", {
-    className: "modal-content"
-  }, React__default.createElement("div", {
-    className: "modal-header"
-  }, React__default.createElement("h5", {
-    className: "modal-title",
-    id: "exampleModalLabel2"
-  }, "Ajouter un commentaire"), React__default.createElement("button", {
-    type: "button",
-    className: "close",
-    "data-dismiss": "modal",
-    "aria-label": "Close"
-  }, React__default.createElement("span", {
-    "aria-hidden": "true"
-  }, "\u00D7"))), React__default.createElement("form", null, React__default.createElement("div", {
-    className: "modal-body"
-  }, React__default.createElement("div", {
-    className: "form-group"
-  }, React__default.createElement("label", {
-    htmlFor: "exampleFormControlInputcinq"
-  }, "First name"), React__default.createElement("input", {
-    type: "text",
-    className: "form-control",
-    id: "exampleFormControlInputcinq",
-    placeholder: "FirstName",
-    value: firstNameUser,
-    onChange: e => {
-      setFirstNameUser(e.target.value);
-    }
-  })), React__default.createElement("div", {
-    className: "form-group"
-  }, React__default.createElement("label", {
-    htmlFor: "exampleFormControlInputsix"
-  }, "Last name"), React__default.createElement("input", {
-    type: "text",
-    className: "form-control",
-    id: "exampleFormControlInputsix",
-    placeholder: "LastName",
-    value: lastNameUser,
-    onChange: e => {
-      setLastNameUser(e.target.value);
-    }
-  })), React__default.createElement("div", {
-    className: "form-group"
-  }, React__default.createElement("label", {
-    htmlFor: "exampleFormControlTextareaquatre"
-  }, "Contenu"), React__default.createElement("textarea", {
-    className: "form-control",
-    id: "exampleFormControlTextareaquatre",
-    rows: 3,
-    value: responseContent,
-    onChange: e => {
-      setResponseContent(e.target.value);
-    }
-  }))), React__default.createElement("div", {
-    className: "modal-footer"
-  }, React__default.createElement("button", {
-    type: "button",
-    className: "btn btn-secondary",
-    "data-dismiss": "modal"
-  }, "Annuler"), React__default.createElement("button", {
-    type: "submit",
-    className: "btn btn-primary",
-    onClick: onAddComments,
-    "data-dismiss": "modal"
-  }, "Ajouter")))))), React__default.createElement("span", {
+  }), React__default.createElement("span", {
     className: styles.divSeparateur
   }), React__default.createElement("div", {
     className: `
-						row
-						${styles.rowReponse}
+							row
+							${styles.rowReponse}
 						`
   }, DatasUserSession === null || DatasUserSession === void 0 ? void 0 : DatasUserSession.map(item => {
     var _item$user, _item$user2, _item$user3, _item$user4, _item$user5, _item$user6, _item$user7, _item$user8;

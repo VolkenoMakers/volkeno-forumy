@@ -3,24 +3,75 @@ import styles from '../styles.module.css'
 // import { DatasUserSession } from './DatasForum';
 import { BiComment } from "react-icons/bi";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import AjoutComments from './AjoutComments';
+// import AjoutComments from './AjoutComments';
 
 const FrontCommentItem: React.FC<any> = (
-    { donnees, onAddResponseComment, DatasUserSession }
+    { donnees,
+        //  onAddResponseComment, 
+         DatasUserSession }
     ): JSX.Element => {
+
+        const [DataInt, setDataInt] = useState(donnees)
+
+        // console.log('data int',DataInt, setDataInt)
 
         const [showLinks, setShowLinks] = useState(false);
 
         const toogleShowLinks = () => {
             setShowLinks(!showLinks)
         }
+
+
+        function generateUniqueID() {
+            var text = "";
+            var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        
+            for (var i = 0; i < 5; i++)
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        
+            return text;
+        }
+
+        const resetForm = () => {
+            (document.getElementById('form-response') as HTMLFormElement).reset();
+        }
+
+        const [response, setResponse] = useState('')
+        
+
+        const submitReponse = (e: any) => {
+            e.preventDefault()
+            if(response.trim().length > 0 ){
+
+                let field: any = {
+                    content: response,
+                    id: generateUniqueID(),
+                    slug: generateUniqueID(),
+                    created_at: '22/04/2022',
+                    user: {
+                        firstName: "Bamba",
+                        lastName: "Fall",
+                        avatar: '/mediafiles/avatars/default.png',
+                    }
+                }
+
+                let foundItem = DataInt.first_level_response.find((element:any) => element.id);
+
+                foundItem.second_level_response.push(field)
+                setDataInt(DataInt)
+                resetForm()
+                setResponse('')
+
+            }
+        }
+
         
 
 	return (
         
 		<div className={styles.cardParent}>
             {
-                donnees?.first_level_response?.map((donnee: any)=>{
+                DataInt?.first_level_response?.map((donnee: any)=>{
                     return(
                         <div key={donnee.id}>
                         <div className={`row ${
@@ -73,7 +124,9 @@ const FrontCommentItem: React.FC<any> = (
                                                     aria-expanded="false"
                                                     aria-controls={`collapseExample${donnee?.id}`}
                                                     onClick={() => {
-                                                        toogleShowLinks();
+                                                        // searchItem()
+                                                        toogleShowLinks;
+
                                                     }}
                                                 >
                                                     <BiComment className="mr-1" />
@@ -205,10 +258,38 @@ const FrontCommentItem: React.FC<any> = (
                                                 </div>
 
                                                 <div className="col-9">
-                                                <AjoutComments
+                                                {/* <AjoutComments
                                                     onSubmitMessageResponse={(comment: string)=>{
                                                     onAddResponseComment(donnees, donnee, comment)
-                                                    }} />
+                                                    }} /> */}
+
+                                                    <form className='mb-3' id='form-response'>
+                                                        <div className={
+                                                            `${styles.forumCardSommaire}` 
+                                                            }>
+                                                            <div className='row'>
+                                                                <div className='col-12 pt-3 mb-md-4 mb-5'>
+                                                                    <textarea className='form-control'
+                                                                    placeholder='Répondre' name='content' 
+                                                                    value={response}
+                                                                    onChange={(e)=>{
+                                                                        setResponse(e.target.value)
+                                                                    }}
+                                                                        ></textarea>                       
+                                                                </div>                  
+                                                            </div>
+                                                        </div>
+
+                                                        <button className={
+                                                            styles.formAddCguButtonAjouter 
+                                                        }
+                                                            onClick={submitReponse}
+                                                        >
+                                                            Ajouter
+                                                        </button>
+                                                    </form>
+
+
                                                 </div>
                                             </div>
 
