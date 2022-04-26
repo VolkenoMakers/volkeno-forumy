@@ -24,7 +24,8 @@ const SommaireItem = ({ Datas }: any): JSX.Element => {
                         to={{
                           pathname: `/forum-discussion/${item.slug}`,
                         }}
-                        state={item}
+                        // state={item}
+                        state={Datas}
                         key={item.id}
                       >
 
@@ -106,7 +107,7 @@ const SommaireItem = ({ Datas }: any): JSX.Element => {
                     )
                 })
                 ) : (
-                <div className="card-contacts-main-content">
+                <div className="card-contacts-main-content mt-5">
                     <div className="row div-card">
                     <div className={`col-12 ${styles.emptySubjectMessage} alert alert-warning`} role="alert">
                         <h4 className="admin-contacts-title text-center">

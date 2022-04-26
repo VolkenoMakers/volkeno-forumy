@@ -26,7 +26,7 @@ function _extends() {
   return _extends.apply(this, arguments);
 }
 
-var styles = {"test":"_styles-module__test__3ybTi","contentViewStart":"_styles-module__contentViewStart__vMiGT","navigationLink":"_styles-module__navigationLink__3BNu_","containerCayore":"_styles-module__containerCayore__zRBck","bannerListeProjet":"_styles-module__bannerListeProjet__zERCC","titreBannerListeProjet":"_styles-module__titreBannerListeProjet__cjRbQ","forumCardSommaire":"_styles-module__forumCardSommaire__3HiKz","forum-card-taille":"_styles-module__forum-card-taille__1eBJ7","forumCardSommaireFixWidth":"_styles-module__forumCardSommaireFixWidth__2uXL-","forum-card-skeleton-fix-width":"_styles-module__forum-card-skeleton-fix-width__2V2Qy","avatarSkeleton":"_styles-module__avatarSkeleton__1jx2o","avatarArticleSkeleton":"_styles-module__avatarArticleSkeleton__vRP36","contentSkeleton":"_styles-module__contentSkeleton__3H1kl","contentSkeleton2":"_styles-module__contentSkeleton2__10yh-","contentSkeletonUser":"_styles-module__contentSkeletonUser__zGOQu","contentSkeletonPara":"_styles-module__contentSkeletonPara__186w2","contentSkeletonPara2":"_styles-module__contentSkeletonPara2__3ncCE","cardSommaireDateAjout":"_styles-module__cardSommaireDateAjout__3TZlv","imgSommaireForum":"_styles-module__imgSommaireForum__3wJ3U","imgSommaireForumDiscussion":"_styles-module__imgSommaireForumDiscussion__10Qyd","titreSommaireForum":"_styles-module__titreSommaireForum__lypzQ","forumSommaireAuteurCard":"_styles-module__forumSommaireAuteurCard__3ovWR","textSommaireForum":"_styles-module__textSommaireForum__R0WUA","sommaireForumUserChat":"_styles-module__sommaireForumUserChat__2fmvg","divNombreCommentaireSommaireForum":"_styles-module__divNombreCommentaireSommaireForum__3VGq1","divSommaireForumUserChat1":"_styles-module__divSommaireForumUserChat1__3AK7B","divSommaireSorumUserChat2":"_styles-module__divSommaireSorumUserChat2__2fhuF","divSommaireForumUserChat3":"_styles-module__divSommaireForumUserChat3__1qa_i","divSommaireForumUserChat4":"_styles-module__divSommaireForumUserChat4__2PTKK","divSommaireForumUserChat5":"_styles-module__divSommaireForumUserChat5__Ms10U","divSommaireForumUserChat2":"_styles-module__divSommaireForumUserChat2__n-NHS","imgSommaireForumUserChat":"_styles-module__imgSommaireForumUserChat__WUnJj","nombreCommentaireSommaireForum":"_styles-module__nombreCommentaireSommaireForum__CZnT8","troisPoints":"_styles-module__troisPoints__1NUMh","sommaireAvatarTitre":"_styles-module__sommaireAvatarTitre__pLURL","cardDiscussionHeureVu":"_styles-module__cardDiscussionHeureVu__2l2Yb","cardDiscussionHeureCommentaire":"_styles-module__cardDiscussionHeureCommentaire__1W3UV","cardDiscussionHeureVuLaurhille":"_styles-module__cardDiscussionHeureVuLaurhille__prVaz","cardDiscussionCommentaire":"_styles-module__cardDiscussionCommentaire__8e0yO","imgSommaireForumDiscussion2":"_styles-module__imgSommaireForumDiscussion2__1nB31","divSeparateur":"_styles-module__divSeparateur__3S7lS","row-input":"_styles-module__row-input__GLjv2","rowReponse":"_styles-module__rowReponse__15pjE","row-reponse-ligne-union":"_styles-module__row-reponse-ligne-union__2905Z","row-reponse-ligne-union1":"_styles-module__row-reponse-ligne-union1__2_YyU","forum-discussion-ligne-union":"_styles-module__forum-discussion-ligne-union___ranC","offline-alert-card":"_styles-module__offline-alert-card__wh7If","offline-alert-textual":"_styles-module__offline-alert-textual__3oC-v","redirect-to-login-btn":"_styles-module__redirect-to-login-btn__1ZnBs","cardParent":"_styles-module__cardParent__nRyJj","formAddCguButtonAjouter":"_styles-module__formAddCguButtonAjouter__2H-xZ","componentListeProjet":"_styles-module__componentListeProjet__2kuVE","btnAjoutResponse":"_styles-module__btnAjoutResponse__3QrOw","btnAjoutSujet":"_styles-module__btnAjoutSujet__21AVM","emptySubjectMessage":"_styles-module__emptySubjectMessage__sJRRl","emptySubjectMessageBtnPlus":"_styles-module__emptySubjectMessageBtnPlus__3XTjZ","forumDiscussionLigneUnion":"_styles-module__forumDiscussionLigneUnion__3LwA7","rowReponseLigneUnion":"_styles-module__rowReponseLigneUnion__1ZzMD","rowReponseLigneUnion1":"_styles-module__rowReponseLigneUnion1__kbaQR","img-sommaire-forum":"_styles-module__img-sommaire-forum__CKiSb"};
+var styles = {"test":"_styles-module__test__3ybTi","contentViewStart":"_styles-module__contentViewStart__vMiGT","navigationLink":"_styles-module__navigationLink__3BNu_","containerCayore":"_styles-module__containerCayore__zRBck","bannerListeProjet":"_styles-module__bannerListeProjet__zERCC","titreBannerListeProjet":"_styles-module__titreBannerListeProjet__cjRbQ","forumCardSommaire":"_styles-module__forumCardSommaire__3HiKz","forum-card-taille":"_styles-module__forum-card-taille__1eBJ7","forumCardSommaireFixWidth":"_styles-module__forumCardSommaireFixWidth__2uXL-","forum-card-skeleton-fix-width":"_styles-module__forum-card-skeleton-fix-width__2V2Qy","avatarSkeleton":"_styles-module__avatarSkeleton__1jx2o","avatarArticleSkeleton":"_styles-module__avatarArticleSkeleton__vRP36","contentSkeleton":"_styles-module__contentSkeleton__3H1kl","contentSkeleton2":"_styles-module__contentSkeleton2__10yh-","contentSkeletonUser":"_styles-module__contentSkeletonUser__zGOQu","contentSkeletonPara":"_styles-module__contentSkeletonPara__186w2","contentSkeletonPara2":"_styles-module__contentSkeletonPara2__3ncCE","cardSommaireDateAjout":"_styles-module__cardSommaireDateAjout__3TZlv","imgSommaireForum":"_styles-module__imgSommaireForum__3wJ3U","imgSommaireForumDiscussion":"_styles-module__imgSommaireForumDiscussion__10Qyd","titreSommaireForum":"_styles-module__titreSommaireForum__lypzQ","forumSommaireAuteurCard":"_styles-module__forumSommaireAuteurCard__3ovWR","textSommaireForum":"_styles-module__textSommaireForum__R0WUA","sommaireForumUserChat":"_styles-module__sommaireForumUserChat__2fmvg","divNombreCommentaireSommaireForum":"_styles-module__divNombreCommentaireSommaireForum__3VGq1","divSommaireForumUserChat1":"_styles-module__divSommaireForumUserChat1__3AK7B","divSommaireSorumUserChat2":"_styles-module__divSommaireSorumUserChat2__2fhuF","divSommaireForumUserChat3":"_styles-module__divSommaireForumUserChat3__1qa_i","divSommaireForumUserChat4":"_styles-module__divSommaireForumUserChat4__2PTKK","divSommaireForumUserChat5":"_styles-module__divSommaireForumUserChat5__Ms10U","divSommaireForumUserChat2":"_styles-module__divSommaireForumUserChat2__n-NHS","imgSommaireForumUserChat":"_styles-module__imgSommaireForumUserChat__WUnJj","nombreCommentaireSommaireForum":"_styles-module__nombreCommentaireSommaireForum__CZnT8","troisPoints":"_styles-module__troisPoints__1NUMh","sommaireAvatarTitre":"_styles-module__sommaireAvatarTitre__pLURL","cardDiscussionHeureVu":"_styles-module__cardDiscussionHeureVu__2l2Yb","cardDiscussionHeureCommentaire":"_styles-module__cardDiscussionHeureCommentaire__1W3UV","cardDiscussionHeureVuLaurhille":"_styles-module__cardDiscussionHeureVuLaurhille__prVaz","cardDiscussionCommentaire":"_styles-module__cardDiscussionCommentaire__8e0yO","imgSommaireForumDiscussion2":"_styles-module__imgSommaireForumDiscussion2__1nB31","divSeparateur":"_styles-module__divSeparateur__3S7lS","row-input":"_styles-module__row-input__GLjv2","rowReponse":"_styles-module__rowReponse__15pjE","row-reponse-ligne-union":"_styles-module__row-reponse-ligne-union__2905Z","row-reponse-ligne-union1":"_styles-module__row-reponse-ligne-union1__2_YyU","forum-discussion-ligne-union":"_styles-module__forum-discussion-ligne-union___ranC","offline-alert-card":"_styles-module__offline-alert-card__wh7If","offline-alert-textual":"_styles-module__offline-alert-textual__3oC-v","redirect-to-login-btn":"_styles-module__redirect-to-login-btn__1ZnBs","cardParent":"_styles-module__cardParent__nRyJj","formAddCguButtonAjouter":"_styles-module__formAddCguButtonAjouter__2H-xZ","componentListeProjet":"_styles-module__componentListeProjet__2kuVE","btnAjoutResponse":"_styles-module__btnAjoutResponse__3QrOw","btnAjoutSujet":"_styles-module__btnAjoutSujet__21AVM","emptySubjectMessage":"_styles-module__emptySubjectMessage__sJRRl","emptySubjectMessageBtnPlus":"_styles-module__emptySubjectMessageBtnPlus__3XTjZ","forumDiscussionLigneUnion":"_styles-module__forumDiscussionLigneUnion__3LwA7","rowReponseLigneUnion":"_styles-module__rowReponseLigneUnion__1ZzMD","rowReponseLigneUnion1":"_styles-module__rowReponseLigneUnion1__kbaQR","btnConnexion":"_styles-module__btnConnexion__1C7_U","hideButton":"_styles-module__hideButton__2Zx1G","img-sommaire-forum":"_styles-module__img-sommaire-forum__CKiSb"};
 
 var FrontCommentItem = function FrontCommentItem(_ref) {
   var _DataInt$first_level_;
@@ -35,54 +35,18 @@ var FrontCommentItem = function FrontCommentItem(_ref) {
       DatasUserSession = _ref.DatasUserSession;
 
   var _useState = React.useState(donnees),
-      DataInt = _useState[0],
-      setDataInt = _useState[1];
+      DataInt = _useState[0];
 
   var _useState2 = React.useState(false),
       showLinks = _useState2[0];
-
-  function generateUniqueID() {
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-    for (var i = 0; i < 5; i++) {
-      text += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-
-    return text;
-  }
-
-  var resetForm = function resetForm() {
-    document.getElementById('form-response').reset();
-  };
 
   var _useState3 = React.useState(''),
       response = _useState3[0],
       setResponse = _useState3[1];
 
-  var submitReponse = function submitReponse(e) {
+  var submitReponse = function submitReponse(e, msg_id, rps_id) {
     e.preventDefault();
-
-    if (response.trim().length > 0) {
-      var field = {
-        content: response,
-        id: generateUniqueID(),
-        slug: generateUniqueID(),
-        created_at: '22/04/2022',
-        user: {
-          firstName: "Bamba",
-          lastName: "Fall",
-          avatar: '/mediafiles/avatars/default.png'
-        }
-      };
-      var foundItem = DataInt.first_level_response.find(function (element) {
-        return element.id;
-      });
-      foundItem.second_level_response.push(field);
-      setDataInt(DataInt);
-      resetForm();
-      setResponse('');
-    }
+    return console.log(msg_id, rps_id);
   };
 
   return React__default.createElement("div", {
@@ -214,7 +178,9 @@ var FrontCommentItem = function FrontCommentItem(_ref) {
         }
       })))), React__default.createElement("button", {
         className: styles.formAddCguButtonAjouter,
-        onClick: submitReponse
+        onClick: function onClick(e) {
+          return submitReponse(e, donnee.id, item.id);
+        }
       }, "Ajouter"))));
     })));
   }));
@@ -223,14 +189,29 @@ var FrontCommentItem = function FrontCommentItem(_ref) {
 var Discussion = function Discussion(_ref) {
   var _donnees$author, _donnees$author2, _donnees$author3, _donnees$author4, _donnees$author5, _donnees$author6, _donnees$author7, _donnees$author8;
 
-  var onAddResponseComment = _ref.onAddResponseComment;
-  var location = reactRouterDom.useLocation();
+  var onAddResponseComment = _ref.onAddResponseComment,
+      datasUserSession = _ref.datasUserSession;
 
-  var _useState = React.useState(location === null || location === void 0 ? void 0 : location.state),
+  var _useParams = reactRouterDom.useParams(),
+      slug = _useParams.slug;
+
+  console.log(slug);
+  var location = reactRouterDom.useLocation();
+  var Datas = location === null || location === void 0 ? void 0 : location.state;
+  var msg_item = Datas === null || Datas === void 0 ? void 0 : Datas.filter(function (ele) {
+    return ele.slug === slug;
+  });
+
+  var _useState = React.useState(msg_item[0]),
       donnees = _useState[0],
       setDonnees = _useState[1];
 
   var donneesInt = donnees;
+  console.log(msg_item, slug);
+  React.useEffect(function () {
+    console.log(Datas);
+    console.log('item', msg_item[0]);
+  }, []);
 
   function generateUniqueID() {
     var text = "";
@@ -247,15 +228,6 @@ var Discussion = function Discussion(_ref) {
     document.getElementById('add_msg_form').reset();
   };
 
-  var DatasUserSession = [{
-    id: 1,
-    user: {
-      firstName: "Me",
-      lastName: "",
-      avatar: '/mediafiles/avatars/default.png'
-    }
-  }];
-
   var _useState2 = React.useState(''),
       comment = _useState2[0],
       setComment = _useState2[1];
@@ -264,14 +236,16 @@ var Discussion = function Discussion(_ref) {
     e.preventDefault();
 
     if (comment.trim().length > 0) {
+      var firstNameUserSession = datasUserSession[0].user.firstName;
+      var lastNameUserSession = datasUserSession[0].user.lastName;
       var field = {
         content: comment,
         id: generateUniqueID(),
         slug: generateUniqueID(),
         created_at: '22/04/2022',
         user: {
-          firstName: "Bamba",
-          lastName: "Fall",
+          firstName: firstNameUserSession,
+          lastName: lastNameUserSession,
           avatar: '/mediafiles/avatars/default.png'
         },
         second_level_response: []
@@ -327,12 +301,12 @@ var Discussion = function Discussion(_ref) {
   }, donnees.initialContent)))), React__default.createElement(FrontCommentItem, {
     donnees: donnees,
     onAddResponseComment: onAddResponseComment,
-    DatasUserSession: DatasUserSession
+    DatasUserSession: datasUserSession
   }), React__default.createElement("span", {
     className: styles.divSeparateur
   }), React__default.createElement("div", {
     className: "\n\t\t\t\t\t\t\trow\n\t\t\t\t\t\t\t" + styles.rowReponse + "\n\t\t\t\t\t\t"
-  }, DatasUserSession === null || DatasUserSession === void 0 ? void 0 : DatasUserSession.map(function (item) {
+  }, datasUserSession === null || datasUserSession === void 0 ? void 0 : datasUserSession.map(function (item) {
     var _item$user, _item$user2, _item$user3, _item$user4, _item$user5, _item$user6, _item$user7, _item$user8;
 
     return React__default.createElement("div", {
@@ -389,7 +363,7 @@ var SommaireItem = function SommaireItem(_ref) {
       to: {
         pathname: "/forum-discussion/" + item.slug
       },
-      state: item,
+      state: Datas,
       key: item.id
     }, React__default.createElement("div", {
       className: styles.forumCardSommaire,
@@ -445,7 +419,7 @@ var SommaireItem = function SommaireItem(_ref) {
       className: "mr-1"
     }), " ", item === null || item === void 0 ? void 0 : (_item$first_level_res = item.first_level_response) === null || _item$first_level_res === void 0 ? void 0 : _item$first_level_res.length, " Commentaires"))))));
   }) : React__default.createElement("div", {
-    className: "card-contacts-main-content"
+    className: "card-contacts-main-content mt-5"
   }, React__default.createElement("div", {
     className: "row div-card"
   }, React__default.createElement("div", {
@@ -459,7 +433,18 @@ var SommaireItem = function SommaireItem(_ref) {
 };
 
 var Sommaire = function Sommaire(_ref) {
-  var Datas = _ref.Datas;
+  var Datas = _ref.Datas,
+      datasUserSession = _ref.datasUserSession;
+  console.log(datasUserSession);
+
+  var _useState = React.useState(false),
+      hideButton = _useState[0],
+      setHideButton = _useState[1];
+
+  var toggleHideButton = function toggleHideButton() {
+    setHideButton(!hideButton);
+  };
+
   return React__default.createElement("div", {
     className: styles.componentListeProjet
   }, React__default.createElement("div", {
@@ -480,13 +465,22 @@ var Sommaire = function Sommaire(_ref) {
     className: "btn " + styles.btnAjoutSujet,
     "data-toggle": "modal",
     "data-target": "#exampleModal"
-  }, "+"))))));
+  }, "+"), React__default.createElement("button", {
+    type: "button",
+    className: "btn " + styles.btnConnexion + " \n              " + (hideButton ? styles.hideButton : '') + "\n                ",
+    onClick: function onClick() {
+      toggleHideButton();
+    },
+    "data-toggle": "modal",
+    "data-target": "#exampleModalhuit"
+  }, "Connection"))))));
 };
 
 var VolkenoForumy = function VolkenoForumy(_ref) {
   var props = _extends({}, _ref);
 
-  var Datas = props.Datas;
+  var Datas = props.Datas,
+      DatasUserSession = props.DatasUserSession;
 
   var onSubmitMessageResponse = function onSubmitMessageResponse(subject, commentText) {
     console.log('sujet', subject);
@@ -514,10 +508,11 @@ var VolkenoForumy = function VolkenoForumy(_ref) {
       Datas: Datas
     })
   }), React.createElement(reactRouterDom.Route, {
-    path: "/forum-discussion/:id",
+    path: "/forum-discussion/:slug",
     element: React.createElement(Discussion, {
       onAddComment: onSubmitMessageResponse,
-      onAddResponseComment: onAddResponseComment
+      onAddResponseComment: onAddResponseComment,
+      datasUserSession: DatasUserSession
     })
   }))));
 };

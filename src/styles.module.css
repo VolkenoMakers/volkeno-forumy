@@ -562,6 +562,16 @@ outline: none;
 .rowReponse {
   margin-bottom: 30px !important;
 }
+.btnConnexion{
+  background-color: #115c67;
+  color: white;
+  position: fixed;
+  top: 30px;
+  right: 20px;
+}
+.hideButton {
+  display: none;
+}
 
 @media (min-width: 768px) and (max-width: 900px) {
   /* .titre-sommaire-forum,

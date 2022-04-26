@@ -46,6 +46,7 @@ const App = () => {
 //   ]
 
   const [Datas, setDatas] = useState<string[]>([])
+  const [DatasUserSession, setDatasUserSession] = useState<string[]>([])
 
 //======================= AJOUT SUJET ===================================
 
@@ -53,6 +54,9 @@ const App = () => {
   const [initialTitle, setInitialTitle] = useState('')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
+
+  const [firstNameUserSession, setFirstNameUserSession] = useState('')
+  const [lastNameUserSession, setLastNameUserSession] = useState('')
 
   function generateUniqueID() {
     var text = "";
@@ -66,6 +70,13 @@ const App = () => {
 
   const resetForm = () => {
     (document.getElementById('add_msg_form') as HTMLFormElement).reset();
+  }
+  const resetForm2 = () => {
+    (document.getElementById('add_msg_form2') as HTMLFormElement).reset();
+  }
+  const [display, setDisplay] = useState(false)
+  const launchAlert = () => {
+    setDisplay(!display)
   }
 
     const onAdd = (e:any) => {
@@ -96,45 +107,53 @@ const App = () => {
         }
     }
 
-    const onAddResponse = (e:any) => {
+    const onAddUserSession = (e:any) => {
         e.preventDefault()
-        if(initialTitle.trim().length > 0 ){
+        if(firstNameUserSession.trim().length > 0 && firstNameUserSession.trim().length > 0 ){
             
             let fields: any = {
-                initialTitle: initialTitle,
-                initialContent: initialContent,
                 id: generateUniqueID(),
                 slug: generateUniqueID(),
                 created_at: '22/04/2022',
-                author: {
-                    firstName: firstName,
-                    lastName: lastName,
+                user: {
+                    firstName: firstNameUserSession,
+                    lastName: lastNameUserSession,
                     avatar: '/mediafiles/avatars/default.png',
                 }
-                ,
-                first_level_response: []
             }
 
-            setDatas([...Datas, fields])
-            resetForm()
-            setInitialContent('')
-            setInitialTitle('')
-            setFirstName('')
-            setLastName('')
+            setDatasUserSession([...DatasUserSession, fields])
+          
+            resetForm2()
+            setFirstNameUserSession('')
+            setLastNameUserSession('')
+
+            launchAlert()
+
+            // alert('Vous êtes bien connecté. Veuillez ajouter un sujet pour continuer !!')
         }
     }
-
-
 
   
   return (
       <div className='forum-container'>
           <VolkenoForumy 
             Datas={Datas}
-            onSubmitMessageResponse={() => onAddResponse(Comment)}
+            DatasUserSession={DatasUserSession}
+            // onSubmitMessageResponse={() => onAddResponse(Comment)}
           />
 
-          {/* ======================== AJOUT SUJET ========================= */}
+
+          {
+            (display) ? (
+              <div className="alert alert-success alert-dismissible fade show display-alert-connexion" role="alert">
+                <strong>Vous êtes connecté!</strong> Veuillez ajouter un sujet pour continuer.
+                <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            ) : ('')
+          }
+
+          {/* ======================== MODALE AJOUT SUJET ========================= */}
 
             <div className="modal fade" id="exampleModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div className='modal-dialog' role="document">
@@ -191,6 +210,50 @@ const App = () => {
                         data-dismiss="modal"
                     >Ajouter</button>
                   </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            {/* ========================== MODALE USER SESSION ======================== */}
+
+            <div className="modal fade" id="exampleModalhuit"  aria-labelledby="exampleModalLabelhuit" aria-hidden="true">
+              <div className='modal-dialog' role="document">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLabelhuit">Se connecter</h5>
+                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <form id='add_msg_form2'> 
+                    <div className="modal-body">
+                        <div className="form-group mr-3 w-100">
+                          <label htmlFor="exampleFormControlInputdeux">First name</label>
+                          <input type="text" className="form-control" id="exampleFormControlInputdeux" placeholder="FirstName"
+                          value={firstNameUserSession}
+                          onChange={(e)=>{
+                            setFirstNameUserSession(e.target.value)
+                          }}
+                          />
+                        </div>
+                        <div className="form-group w-100">
+                          <label htmlFor="exampleFormControlInputtrois">Last name</label>
+                          <input type="text" className="form-control" id="exampleFormControlInputtrois" placeholder="LastName"
+                          value={lastNameUserSession}
+                          onChange={(e)=>{
+                            setLastNameUserSession(e.target.value)
+                          }}
+                          />
+                        </div>
+                      </div>
+                      <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                        <button type="submit" className="btn btn-primary"
+                            onClick={onAddUserSession}
+                            data-dismiss="modal"
+                        >Se connecter</button>
+                      </div>
                   </form>
                 </div>
               </div>

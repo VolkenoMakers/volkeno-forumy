@@ -1,26 +1,43 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from '../styles.module.css'
 // import AjoutComments from './AjoutComments';
 import FrontCommentItem from './FrontCommentItem';
 import { IoReturnDownBackOutline } from 'react-icons/io5';
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 
 type discussionProps = {
   onAddComment: (subject: any, commentText: string)=> any
   onAddResponseComment: (subject: any, comment:any, commentText: string )=> any
+  datasUserSession: any
 }
 
 const Discussion= ({
 //   onAddComment,
-  onAddResponseComment
+  onAddResponseComment,
+  datasUserSession
 }: discussionProps) => {
 
-  let location = useLocation();
-  const [donnees, setDonnees]:any = useState(location?.state)
-  let donneesInt = donnees
+	const {slug} = useParams() 
 
+	console.log(slug)
+
+	let location = useLocation();
+	const Datas:any = location?.state
+	const msg_item = Datas?.filter((ele:any) => ele.slug === slug)
+	const [donnees, setDonnees]:any = useState(msg_item[0])
+	let donneesInt = donnees
+
+	console.log(msg_item, slug)
+
+
+  useEffect(() => {
+	console.log(Datas)
+	console.log('item',msg_item[0])
+  }, [])
+  
 
   function generateUniqueID() {
     var text = "";
@@ -36,25 +53,14 @@ const Discussion= ({
     (document.getElementById('add_msg_form') as HTMLFormElement).reset();
   }
 
-
- 
-
-  const DatasUserSession = [
-	{
-		id: 1,
-		user: {
-			firstName: "Me",
-			lastName: "",
-			avatar: '/mediafiles/avatars/default.png'
-		}
-	}
-  ]
-
   const [comment, setComment] = useState('')
 
   const submitComment = (e: any) => {
 	e.preventDefault()
 	if(comment.trim().length > 0 ){
+
+		let firstNameUserSession = datasUserSession[0].user.firstName
+		let lastNameUserSession = datasUserSession[0].user.lastName
 
 		let field: any = {
 			content: comment,
@@ -62,8 +68,8 @@ const Discussion= ({
 			slug: generateUniqueID(),
 			created_at: '22/04/2022',
 			user: {
-				firstName: "Bamba",
-				lastName: "Fall",
+				firstName: firstNameUserSession,
+				lastName: lastNameUserSession,
 				avatar: '/mediafiles/avatars/default.png',
 			},
 			second_level_response: []
@@ -146,7 +152,7 @@ const Discussion= ({
 								</div>
 							</div>
             
-            			<FrontCommentItem donnees={donnees} onAddResponseComment={onAddResponseComment} DatasUserSession={DatasUserSession} />
+            			<FrontCommentItem donnees={donnees} onAddResponseComment={onAddResponseComment} DatasUserSession={datasUserSession} />
 
 						{/* =========================================================== FIN COLLAPSE ============================================================================ */}
 						
@@ -157,7 +163,7 @@ const Discussion= ({
 							${styles.rowReponse}
 						`}>
 							{
-								DatasUserSession?.map((item: any)=>{
+								datasUserSession?.map((item: any)=>{
 									return(
 
 										<div className='row' key={item.id}>

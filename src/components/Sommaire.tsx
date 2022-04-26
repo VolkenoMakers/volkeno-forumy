@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '../styles.module.css'
 import SommaireItem from './SommaireItem';
 
 
-const Sommaire: React.FC<DatasType> = ({ Datas }): JSX.Element => {
+
+type sommaireProps = {
+  Datas: any
+  datasUserSession: any
+}
+
+const Sommaire: React.FC<DatasType> = ({ Datas, datasUserSession }:sommaireProps): JSX.Element => {
+
+  console.log(datasUserSession)
+
+  const [hideButton, setHideButton] = useState(false)
+
+  const toggleHideButton = () => {
+    setHideButton(!hideButton)
+  }
 
   return (
       <div className={styles.componentListeProjet}>
@@ -12,11 +26,27 @@ const Sommaire: React.FC<DatasType> = ({ Datas }): JSX.Element => {
             <div className="row align-items-center" style={{ margin: "3rem 0" }}>
             <div className="col-12">
               {
-                  <SommaireItem Datas={Datas}  />
+
+                
+
+                  // (datasUserSession.length > 0) ? (
+                    <SommaireItem Datas={Datas}  />
+                  // ) : ('hjhuy')
+
+
+                  // <SommaireItem Datas={Datas}  />
               } 
 
               <button type="button" className={`btn ${styles.btnAjoutSujet}` }data-toggle="modal" data-target="#exampleModal">
                 +
+              </button>
+
+              <button type="button" className={`btn ${styles.btnConnexion} 
+              ${hideButton
+              ? styles.hideButton
+              : ''}
+                ` } onClick={() => {toggleHideButton()}} data-toggle="modal" data-target="#exampleModalhuit">
+                Connection
               </button>
 
           </div>

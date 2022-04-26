@@ -5,14 +5,15 @@ import Sommaire from './components/Sommaire'
 
 interface ForumProps {
   Datas: any;
-  onSubmitMessageResponse:  (value: any) => void;
+  // onSubmitMessageResponse:  (value: any) => void;
+  DatasUserSession: any
 }
 
 
 export const VolkenoForumy = ({...props}: ForumProps) => {
 
   let {
-    Datas
+    Datas, DatasUserSession
   } = props
   
 
@@ -55,9 +56,11 @@ export const VolkenoForumy = ({...props}: ForumProps) => {
 						element={<Sommaire Datas={Datas}  />}
 					/>
 					<Route
-						path="/forum-discussion/:id"
+						path="/forum-discussion/:slug"
 						element={<Discussion onAddComment={onSubmitMessageResponse}
             onAddResponseComment={onAddResponseComment}
+            datasUserSession={DatasUserSession}
+            
             />}
 					/>
         </Routes>

@@ -5,15 +5,16 @@ import { BiComment } from "react-icons/bi";
 import { AiOutlineClockCircle } from "react-icons/ai";
 // import AjoutComments from './AjoutComments';
 
+
 const FrontCommentItem: React.FC<any> = (
     { donnees,
         //  onAddResponseComment, 
          DatasUserSession }
     ): JSX.Element => {
 
-        const [DataInt, setDataInt] = useState(donnees)
+        
 
-        // console.log('data int',DataInt, setDataInt)
+        const [DataInt, setDataInt] = useState(donnees)
 
         const [showLinks, setShowLinks] = useState(false);
 
@@ -21,6 +22,7 @@ const FrontCommentItem: React.FC<any> = (
             setShowLinks(!showLinks)
         }
 
+        
 
         function generateUniqueID() {
             var text = "";
@@ -39,9 +41,12 @@ const FrontCommentItem: React.FC<any> = (
         const [response, setResponse] = useState('')
         
 
-        const submitReponse = (e: any) => {
+        const submitReponse = (e: any, msg_id:number, rps_id:number) => {
             e.preventDefault()
+            return console.log(msg_id, rps_id )
             if(response.trim().length > 0 ){
+                let firstNameUserSession = DatasUserSession[0].user.firstName
+		        let lastNameUserSession = DatasUserSession[0].user.lastName
 
                 let field: any = {
                     content: response,
@@ -49,12 +54,11 @@ const FrontCommentItem: React.FC<any> = (
                     slug: generateUniqueID(),
                     created_at: '22/04/2022',
                     user: {
-                        firstName: "Bamba",
-                        lastName: "Fall",
+                        firstName: firstNameUserSession,
+                        lastName: lastNameUserSession,
                         avatar: '/mediafiles/avatars/default.png',
                     }
                 }
-
                 let foundItem = DataInt.first_level_response.find((element:any) => element.id);
 
                 foundItem.second_level_response.push(field)
@@ -124,7 +128,6 @@ const FrontCommentItem: React.FC<any> = (
                                                     aria-expanded="false"
                                                     aria-controls={`collapseExample${donnee?.id}`}
                                                     onClick={() => {
-                                                        // searchItem()
                                                         toogleShowLinks;
 
                                                     }}
@@ -283,7 +286,7 @@ const FrontCommentItem: React.FC<any> = (
                                                         <button className={
                                                             styles.formAddCguButtonAjouter 
                                                         }
-                                                            onClick={submitReponse}
+                                                            onClick={(e) => submitReponse(e, donnee.id, item.id)}
                                                         >
                                                             Ajouter
                                                         </button>

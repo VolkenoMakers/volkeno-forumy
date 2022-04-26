@@ -37,3 +37,10 @@ code {
 .modal {
   width: 95% !important;
 }
+
+.display-alert-connexion {
+  position: fixed;
+  top: 10px;
+  left: 13px;
+  width: 98%;
+}
