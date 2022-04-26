@@ -16,11 +16,45 @@ const FrontCommentItem = ({
   const [DataInt, setDataInt] = useState(donnees);
   const [showLinks, setShowLinks] = useState(false);
 
+  function generateUniqueID() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (var i = 0; i < 5; i++) text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+  }
+
+  const resetForm = () => {
+    document.getElementById('form-response').reset();
+  };
+
   const [response, setResponse] = useState('');
 
   const submitReponse = (e, msg_id, rps_id) => {
     e.preventDefault();
-    return console.log(msg_id, rps_id);
+    console.log('msg', msg_id, 'rps', rps_id);
+
+    if (response.trim().length > 0) {
+      let firstNameUserSession = DatasUserSession[0].user.firstName;
+      let lastNameUserSession = DatasUserSession[0].user.lastName;
+      let field = {
+        content: response,
+        id: generateUniqueID(),
+        slug: generateUniqueID(),
+        created_at: '22/04/2022',
+        user: {
+          firstName: firstNameUserSession,
+          lastName: lastNameUserSession,
+          avatar: '/mediafiles/avatars/default.png'
+        }
+      };
+      let foundItem = DataInt.first_level_response.find(element => element.id === msg_id);
+      foundItem.second_level_response.push(field);
+      setDataInt(DataInt);
+      resetForm();
+      setResponse('');
+    }
   };
 
   return React__default.createElement("div", {

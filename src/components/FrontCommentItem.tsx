@@ -22,8 +22,6 @@ const FrontCommentItem: React.FC<any> = (
             setShowLinks(!showLinks)
         }
 
-        
-
         function generateUniqueID() {
             var text = "";
             var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -43,7 +41,10 @@ const FrontCommentItem: React.FC<any> = (
 
         const submitReponse = (e: any, msg_id:number, rps_id:number) => {
             e.preventDefault()
-            return console.log(msg_id, rps_id )
+            // return console.log('mes',msg_id, 'res',rps_id )
+
+            console.log('msg',msg_id, 'rps',rps_id)
+
             if(response.trim().length > 0 ){
                 let firstNameUserSession = DatasUserSession[0].user.firstName
 		        let lastNameUserSession = DatasUserSession[0].user.lastName
@@ -59,7 +60,9 @@ const FrontCommentItem: React.FC<any> = (
                         avatar: '/mediafiles/avatars/default.png',
                     }
                 }
-                let foundItem = DataInt.first_level_response.find((element:any) => element.id);
+                let foundItem = DataInt.first_level_response.find((element:any) => element.id === msg_id);
+
+                // return console.log('find',foundItem)
 
                 foundItem.second_level_response.push(field)
                 setDataInt(DataInt)

@@ -35,10 +35,26 @@ var FrontCommentItem = function FrontCommentItem(_ref) {
       DatasUserSession = _ref.DatasUserSession;
 
   var _useState = React.useState(donnees),
-      DataInt = _useState[0];
+      DataInt = _useState[0],
+      setDataInt = _useState[1];
 
   var _useState2 = React.useState(false),
       showLinks = _useState2[0];
+
+  function generateUniqueID() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (var i = 0; i < 5; i++) {
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+
+    return text;
+  }
+
+  var resetForm = function resetForm() {
+    document.getElementById('form-response').reset();
+  };
 
   var _useState3 = React.useState(''),
       response = _useState3[0],
@@ -46,7 +62,30 @@ var FrontCommentItem = function FrontCommentItem(_ref) {
 
   var submitReponse = function submitReponse(e, msg_id, rps_id) {
     e.preventDefault();
-    return console.log(msg_id, rps_id);
+    console.log('msg', msg_id, 'rps', rps_id);
+
+    if (response.trim().length > 0) {
+      var firstNameUserSession = DatasUserSession[0].user.firstName;
+      var lastNameUserSession = DatasUserSession[0].user.lastName;
+      var field = {
+        content: response,
+        id: generateUniqueID(),
+        slug: generateUniqueID(),
+        created_at: '22/04/2022',
+        user: {
+          firstName: firstNameUserSession,
+          lastName: lastNameUserSession,
+          avatar: '/mediafiles/avatars/default.png'
+        }
+      };
+      var foundItem = DataInt.first_level_response.find(function (element) {
+        return element.id === msg_id;
+      });
+      foundItem.second_level_response.push(field);
+      setDataInt(DataInt);
+      resetForm();
+      setResponse('');
+    }
   };
 
   return React__default.createElement("div", {
