@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styles from '../styles.module.css'
-import AjoutComments from './AjoutComments';
+// import AjoutComments from './AjoutComments';
 import FrontCommentItem from './FrontCommentItem';
 import { IoReturnDownBackOutline } from 'react-icons/io5';
 import { AiOutlineClockCircle } from "react-icons/ai";
@@ -13,7 +13,7 @@ type discussionProps = {
 }
 
 const Discussion= ({
-  onAddComment,
+//   onAddComment,
   onAddResponseComment
 }: discussionProps) => {
 
@@ -77,6 +77,31 @@ const Discussion= ({
 		}
 	}
   ]
+
+  const [comment, setComment] = useState('')
+
+  const submitComment = (e: any) => {
+	e.preventDefault()
+	if(comment.trim().length > 0 ){
+
+		let field: any = {
+			content: comment,
+			id: generateUniqueID(),
+			slug: generateUniqueID(),
+			created_at: '22/04/2022',
+			user: {
+				firstName: "Bamba",
+				lastName: "Fall",
+				avatar: '/mediafiles/avatars/default.png',
+			},
+			second_level_response: []
+		}
+		donneesInt.first_level_response.push(field)
+		setDonnees(donneesInt)
+		resetForm()
+		setComment('')
+	}
+}
 
   return (
 		<div className="component-liste-projet">
@@ -259,11 +284,38 @@ const Discussion= ({
 											</div>
 
 											<div className="col-10">
-												<AjoutComments
-													onSubmit={(comment: string)=>{
+												{/* <AjoutComments
+													onSubmitMessageResponse={(comment: string)=>{
 													onAddComment(donnees, comment)
 													}}
-												/>
+												/> */}
+
+													<form className='mb-3'>
+														<div className={
+															`${styles.forumCardSommaire}` 
+															}>
+															<div className='row'>
+																<div className='col-12 pt-3 mb-md-4 mb-5'>
+																	<textarea className='form-control'
+																	placeholder='Répondre' name='content' 
+																	value={comment}
+																	onChange={(e)=>{
+																		setComment(e.target.value)
+																	}}
+																	></textarea>                       
+																</div>                  
+															</div>
+														</div>
+
+														<button className={
+															styles.formAddCguButtonAjouter 
+														}
+															onClick={submitComment}
+														>
+															Ajouter
+														</button>
+													</form>
+
 											</div>
 										</div>
 

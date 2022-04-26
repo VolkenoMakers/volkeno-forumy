@@ -1,5 +1,6 @@
 /// <reference types="react" />
-declare function AjoutComments({ onSubmit }: {
-    onSubmit: ((comment: string) => any);
-}): JSX.Element;
+interface AcProps {
+    onSubmitMessageResponse?: (value: any) => void;
+}
+declare function AjoutComments({ ...props }: AcProps): JSX.Element;
 export default AjoutComments;

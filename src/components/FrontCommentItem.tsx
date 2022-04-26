@@ -14,6 +14,7 @@ const FrontCommentItem: React.FC<any> = (
         const toogleShowLinks = () => {
             setShowLinks(!showLinks)
         }
+        
 
 	return (
         
@@ -25,9 +26,7 @@ const FrontCommentItem: React.FC<any> = (
                         <div className={`row ${
                                 showLinks
                                     ? styles.forumDiscussionLigneUnion
-                                    : `
-                                } `}
-                            }`}>
+                                    : ''}`}>
                             <div className="col-2">
                                 <div className={styles.sommaireAvatarTitre}>
                                     <div className="">
@@ -94,7 +93,7 @@ const FrontCommentItem: React.FC<any> = (
 			{/* =========================================================== COLLAPSE ============================================================================ */}
 
                                 <div className="collapse" 
-                                    id={`collapseExample${donnee.id}`}
+                                    id={`collapseExample${donnee?.id}`}
                                 >
                                 {donnee.second_level_response?.map((item:any) => {
                                     return (
@@ -103,9 +102,8 @@ const FrontCommentItem: React.FC<any> = (
                                             className={`row ${
                                                 showLinks
                                                     ? styles.forumDiscussionLigneUnion
-                                                    : `
-                                                } `}
-                                            } mb-3`}
+                                                    : ''}
+                                            mb-3`}
                                             
                                         >
                                             <div className="col-3">
@@ -113,9 +111,7 @@ const FrontCommentItem: React.FC<any> = (
                                                 className={`row ${
                                                     showLinks
                                                         ? styles.rowReponseLigneUnion1
-                                                        : `
-                                                    } `}
-                                                }`}
+                                                        : ''}`}
                                                 >
                                                     <div className="col-md-6">
                                                         <div className="p1 d-flex justify-content-end">
@@ -170,9 +166,7 @@ const FrontCommentItem: React.FC<any> = (
                                                 className={`row ${
                                                     showLinks
                                                         ? styles.rowReponseLigneUnion
-                                                        : `
-                                                    } `}
-                                                }`} key={item.id}
+                                                        : ''}`} key={item.id}
                                             >
                                                 <div className="col-3">
                                                     <div className="row">
@@ -212,7 +206,7 @@ const FrontCommentItem: React.FC<any> = (
 
                                                 <div className="col-9">
                                                 <AjoutComments
-                                                    onSubmit={(comment: string)=>{
+                                                    onSubmitMessageResponse={(comment: string)=>{
                                                     onAddResponseComment(donnees, donnee, comment)
                                                     }} />
                                                 </div>

@@ -29,21 +29,27 @@ function _extends() {
 var styles = {"test":"_styles-module__test__3ybTi","contentViewStart":"_styles-module__contentViewStart__vMiGT","navigationLink":"_styles-module__navigationLink__3BNu_","containerCayore":"_styles-module__containerCayore__zRBck","bannerListeProjet":"_styles-module__bannerListeProjet__zERCC","titreBannerListeProjet":"_styles-module__titreBannerListeProjet__cjRbQ","forumCardSommaire":"_styles-module__forumCardSommaire__3HiKz","forum-card-taille":"_styles-module__forum-card-taille__1eBJ7","forumCardSommaireFixWidth":"_styles-module__forumCardSommaireFixWidth__2uXL-","forum-card-skeleton-fix-width":"_styles-module__forum-card-skeleton-fix-width__2V2Qy","avatarSkeleton":"_styles-module__avatarSkeleton__1jx2o","avatarArticleSkeleton":"_styles-module__avatarArticleSkeleton__vRP36","contentSkeleton":"_styles-module__contentSkeleton__3H1kl","contentSkeleton2":"_styles-module__contentSkeleton2__10yh-","contentSkeletonUser":"_styles-module__contentSkeletonUser__zGOQu","contentSkeletonPara":"_styles-module__contentSkeletonPara__186w2","contentSkeletonPara2":"_styles-module__contentSkeletonPara2__3ncCE","cardSommaireDateAjout":"_styles-module__cardSommaireDateAjout__3TZlv","imgSommaireForum":"_styles-module__imgSommaireForum__3wJ3U","imgSommaireForumDiscussion":"_styles-module__imgSommaireForumDiscussion__10Qyd","titreSommaireForum":"_styles-module__titreSommaireForum__lypzQ","forumSommaireAuteurCard":"_styles-module__forumSommaireAuteurCard__3ovWR","textSommaireForum":"_styles-module__textSommaireForum__R0WUA","sommaireForumUserChat":"_styles-module__sommaireForumUserChat__2fmvg","divNombreCommentaireSommaireForum":"_styles-module__divNombreCommentaireSommaireForum__3VGq1","divSommaireForumUserChat1":"_styles-module__divSommaireForumUserChat1__3AK7B","divSommaireSorumUserChat2":"_styles-module__divSommaireSorumUserChat2__2fhuF","divSommaireForumUserChat3":"_styles-module__divSommaireForumUserChat3__1qa_i","divSommaireForumUserChat4":"_styles-module__divSommaireForumUserChat4__2PTKK","divSommaireForumUserChat5":"_styles-module__divSommaireForumUserChat5__Ms10U","divSommaireForumUserChat2":"_styles-module__divSommaireForumUserChat2__n-NHS","imgSommaireForumUserChat":"_styles-module__imgSommaireForumUserChat__WUnJj","nombreCommentaireSommaireForum":"_styles-module__nombreCommentaireSommaireForum__CZnT8","troisPoints":"_styles-module__troisPoints__1NUMh","sommaireAvatarTitre":"_styles-module__sommaireAvatarTitre__pLURL","cardDiscussionHeureVu":"_styles-module__cardDiscussionHeureVu__2l2Yb","cardDiscussionHeureCommentaire":"_styles-module__cardDiscussionHeureCommentaire__1W3UV","cardDiscussionHeureVuLaurhille":"_styles-module__cardDiscussionHeureVuLaurhille__prVaz","cardDiscussionCommentaire":"_styles-module__cardDiscussionCommentaire__8e0yO","imgSommaireForumDiscussion2":"_styles-module__imgSommaireForumDiscussion2__1nB31","divSeparateur":"_styles-module__divSeparateur__3S7lS","row-input":"_styles-module__row-input__GLjv2","rowReponse":"_styles-module__rowReponse__15pjE","row-reponse-ligne-union":"_styles-module__row-reponse-ligne-union__2905Z","row-reponse-ligne-union1":"_styles-module__row-reponse-ligne-union1__2_YyU","forum-discussion-ligne-union":"_styles-module__forum-discussion-ligne-union___ranC","offline-alert-card":"_styles-module__offline-alert-card__wh7If","offline-alert-textual":"_styles-module__offline-alert-textual__3oC-v","redirect-to-login-btn":"_styles-module__redirect-to-login-btn__1ZnBs","cardParent":"_styles-module__cardParent__nRyJj","formAddCguButtonAjouter":"_styles-module__formAddCguButtonAjouter__2H-xZ","componentListeProjet":"_styles-module__componentListeProjet__2kuVE","btnAjoutResponse":"_styles-module__btnAjoutResponse__3QrOw","btnAjoutSujet":"_styles-module__btnAjoutSujet__21AVM","emptySubjectMessage":"_styles-module__emptySubjectMessage__sJRRl","emptySubjectMessageBtnPlus":"_styles-module__emptySubjectMessageBtnPlus__3XTjZ","forumDiscussionLigneUnion":"_styles-module__forumDiscussionLigneUnion__3LwA7","rowReponseLigneUnion":"_styles-module__rowReponseLigneUnion__1ZzMD","rowReponseLigneUnion1":"_styles-module__rowReponseLigneUnion1__kbaQR","img-sommaire-forum":"_styles-module__img-sommaire-forum__CKiSb"};
 
 function AjoutComments(_ref) {
-  var onSubmit = _ref.onSubmit;
+  var props = _extends({}, _ref);
 
   var _useState = React.useState(''),
       comment = _useState[0],
       setComment = _useState[1];
 
+  var onSubmitMessageResponse = props.onSubmitMessageResponse;
+
   var submitReponse = function submitReponse(e) {
     e.preventDefault();
 
     if (comment.trim().length > 0) {
-      onSubmit(comment);
+      if (onSubmitMessageResponse) {
+        onSubmitMessageResponse(comment);
+      }
     }
   };
 
-  return React__default.createElement("form", null, React__default.createElement("div", {
+  return React__default.createElement("form", {
+    className: 'mb-3'
+  }, React__default.createElement("div", {
     className: "" + styles.forumCardSommaire
   }, React__default.createElement("div", {
     className: 'row'
@@ -86,7 +92,7 @@ var FrontCommentItem = function FrontCommentItem(_ref) {
     return React__default.createElement("div", {
       key: donnee.id
     }, React__default.createElement("div", {
-      className: "row " + (showLinks ? styles.forumDiscussionLigneUnion : "\n                                } ") + "\n                            }"
+      className: "row " + (showLinks ? styles.forumDiscussionLigneUnion : '')
     }, React__default.createElement("div", {
       className: "col-2"
     }, React__default.createElement("div", {
@@ -131,17 +137,17 @@ var FrontCommentItem = function FrontCommentItem(_ref) {
       className: "mr-1"
     }), " ", donnee === null || donnee === void 0 ? void 0 : donnee.created_at))))), React__default.createElement("div", {
       className: "collapse",
-      id: "collapseExample" + donnee.id
+      id: "collapseExample" + (donnee === null || donnee === void 0 ? void 0 : donnee.id)
     }, (_donnee$second_level_2 = donnee.second_level_response) === null || _donnee$second_level_2 === void 0 ? void 0 : _donnee$second_level_2.map(function (item) {
       var _item$user, _item$user2, _item$user3, _item$user4, _item$user5, _item$user6;
 
       return React__default.createElement("div", {
         key: item.id,
-        className: "row " + (showLinks ? styles.forumDiscussionLigneUnion : "\n                                                } ") + "\n                                            } mb-3"
+        className: "row " + (showLinks ? styles.forumDiscussionLigneUnion : '') + "\n                                            mb-3"
       }, React__default.createElement("div", {
         className: "col-3"
       }, React__default.createElement("div", {
-        className: "row " + (showLinks ? styles.rowReponseLigneUnion1 : "\n                                                    } ") + "\n                                                }"
+        className: "row " + (showLinks ? styles.rowReponseLigneUnion1 : '')
       }, React__default.createElement("div", {
         className: "col-md-6"
       }, React__default.createElement("div", {
@@ -169,7 +175,7 @@ var FrontCommentItem = function FrontCommentItem(_ref) {
       var _item$user7, _item$user8, _item$user9, _item$user10, _item$user11, _item$user12, _item$user13, _item$user14;
 
       return React__default.createElement("div", {
-        className: "row " + (showLinks ? styles.rowReponseLigneUnion : "\n                                                    } ") + "\n                                                }",
+        className: "row " + (showLinks ? styles.rowReponseLigneUnion : ''),
         key: item.id
       }, React__default.createElement("div", {
         className: "col-3"
@@ -190,7 +196,7 @@ var FrontCommentItem = function FrontCommentItem(_ref) {
       }, (item === null || item === void 0 ? void 0 : (_item$user11 = item.user) === null || _item$user11 === void 0 ? void 0 : _item$user11.firstName) !== undefined || (item === null || item === void 0 ? void 0 : (_item$user12 = item.user) === null || _item$user12 === void 0 ? void 0 : _item$user12.lastName) !== undefined ? (item === null || item === void 0 ? void 0 : (_item$user13 = item.user) === null || _item$user13 === void 0 ? void 0 : _item$user13.firstName) + " " + (item === null || item === void 0 ? void 0 : (_item$user14 = item.user) === null || _item$user14 === void 0 ? void 0 : _item$user14.lastName) : "Anonyme")))), React__default.createElement("div", {
         className: "col-9"
       }, React__default.createElement(AjoutComments, {
-        onSubmit: function onSubmit(comment) {
+        onSubmitMessageResponse: function onSubmitMessageResponse(comment) {
           onAddResponseComment(donnees, donnee, comment);
         }
       })));
@@ -201,8 +207,7 @@ var FrontCommentItem = function FrontCommentItem(_ref) {
 var Discussion = function Discussion(_ref) {
   var _donnees$author, _donnees$author2, _donnees$author3, _donnees$author4, _donnees$author5, _donnees$author6, _donnees$author7, _donnees$author8;
 
-  var onAddComment = _ref.onAddComment,
-      onAddResponseComment = _ref.onAddResponseComment;
+  var onAddResponseComment = _ref.onAddResponseComment;
   var location = reactRouterDom.useLocation();
 
   var _useState = React.useState(location === null || location === void 0 ? void 0 : location.state),
@@ -271,6 +276,34 @@ var Discussion = function Discussion(_ref) {
       avatar: '/mediafiles/avatars/default.png'
     }
   }];
+
+  var _useState5 = React.useState(''),
+      comment = _useState5[0],
+      setComment = _useState5[1];
+
+  var submitComment = function submitComment(e) {
+    e.preventDefault();
+
+    if (comment.trim().length > 0) {
+      var field = {
+        content: comment,
+        id: generateUniqueID(),
+        slug: generateUniqueID(),
+        created_at: '22/04/2022',
+        user: {
+          firstName: "Bamba",
+          lastName: "Fall",
+          avatar: '/mediafiles/avatars/default.png'
+        },
+        second_level_response: []
+      };
+      donneesInt.first_level_response.push(field);
+      setDonnees(donneesInt);
+      resetForm();
+      setComment('');
+    }
+  };
+
   return React__default.createElement("div", {
     className: "component-liste-projet"
   }, React__default.createElement("div", {
@@ -421,11 +454,26 @@ var Discussion = function Discussion(_ref) {
       className: styles.forumSommaireAuteurCard
     }, (item === null || item === void 0 ? void 0 : (_item$user5 = item.user) === null || _item$user5 === void 0 ? void 0 : _item$user5.firstName) !== undefined || (item === null || item === void 0 ? void 0 : (_item$user6 = item.user) === null || _item$user6 === void 0 ? void 0 : _item$user6.lastName) !== undefined ? (item === null || item === void 0 ? void 0 : (_item$user7 = item.user) === null || _item$user7 === void 0 ? void 0 : _item$user7.firstName) + " " + (item === null || item === void 0 ? void 0 : (_item$user8 = item.user) === null || _item$user8 === void 0 ? void 0 : _item$user8.lastName) : "Anonyme")))), React__default.createElement("div", {
       className: "col-10"
-    }, React__default.createElement(AjoutComments, {
-      onSubmit: function onSubmit(comment) {
-        onAddComment(donnees, comment);
+    }, React__default.createElement("form", {
+      className: 'mb-3'
+    }, React__default.createElement("div", {
+      className: "" + styles.forumCardSommaire
+    }, React__default.createElement("div", {
+      className: 'row'
+    }, React__default.createElement("div", {
+      className: 'col-12 pt-3 mb-md-4 mb-5'
+    }, React__default.createElement("textarea", {
+      className: 'form-control',
+      placeholder: "R\xE9pondre",
+      name: 'content',
+      value: comment,
+      onChange: function onChange(e) {
+        setComment(e.target.value);
       }
-    })));
+    })))), React__default.createElement("button", {
+      className: styles.formAddCguButtonAjouter,
+      onClick: submitComment
+    }, "Ajouter"))));
   }))))));
 };
 
@@ -538,8 +586,18 @@ var VolkenoForumy = function VolkenoForumy(_ref) {
 
   var Datas = props.Datas;
 
-  var onAddComment = function onAddComment(subject, commentText) {
-    console.log(subject, commentText);
+  var onSubmitMessageResponse = function onSubmitMessageResponse(subject, commentText) {
+    console.log('sujet', subject);
+    var field = {
+      content: commentText,
+      user: {
+        firstName: "Paul",
+        lastName: "Gomis",
+        avatar: '/mediafiles/avatars/default.png'
+      }
+    };
+    Datas = subject.first_level_response.push(field);
+    console.log('date', Datas);
   };
 
   var onAddResponseComment = function onAddResponseComment(subject, comment, commentText) {
@@ -556,7 +614,7 @@ var VolkenoForumy = function VolkenoForumy(_ref) {
   }), React.createElement(reactRouterDom.Route, {
     path: "/forum-discussion/:id",
     element: React.createElement(Discussion, {
-      onAddComment: onAddComment,
+      onAddComment: onSubmitMessageResponse,
       onAddResponseComment: onAddResponseComment
     })
   }))));
