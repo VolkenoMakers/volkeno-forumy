@@ -39,11 +39,10 @@ const FrontCommentItem: React.FC<any> = (
         const [response, setResponse] = useState('')
         
 
-        const submitReponse = (e: any, msg_id:number, rps_id:number) => {
+        const submitReponse = (e: any, msg_id:number, _rps_id:number) => {
             e.preventDefault()
-            // return console.log('mes',msg_id, 'res',rps_id )
 
-            console.log('msg',msg_id, 'rps',rps_id)
+            // console.log('msg',msg_id, 'rps',rps_id)
 
             if(response.trim().length > 0 ){
                 let firstNameUserSession = DatasUserSession[0].user.firstName
@@ -61,8 +60,6 @@ const FrontCommentItem: React.FC<any> = (
                     }
                 }
                 let foundItem = DataInt.first_level_response.find((element:any) => element.id === msg_id);
-
-                // return console.log('find',foundItem)
 
                 foundItem.second_level_response.push(field)
                 setDataInt(DataInt)

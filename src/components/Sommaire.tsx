@@ -6,12 +6,9 @@ import SommaireItem from './SommaireItem';
 
 type sommaireProps = {
   Datas: any
-  datasUserSession: any
 }
 
-const Sommaire: React.FC<DatasType> = ({ Datas, datasUserSession }:sommaireProps): JSX.Element => {
-
-  console.log(datasUserSession)
+const Sommaire: React.FC<DatasType> = ({ Datas }:sommaireProps): JSX.Element => {
 
   const [hideButton, setHideButton] = useState(false)
 
@@ -26,15 +23,7 @@ const Sommaire: React.FC<DatasType> = ({ Datas, datasUserSession }:sommaireProps
             <div className="row align-items-center" style={{ margin: "3rem 0" }}>
             <div className="col-12">
               {
-
-                
-
-                  // (datasUserSession.length > 0) ? (
-                    <SommaireItem Datas={Datas}  />
-                  // ) : ('hjhuy')
-
-
-                  // <SommaireItem Datas={Datas}  />
+                <SommaireItem Datas={Datas}  />
               } 
 
               <button type="button" className={`btn ${styles.btnAjoutSujet}` }data-toggle="modal" data-target="#exampleModal">
@@ -42,10 +31,10 @@ const Sommaire: React.FC<DatasType> = ({ Datas, datasUserSession }:sommaireProps
               </button>
 
               <button type="button" className={`btn ${styles.btnConnexion} 
-              ${hideButton
-              ? styles.hideButton
-              : ''}
-                ` } onClick={() => {toggleHideButton()}} data-toggle="modal" data-target="#exampleModalhuit">
+                ${hideButton
+                ? styles.hideButton
+                : ''}
+                  ` } onClick={() => {toggleHideButton()}} data-toggle="modal" data-target="#exampleModalhuit">
                 Connection
               </button>
 

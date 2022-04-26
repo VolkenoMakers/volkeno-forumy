@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styles from '../styles.module.css'
 // import AjoutComments from './AjoutComments';
 import FrontCommentItem from './FrontCommentItem';
@@ -22,21 +22,11 @@ const Discussion= ({
 
 	const {slug} = useParams() 
 
-	console.log(slug)
-
 	let location = useLocation();
 	const Datas:any = location?.state
 	const msg_item = Datas?.filter((ele:any) => ele.slug === slug)
 	const [donnees, setDonnees]:any = useState(msg_item[0])
 	let donneesInt = donnees
-
-	console.log(msg_item, slug)
-
-
-  useEffect(() => {
-	console.log(Datas)
-	console.log('item',msg_item[0])
-  }, [])
   
 
   function generateUniqueID() {

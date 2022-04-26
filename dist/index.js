@@ -60,9 +60,8 @@ var FrontCommentItem = function FrontCommentItem(_ref) {
       response = _useState3[0],
       setResponse = _useState3[1];
 
-  var submitReponse = function submitReponse(e, msg_id, rps_id) {
+  var submitReponse = function submitReponse(e, msg_id, _rps_id) {
     e.preventDefault();
-    console.log('msg', msg_id, 'rps', rps_id);
 
     if (response.trim().length > 0) {
       var firstNameUserSession = DatasUserSession[0].user.firstName;
@@ -218,7 +217,7 @@ var FrontCommentItem = function FrontCommentItem(_ref) {
       })))), React__default.createElement("button", {
         className: styles.formAddCguButtonAjouter,
         onClick: function onClick(e) {
-          return submitReponse(e, donnee.id, item.id);
+          return submitReponse(e, donnee.id);
         }
       }, "Ajouter"))));
     })));
@@ -234,7 +233,6 @@ var Discussion = function Discussion(_ref) {
   var _useParams = reactRouterDom.useParams(),
       slug = _useParams.slug;
 
-  console.log(slug);
   var location = reactRouterDom.useLocation();
   var Datas = location === null || location === void 0 ? void 0 : location.state;
   var msg_item = Datas === null || Datas === void 0 ? void 0 : Datas.filter(function (ele) {
@@ -246,11 +244,6 @@ var Discussion = function Discussion(_ref) {
       setDonnees = _useState[1];
 
   var donneesInt = donnees;
-  console.log(msg_item, slug);
-  React.useEffect(function () {
-    console.log(Datas);
-    console.log('item', msg_item[0]);
-  }, []);
 
   function generateUniqueID() {
     var text = "";
@@ -472,9 +465,7 @@ var SommaireItem = function SommaireItem(_ref) {
 };
 
 var Sommaire = function Sommaire(_ref) {
-  var Datas = _ref.Datas,
-      datasUserSession = _ref.datasUserSession;
-  console.log(datasUserSession);
+  var Datas = _ref.Datas;
 
   var _useState = React.useState(false),
       hideButton = _useState[0],
@@ -506,7 +497,7 @@ var Sommaire = function Sommaire(_ref) {
     "data-target": "#exampleModal"
   }, "+"), React__default.createElement("button", {
     type: "button",
-    className: "btn " + styles.btnConnexion + " \n              " + (hideButton ? styles.hideButton : '') + "\n                ",
+    className: "btn " + styles.btnConnexion + " \n                " + (hideButton ? styles.hideButton : '') + "\n                  ",
     onClick: function onClick() {
       toggleHideButton();
     },

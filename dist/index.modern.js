@@ -1,4 +1,4 @@
-import React__default, { useState, useEffect, createElement } from 'react';
+import React__default, { useState, createElement } from 'react';
 import { useParams, useLocation, NavLink, BrowserRouter, Routes, Route } from 'react-router-dom';
 import { BiComment } from 'react-icons/bi';
 import { AiOutlineClockCircle } from 'react-icons/ai';
@@ -31,9 +31,8 @@ const FrontCommentItem = ({
 
   const [response, setResponse] = useState('');
 
-  const submitReponse = (e, msg_id, rps_id) => {
+  const submitReponse = (e, msg_id, _rps_id) => {
     e.preventDefault();
-    console.log('msg', msg_id, 'rps', rps_id);
 
     if (response.trim().length > 0) {
       let firstNameUserSession = DatasUserSession[0].user.firstName;
@@ -187,7 +186,7 @@ const FrontCommentItem = ({
         }
       })))), React__default.createElement("button", {
         className: styles.formAddCguButtonAjouter,
-        onClick: e => submitReponse(e, donnee.id, item.id)
+        onClick: e => submitReponse(e, donnee.id)
       }, "Ajouter"))));
     })));
   }));
@@ -202,17 +201,11 @@ const Discussion = ({
   const {
     slug
   } = useParams();
-  console.log(slug);
   let location = useLocation();
   const Datas = location === null || location === void 0 ? void 0 : location.state;
   const msg_item = Datas === null || Datas === void 0 ? void 0 : Datas.filter(ele => ele.slug === slug);
   const [donnees, setDonnees] = useState(msg_item[0]);
   let donneesInt = donnees;
-  console.log(msg_item, slug);
-  useEffect(() => {
-    console.log(Datas);
-    console.log('item', msg_item[0]);
-  }, []);
 
   function generateUniqueID() {
     var text = "";
@@ -436,10 +429,8 @@ const SommaireItem = ({
 };
 
 const Sommaire = ({
-  Datas,
-  datasUserSession
+  Datas
 }) => {
-  console.log(datasUserSession);
   const [hideButton, setHideButton] = useState(false);
 
   const toggleHideButton = () => {
@@ -469,8 +460,8 @@ const Sommaire = ({
   }, "+"), React__default.createElement("button", {
     type: "button",
     className: `btn ${styles.btnConnexion} 
-              ${hideButton ? styles.hideButton : ''}
-                `,
+                ${hideButton ? styles.hideButton : ''}
+                  `,
     onClick: () => {
       toggleHideButton();
     },

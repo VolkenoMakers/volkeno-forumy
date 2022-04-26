@@ -6,10 +6,6 @@ import { NavLink } from 'react-router-dom';
 
 
 const SommaireItem = ({ Datas }: any): JSX.Element => {
-
-    // console.log(Datas.length)
-
-
   
   return (
       <div>
