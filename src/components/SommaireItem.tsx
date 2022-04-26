@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from 'react'
 import styles from '../styles.module.css'
 import { BsChat } from 'react-icons/bs'

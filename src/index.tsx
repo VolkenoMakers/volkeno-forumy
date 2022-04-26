@@ -5,20 +5,38 @@ import Sommaire from './components/Sommaire'
 
 interface ForumProps {
   Datas: any;
+  onSubmitMessageResponse:  (value: any) => void;
 }
 
 
 export const VolkenoForumy = ({...props}: ForumProps) => {
 
-  const {
+  let {
     Datas
   } = props
+  
 
-  const onAddComment = (subject: any, commentText:any) =>{
+  
+
+  const onSubmitMessageResponse = (
+    subject: any, 
+    commentText:any
+    ) =>{
     console.log(
-    subject,
-    commentText
-  )}
+    'sujet',subject,
+    // 'comment',commentText
+    )
+    let field ={
+      content : commentText,
+      user: {
+        firstName: "Paul",
+        lastName: "Gomis",
+        avatar: '/mediafiles/avatars/default.png',
+      }
+    }
+    Datas = subject.first_level_response.push(field)
+    console.log('date',Datas)
+  }
 
   const onAddResponseComment = (subject:any, comment:any, commentText:any) => {
     console.log(
@@ -38,7 +56,7 @@ export const VolkenoForumy = ({...props}: ForumProps) => {
 					/>
 					<Route
 						path="/forum-discussion/:id"
-						element={<Discussion onAddComment={onAddComment}
+						element={<Discussion onAddComment={onSubmitMessageResponse}
             onAddResponseComment={onAddResponseComment}
             />}
 					/>

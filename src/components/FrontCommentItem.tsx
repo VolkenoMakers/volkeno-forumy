@@ -27,9 +27,9 @@ const FrontCommentItem: React.FC<any> = ({
                 showLinks
                   ? styles.forumDiscussionLigneUnion
                   : `
-                                } `
+               } `
               }
-                            }`}
+             }`}
             >
               <div className='col-2'>
                 <div className={styles.sommaireAvatarTitre}>

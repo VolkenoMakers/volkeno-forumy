@@ -517,19 +517,19 @@ var Sommaire = function Sommaire(_ref) {
   }, React__default.createElement("div", {
     className: styles.containerCayore
   }, React__default.createElement("div", {
-    className: "row align-items-center",
+    className: 'row align-items-center',
     style: {
-      margin: "3rem 0"
+      margin: '3rem 0'
     }
   }, React__default.createElement("div", {
-    className: "col-12"
+    className: 'col-12'
   }, React__default.createElement(SommaireItem, {
     Datas: Datas
   }), React__default.createElement("button", {
-    type: "button",
+    type: 'button',
     className: "btn " + styles.btnAjoutSujet,
-    "data-toggle": "modal",
-    "data-target": "#exampleModal"
+    "data-toggle": 'modal',
+    "data-target": '#exampleModal'
   }, "+"))))));
 };
 
@@ -538,8 +538,18 @@ var VolkenoForumy = function VolkenoForumy(_ref) {
 
   var Datas = props.Datas;
 
-  var onAddComment = function onAddComment(subject, commentText) {
-    console.log(subject, commentText);
+  var onSubmitMessageResponse = function onSubmitMessageResponse(subject, commentText) {
+    console.log('sujet', subject);
+    var field = {
+      content: commentText,
+      user: {
+        firstName: "Paul",
+        lastName: "Gomis",
+        avatar: '/mediafiles/avatars/default.png'
+      }
+    };
+    Datas = subject.first_level_response.push(field);
+    console.log('date', Datas);
   };
 
   var onAddResponseComment = function onAddResponseComment(subject, comment, commentText) {
@@ -556,7 +566,7 @@ var VolkenoForumy = function VolkenoForumy(_ref) {
   }), React.createElement(reactRouterDom.Route, {
     path: "/forum-discussion/:id",
     element: React.createElement(Discussion, {
-      onAddComment: onAddComment,
+      onAddComment: onSubmitMessageResponse,
       onAddResponseComment: onAddResponseComment
     })
   }))));

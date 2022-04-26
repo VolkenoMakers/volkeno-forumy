@@ -95,10 +95,43 @@ const App = () => {
         }
     }
 
+    const onAddResponse = (e:any) => {
+        e.preventDefault()
+        if(initialTitle.trim().length > 0 ){
+            
+            let fields: any = {
+                initialTitle: initialTitle,
+                initialContent: initialContent,
+                id: generateUniqueID(),
+                slug: generateUniqueID(),
+                created_at: '22/04/2022',
+                author: {
+                    firstName: firstName,
+                    lastName: lastName,
+                    avatar: '/mediafiles/avatars/default.png',
+                }
+                ,
+                first_level_response: []
+            }
+
+            setDatas([...Datas, fields])
+            resetForm()
+            setInitialContent('')
+            setInitialTitle('')
+            setFirstName('')
+            setLastName('')
+        }
+    }
+
+
+
   
   return (
       <div className='forum-container'>
-          <VolkenoForumy Datas={Datas}  />
+          <VolkenoForumy 
+            Datas={Datas}
+            onSubmitMessageResponse={() => onAddResponse(Comment)}
+          />
 
           {/* ======================== AJOUT SUJET ========================= */}
 

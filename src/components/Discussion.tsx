@@ -41,7 +41,7 @@ const Discussion = ({
 
   const onAddComments = (e: any) => {
     e.preventDefault()
-    if (responseContent.trim().length > 0 && firstNameUser.trim().length > 0) {
+    if (responseContent.trim().length > 1 && firstNameUser.trim().length > 5) {
       const fields: any = {
         content: responseContent,
         id: generateUniqueID(),

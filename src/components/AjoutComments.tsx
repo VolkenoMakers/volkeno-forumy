@@ -1,33 +1,44 @@
 import React, { useState } from 'react'
-import styles from '../styles.module.css'
 
-function AjoutComments({ onSubmit }: { onSubmit: (comment: string) => any }) {
-  const [comment, setComment] = useState('')
+interface AcProps {
+    onSubmitMessageResponse?:  (value: any) => void;
+}
 
-  const submitReponse = (e: any) => {
-    e.preventDefault()
-    if (comment.trim().length > 0) {
-      onSubmit(comment)
+function AjoutComments({...props}: AcProps) {
+
+    const [comment, setComment] = useState('')
+    const {
+        onSubmitMessageResponse
+    } = props
+   
+    const submitReponse = (e: any) => {
+        e.preventDefault()
+        if(comment.trim().length > 0 ){
+            if(onSubmitMessageResponse) {
+                onSubmitMessageResponse(comment)
+            }
+        }
     }
   }
 
   return (
-    <form>
-      <div className={`${styles.forumCardSommaire}`}>
-        <div className='row'>
-          <div className='col-12 pt-3 mb-md-4 mb-5'>
-            <textarea
-              className='form-control'
-              placeholder='Réponses'
-              name='content'
-              value={comment}
-              onChange={(e) => {
-                setComment(e.target.value)
-              }}
-            />
-          </div>
-        </div>
-      </div>
+    
+        <form className='mb-3'>
+            <div className={
+                `${styles.forumCardSommaire}` 
+                }>
+                <div className='row'>
+                    <div className='col-12 pt-3 mb-md-4 mb-5'>
+                        <textarea className='form-control'
+                        placeholder='Répondre' name='content' 
+                        value={comment}
+                        onChange={(e)=>{
+                            setComment(e.target.value)
+                        }}
+                         ></textarea>                       
+                    </div>                  
+                </div>
+            </div>
 
       <button
         className={styles.formAddCguButtonAjouter}
