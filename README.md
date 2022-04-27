@@ -2,7 +2,7 @@
 
 >Volkeno Forumy gives you the possibility to integrate a discussion forum, while making it easier for you to adapt to each of your React JS projects.
 
-## Descriptions
+## Description
 
 the forum has three levels of possible addition:
 
