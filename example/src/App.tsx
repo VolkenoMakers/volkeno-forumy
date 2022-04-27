@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { VolkenoForumy } from 'volkeno-forumy'
 import 'volkeno-forumy/dist/index.css'
+import moment from 'moment'
 
 const App = () => {
 
@@ -88,7 +89,7 @@ const App = () => {
                 initialContent: initialContent,
                 id: generateUniqueID(),
                 slug: generateUniqueID(),
-                created_at: '22/04/2022',
+                created_at: moment().format('DD/MM/yyyy'),
                 author: {
                     firstName: firstName,
                     lastName: lastName,

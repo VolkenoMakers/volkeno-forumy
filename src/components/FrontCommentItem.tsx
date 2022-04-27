@@ -4,6 +4,7 @@ import styles from '../styles.module.css'
 import { BiComment } from "react-icons/bi";
 import { AiOutlineClockCircle } from "react-icons/ai";
 // import AjoutComments from './AjoutComments';
+import moment from 'moment';
 
 
 const FrontCommentItem: React.FC<any> = (
@@ -52,7 +53,7 @@ const FrontCommentItem: React.FC<any> = (
                     content: response,
                     id: generateUniqueID(),
                     slug: generateUniqueID(),
-                    created_at: '22/04/2022',
+                    created_at: moment().format('DD/MM/yyyy'),
                     user: {
                         firstName: firstNameUserSession,
                         lastName: lastNameUserSession,
