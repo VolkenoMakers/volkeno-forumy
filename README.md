@@ -13,6 +13,7 @@ npm install --save volkeno-forumy
 ```
 
 
+![alt text](https://github.com/VolkenoMakers/volkeno-forumy/blob/add-response/src/components/img/dataForumStructure.png)
 ## Usage
 
 ```tsx
