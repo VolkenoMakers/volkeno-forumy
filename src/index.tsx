@@ -4,21 +4,40 @@ import Discussion from './components/Discussion'
 import Sommaire from './components/Sommaire'
 
 interface ForumProps {
-  data: any;
+  Datas: any;
+  // onSubmitMessageResponse:  (value: any) => void;
+  DatasUserSession: any
 }
 
 
 export const VolkenoForumy = ({...props}: ForumProps) => {
 
-  const {
-     data
+  let {
+    Datas, DatasUserSession
   } = props
+  
 
-  const onAddComment = (subject: any, commentText:any) =>{
+  
+
+  const onSubmitMessageResponse = (
+    subject: any, 
+    commentText:any
+    ) =>{
     console.log(
-    subject,
-    commentText
-  )}
+    'sujet',subject,
+    // 'comment',commentText
+    )
+    let field ={
+      content : commentText,
+      user: {
+        firstName: "Paul",
+        lastName: "Gomis",
+        avatar: '/mediafiles/avatars/default.png',
+      }
+    }
+    Datas = subject.first_level_response.push(field)
+    console.log('date',Datas)
+  }
 
   const onAddResponseComment = (subject:any, comment:any, commentText:any) => {
     console.log(
@@ -34,12 +53,14 @@ export const VolkenoForumy = ({...props}: ForumProps) => {
 				<Routes>
 					<Route
 						path="/"
-						element={<Sommaire Datas={data}  />}
+						element={<Sommaire Datas={Datas}  />}
 					/>
 					<Route
-						path="/forum-discussion/:id"
-						element={<Discussion onAddComment={onAddComment}
+						path="/forum-discussion/:slug"
+						element={<Discussion onAddComment={onSubmitMessageResponse}
             onAddResponseComment={onAddResponseComment}
+            datasUserSession={DatasUserSession}
+            
             />}
 					/>
         </Routes>

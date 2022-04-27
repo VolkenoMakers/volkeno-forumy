@@ -1,20 +1,29 @@
 import React, { useState } from 'react'
 import styles from '../styles.module.css'
 
-function AjoutComments({onSubmit}: {onSubmit: ((comment: string)=>any)}) {
+interface AcProps {
+    onSubmitMessageResponse?:  (value: any) => void;
+}
+
+function AjoutComments({...props}: AcProps) {
 
     const [comment, setComment] = useState('')
+    const {
+        onSubmitMessageResponse
+    } = props
    
     const submitReponse = (e: any) => {
         e.preventDefault()
         if(comment.trim().length > 0 ){
-            onSubmit(comment)
+            if(onSubmitMessageResponse) {
+                onSubmitMessageResponse(comment)
+            }
         }
     }
 
   return (
     
-        <form>
+        <form className='mb-3'>
             <div className={
                 `${styles.forumCardSommaire}` 
                 }>

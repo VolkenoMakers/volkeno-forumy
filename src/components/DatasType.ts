@@ -1,3 +1,3 @@
 type DatasType = {
     Datas: any
-  };
+};

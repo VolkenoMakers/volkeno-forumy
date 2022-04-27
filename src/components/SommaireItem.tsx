@@ -5,14 +5,13 @@ import { IoReturnDownBackOutline } from "react-icons/io5";
 import { NavLink } from 'react-router-dom';
 
 
-const SommaireItem: React.FC<any> = ({ Datas }): JSX.Element => {
-
+const SommaireItem = ({ Datas }: any): JSX.Element => {
   
   return (
       <div>
 
         {
-            Datas?.length > 0  ? (
+            Datas.length > 0  ? (
             Datas.map((item: any) => {
                 return(
 
@@ -21,7 +20,8 @@ const SommaireItem: React.FC<any> = ({ Datas }): JSX.Element => {
                         to={{
                           pathname: `/forum-discussion/${item.slug}`,
                         }}
-                        state={item}
+                        // state={item}
+                        state={Datas}
                         key={item.id}
                       >
 
@@ -103,12 +103,13 @@ const SommaireItem: React.FC<any> = ({ Datas }): JSX.Element => {
                     )
                 })
                 ) : (
-                <div className="card-contacts-main-content">
+                <div className="card-contacts-main-content mt-5">
                     <div className="row div-card">
-                    <div className="col-12">
+                    <div className={`col-12 ${styles.emptySubjectMessage} alert alert-warning`} role="alert">
                         <h4 className="admin-contacts-title text-center">
                             Pas de sujet de discussion
                         </h4>
+                        <p>Appuyer sur le boutton <span className={`${styles.emptySubjectMessageBtnPlus}`}>+</span> en bas pour ajouter des sujet !!</p>
                     </div>
                     </div>
                 </div>
