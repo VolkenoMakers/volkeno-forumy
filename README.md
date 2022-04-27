@@ -12,7 +12,11 @@ the forum has three levels of possible addition:
 
 * And for the last level users can reply to a comment with the same fields of level two
 
+
+
 To take full advantage of the features of the forum the user must provide a structure similar to the one below
+
+Forum data
 
 ```
 {
@@ -50,6 +54,23 @@ To take full advantage of the features of the forum the user must provide a stru
   ]
 }
 ```
+
+logged in user data
+
+```
+{
+  id: string,
+  slug: string | number,
+  created_at: string,
+  user: {
+    firstName: string,
+    lastName: string,
+    avatar: string,
+  }
+}
+```
+
+
 <!-- ![alt text](https://github.com/VolkenoMakers/volkeno-forumy/blob/add-response/src/components/img/dataForumStructure.png) -->
 
 
@@ -63,18 +84,37 @@ npm install --save volkeno-forumy
 
 ## Usage
 
+First step: import the component with the css file:
 ```tsx
-import React, { Component } from 'react'
-
-import MyComponent from 'volkeno-forumy'
+import React, { useState } from 'react'
+import { VolkenoForumy } from 'volkeno-forumy'
 import 'volkeno-forumy/dist/index.css'
-
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
 ```
+
+Second step: Use the component to get home page
+
+```tsx
+const App = () => {
+
+  const [Datas, setDatas] = useState<string[]>([])
+  const [DatasUserSession, setDatasUserSession] = useState<string[]>([])
+
+  return <VolkenoForumy Datas={Datas} DatasUserSession={DatasUserSession} />
+
+}
+
+
+export default App
+
+```
+
+## Configuration - Props
+
+| Property                 |   Type   | Require  |  Default | Description                                                                              |
+| ------------------------ | :------: | :-----:  | :-------:| :------------------------------------------------------------------------------ |
+| Datas               | string   |  true    | ...   | Contain forum data                                      |
+| DatasUserSession                    | string   |  true    | ...      |  contain user logged in data                                                                     |
+                                                               
 
 ## License
 
