@@ -86,8 +86,7 @@ npm install --save volkeno-forumy
 
 First step: import the component with the css file:
 ```tsx
-import React from 'react'
-
+import React, { useState } from 'react'
 import { VolkenoForumy } from 'volkeno-forumy'
 import 'volkeno-forumy/dist/index.css'
 ```
@@ -96,15 +95,12 @@ Second step: Use the component to get home page
 
 ```tsx
 const App = () => {
-    const [Datas, setDatas] = useState<string[]>([])
-    const [DatasUserSession, setDatasUserSession] = useState<string[]>([])
 
-  return (
-    <VolkenoForumy 
-      Datas={Datas}
-      DatasUserSession={DatasUserSession}
-    />
-  )
+  const [Datas, setDatas] = useState<string[]>([])
+  const [DatasUserSession, setDatasUserSession] = useState<string[]>([])
+
+  return <VolkenoForumy Datas={Datas} DatasUserSession={DatasUserSession} />
+
 }
 
 
