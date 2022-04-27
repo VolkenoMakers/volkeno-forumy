@@ -5898,7 +5898,7 @@ var FrontCommentItem = function FrontCommentItem(_ref) {
       }, React__default.createElement("textarea", {
         className: 'form-control',
         placeholder: "R\xE9pondre",
-        name: 'content',
+        name: 'contents',
         value: response,
         onChange: function onChange(e) {
           setResponse(e.target.value);
@@ -6062,7 +6062,7 @@ var Discussion = function Discussion(_ref) {
     }, React__default.createElement("textarea", {
       className: 'form-control',
       placeholder: "R\xE9pondre",
-      name: 'content',
+      name: 'contents',
       value: comment,
       onChange: function onChange(e) {
         setComment(e.target.value);

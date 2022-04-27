@@ -274,12 +274,12 @@ const FrontCommentItem: React.FC<any> = (
                                                             <div className='row'>
                                                                 <div className='col-12 pt-3 mb-md-4 mb-5'>
                                                                     <textarea className='form-control'
-                                                                    placeholder='Répondre' name='content' 
+                                                                    placeholder='Répondre' name='contents' 
                                                                     value={response}
                                                                     onChange={(e)=>{
                                                                         setResponse(e.target.value)
                                                                     }}
-                                                                        ></textarea>                       
+                                                                    ></textarea>                       
                                                                 </div>                  
                                                             </div>
                                                         </div>

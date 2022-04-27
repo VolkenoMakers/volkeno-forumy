@@ -5868,7 +5868,7 @@ const FrontCommentItem = ({
       }, React__default.createElement("textarea", {
         className: 'form-control',
         placeholder: 'R\u00E9pondre',
-        name: 'content',
+        name: 'contents',
         value: response,
         onChange: e => {
           setResponse(e.target.value);
@@ -6023,7 +6023,7 @@ const Discussion = ({
     }, React__default.createElement("textarea", {
       className: 'form-control',
       placeholder: 'R\u00E9pondre',
-      name: 'content',
+      name: 'contents',
       value: comment,
       onChange: e => {
         setComment(e.target.value);

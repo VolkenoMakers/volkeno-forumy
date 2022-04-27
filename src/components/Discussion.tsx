@@ -213,7 +213,7 @@ const Discussion= ({
 																<div className='row'>
 																	<div className='col-12 pt-3 mb-md-4 mb-5'>
 																		<textarea className='form-control'
-																		placeholder='Répondre' name='content' 
+																		placeholder='Répondre' name='contents' 
 																		value={comment}
 																		onChange={(e)=>{
 																			setComment(e.target.value)
