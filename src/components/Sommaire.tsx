@@ -24,13 +24,13 @@ const Sommaire: React.FC<DatasType> = ({ Datas }:sommaireProps): JSX.Element => 
             <div className="col-12">
               {
                 <SommaireItem Datas={Datas}  />
-              } 
+              }
 
-              {/* <button type="button" className={`btn ${styles.btnAjoutSujet}` }data-toggle="modal" data-target="#exampleModal">
+              <button type="button" className={`btn ${styles.btnAjoutSujet}` }data-toggle="modal" data-target="#exampleModal">
                 +
-              </button> */}
+              </button>
 
-              {/* <button type="button" className={`btn ${styles.btnConnexion} 
+              {/* <button type="button" className={`btn ${styles.btnConnexion}
                 ${hideButton
                 ? styles.hideButton
                 : ''}
