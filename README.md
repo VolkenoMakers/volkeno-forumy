@@ -70,6 +70,55 @@ logged in user data
 }
 ```
 
+You should first make sure to create a method to retrieve user data to pass it in the DatasUserSession variable
+this process allows you to comment on a topic
+
+Example:
+```tsx
+const [DatasUserSession, setDatasUserSession] = useState<string[]>([])
+
+const onAddUserSession = (e:any) => {
+  e.preventDefault()
+  let fields: any = {
+      id: generateUniqueID(),
+      slug: generateUniqueID(),
+      created_at: '22/04/2022',
+      user: {
+        firstName: firstNameUserSession,
+        lastName: lastNameUserSession,
+        avatar: '/mediafiles/avatars/default.png',
+      }
+  }
+
+  setDatasUserSession([...DatasUserSession, fields])
+}
+```
+
+then to add a subject,
+create a method to retrieve the required fields and send it to the Datas variable
+
+Example:
+
+```tsx
+const onAddSubject = (e:any) => {
+  e.preventDefault()
+  let fields: any = {
+      initialTitle: initialTitle,
+      initialContent: initialContent,
+      id: generateUniqueID(),
+      slug: generateUniqueID(),
+      created_at: moment().format('DD/MM/yyyy'),
+      author: {
+          firstName: firstName,
+          lastName: lastName,
+          avatar: '/mediafiles/avatars/default.png',
+      },
+      first_level_response: []
+  }
+  setDatas([...Datas, fields])
+}
+```
+
 
 <!-- ![alt text](https://github.com/VolkenoMakers/volkeno-forumy/blob/add-response/src/components/img/dataForumStructure.png) -->
 
@@ -99,7 +148,7 @@ const App = () => {
   const [Datas, setDatas] = useState<string[]>([])
   const [DatasUserSession, setDatasUserSession] = useState<string[]>([])
 
-  return <VolkenoForumy Datas={Datas} DatasUserSession={DatasUserSession} />
+  return <VolkenoForumy Datas={Datas} DatasUserSession={DatasUserSession} hasThirdLevel={false} />
 
 }
 
@@ -112,8 +161,9 @@ export default App
 
 | Property                 |   Type   | Require  |  Default | Description                                                                              |
 | ------------------------ | :------: | :-----:  | :-------:| :------------------------------------------------------------------------------ |
-| Datas               | string   |  true    | ...   | Contain forum data                                      |
-| DatasUserSession                    | string   |  true    | ...      |  contain user logged in data                                                                     |
+| Datas               | string   |  true    | []   | Contain forum data                                      |
+| DatasUserSession                    | string   |  true    | []      |  contain user logged in data                                                                     |
+| hasThirdLevel                    | boolean   |  true    | false      |  allows the user to add or not add a third level of discussion                                                                     |
                                                                
 
 ## License

@@ -7,14 +7,9 @@ import { AiOutlineClockCircle } from "react-icons/ai";
 import moment from 'moment';
 
 
-const FrontCommentItem: React.FC<any> = (
-    { donnees,
-        //  onAddResponseComment, 
-         DatasUserSession }
-    ): JSX.Element => {
+const FrontCommentItem: React.FC<any> = ({ donnees, DatasUserSession , hasThirdLevel}): JSX.Element => {
 
         
-
         const [DataInt, setDataInt] = useState(donnees)
 
         const [showLinks, setShowLinks] = useState(false);
@@ -121,22 +116,25 @@ const FrontCommentItem: React.FC<any> = (
                                             <div className={
                                                 styles.cardDiscussionHeureCommentaire 
                                                 }>
-                                                <a
-                                                    className={styles.cardDiscussionCommentaire}
-                                                    data-toggle="collapse"
-                                                    href={`#collapseExample${donnee?.id}`}
-                                                    role="button"
-                                                    aria-expanded="false"
-                                                    aria-controls={`collapseExample${donnee?.id}`}
-                                                    onClick={() => {
-                                                        toogleShowLinks;
+                                                {
+                                                   hasThirdLevel &&  
+                                                   <a
+                                                        className={styles.cardDiscussionCommentaire}
+                                                        data-toggle="collapse"
+                                                        href={`#collapseExample${donnee?.id}`}
+                                                        role="button"
+                                                        aria-expanded="false"
+                                                        aria-controls={`collapseExample${donnee?.id}`}
+                                                        onClick={() => {
+                                                            toogleShowLinks;
 
-                                                    }}
-                                                >
-                                                    <BiComment className="mr-1" />
-                                                    {donnee?.second_level_response?.length}{" "}
-                                                    commentaires
-                                                </a>
+                                                        }}
+                                                    >
+                                                        <BiComment className="mr-1" />
+                                                        {donnee?.second_level_response?.length}{" "}
+                                                        commentaires
+                                                    </a>
+                                                }
                                                 <span>
                                                     <AiOutlineClockCircle className="mr-1" />{" "}
                                                     {donnee?.created_at}
@@ -148,85 +146,28 @@ const FrontCommentItem: React.FC<any> = (
 
 
 			{/* =========================================================== COLLAPSE ============================================================================ */}
-
+                                
                                 <div className="collapse" 
                                     id={`collapseExample${donnee?.id}`}
                                 >
-                                {donnee.second_level_response?.map((item:any) => {
-                                    return (
-                                        <div
-                                            key={item.id}
-                                            className={`row ${
-                                                showLinks
-                                                    ? styles.forumDiscussionLigneUnion
-                                                    : ''}
-                                            mb-3`}
-                                            
-                                        >
-                                            <div className="col-3">
-                                                <div 
+                                    {donnee.second_level_response?.map((item:any) => {
+                                        return (
+                                            <div
+                                                key={item.id}
                                                 className={`row ${
                                                     showLinks
-                                                        ? styles.rowReponseLigneUnion1
-                                                        : ''}`}
-                                                >
-                                                    <div className="col-md-6">
-                                                        <div className="p1 d-flex justify-content-end">
-                                                            <img
-                                                                src={item?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item?.user?.firstName} + ${item?.user?.lastName}` : `${item?.user?.avatar}`}
-                                                                alt="user-avatar"
-                                                                className={styles.imgSommaireForumDiscussion2}
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                    <div className="col-md-6 d-flex align-item-md-center">
-                                                        <div className={
-                                                            styles.forumSommaireAuteurCard 
-                                                            }>
-                                                            {item?.user
-                                                                ?.firstName +
-                                                                " " +
-                                                                item
-                                                                    ?.user
-                                                                    ?.lastName} 
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div className={`col-9`}>
-                                                <div className={
-                                                    styles.forumCardSommaire
-                                                    }>
-                                                    <div className="row">
-                                                        <div className="col-12 pt-3 mb-md-4 mb-5">
-                                                            <p className={
-                                                                styles.textSommaireForum
-                                                                }>
-                                                                {
-                                                                    item?.content
-                                                                }{" "}
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    );
-                                })}
-
-                                {
-                                    DatasUserSession.map((item: any) => {
-                                        return(
-
-                                            <div 
-                                                className={`row ${
-                                                    showLinks
-                                                        ? styles.rowReponseLigneUnion
-                                                        : ''}`} key={item.id}
+                                                        ? styles.forumDiscussionLigneUnion
+                                                        : ''}
+                                                mb-3`}
+                                                
                                             >
                                                 <div className="col-3">
-                                                    <div className="row">
+                                                    <div 
+                                                    className={`row ${
+                                                        showLinks
+                                                            ? styles.rowReponseLigneUnion1
+                                                            : ''}`}
+                                                    >
                                                         <div className="col-md-6">
                                                             <div className="p1 d-flex justify-content-end">
                                                                 <img
@@ -240,67 +181,124 @@ const FrontCommentItem: React.FC<any> = (
                                                             <div className={
                                                                 styles.forumSommaireAuteurCard 
                                                                 }>
-                                                                {item
-                                                                    ?.user
-                                                                    ?.firstName !==
-                                                                    undefined ||
+                                                                {item?.user
+                                                                    ?.firstName +
+                                                                    " " +
                                                                     item
-                                                                    ?.user
-                                                                    ?.lastName !==
-                                                                    undefined
-                                                                    ? item
-                                                                    ?.user
-                                                                            ?.firstName +
-                                                                        " " +
-                                                                        item
-                                                                    ?.user
-                                                                            ?.lastName
-                                                                    : "Anonyme"} 
+                                                                        ?.user
+                                                                        ?.lastName} 
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div className="col-9">
-                                                {/* <AjoutComments
-                                                    onSubmitMessageResponse={(comment: string)=>{
-                                                    onAddResponseComment(donnees, donnee, comment)
-                                                    }} /> */}
-
-                                                    <form className='mb-3' id='form-response'>
-                                                        <div className={
-                                                            `${styles.forumCardSommaire}` 
-                                                            }>
-                                                            <div className='row'>
-                                                                <div className='col-12 pt-3 mb-md-4 mb-5'>
-                                                                    <textarea className='form-control'
-                                                                    placeholder='Répondre' name='contents' 
-                                                                    value={response}
-                                                                    onChange={(e)=>{
-                                                                        setResponse(e.target.value)
-                                                                    }}
-                                                                    ></textarea>                       
-                                                                </div>                  
+                                                <div className={`col-9`}>
+                                                    <div className={
+                                                        styles.forumCardSommaire
+                                                        }>
+                                                        <div className="row">
+                                                            <div className="col-12 pt-3 mb-md-4 mb-5">
+                                                                <p className={
+                                                                    styles.textSommaireForum
+                                                                    }>
+                                                                    {
+                                                                        item?.content
+                                                                    }{" "}
+                                                                </p>
                                                             </div>
                                                         </div>
-
-                                                        <button className={
-                                                            styles.formAddCguButtonAjouter 
-                                                        }
-                                                            onClick={(e) => submitReponse(e, donnee.id, item.id)}
-                                                        >
-                                                            Ajouter
-                                                        </button>
-                                                    </form>
-
-
+                                                    </div>
                                                 </div>
                                             </div>
+                                        );
+                                    })}
 
-                                        )
-                                    })
-                                }
-                            </div>
+                                    {
+                                        DatasUserSession.map((item: any) => {
+                                            return(
+
+                                                <div 
+                                                    className={`row ${
+                                                        showLinks
+                                                            ? styles.rowReponseLigneUnion
+                                                            : ''}`} key={item.id}
+                                                >
+                                                    <div className="col-3">
+                                                        <div className="row">
+                                                            <div className="col-md-6">
+                                                                <div className="p1 d-flex justify-content-end">
+                                                                    <img
+                                                                        src={item?.user?.avatar === '/mediafiles/avatars/default.png' ? `https://ui-avatars.com/api/?name=${item?.user?.firstName} + ${item?.user?.lastName}` : `${item?.user?.avatar}`}
+                                                                        alt="user-avatar"
+                                                                        className={styles.imgSommaireForumDiscussion2}
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-6 d-flex align-item-md-center">
+                                                                <div className={
+                                                                    styles.forumSommaireAuteurCard 
+                                                                    }>
+                                                                    {item
+                                                                        ?.user
+                                                                        ?.firstName !==
+                                                                        undefined ||
+                                                                        item
+                                                                        ?.user
+                                                                        ?.lastName !==
+                                                                        undefined
+                                                                        ? item
+                                                                        ?.user
+                                                                                ?.firstName +
+                                                                            " " +
+                                                                            item
+                                                                        ?.user
+                                                                                ?.lastName
+                                                                        : "Anonyme"} 
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="col-9">
+                                                    {/* <AjoutComments
+                                                        onSubmitMessageResponse={(comment: string)=>{
+                                                        onAddResponseComment(donnees, donnee, comment)
+                                                        }} /> */}
+
+                                                        <form className='mb-3' id='form-response'>
+                                                            <div className={
+                                                                `${styles.forumCardSommaire}` 
+                                                                }>
+                                                                <div className='row'>
+                                                                    <div className='col-12 pt-3 mb-md-4 mb-5'>
+                                                                        <textarea className='form-control'
+                                                                        placeholder='Répondre' name='contents' 
+                                                                        value={response}
+                                                                        onChange={(e)=>{
+                                                                            setResponse(e.target.value)
+                                                                        }}
+                                                                        ></textarea>                       
+                                                                    </div>                  
+                                                                </div>
+                                                            </div>
+
+                                                            <button className={
+                                                                styles.formAddCguButtonAjouter 
+                                                            }
+                                                                onClick={(e) => submitReponse(e, donnee.id, item.id)}
+                                                            >
+                                                                Ajouter
+                                                            </button>
+                                                        </form>
+
+
+                                                    </div>
+                                                </div>
+
+                                            )
+                                        })
+                                    }
+                                </div>
                         </div>
                     )
                 })
