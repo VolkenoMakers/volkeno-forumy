@@ -33,7 +33,8 @@ var FrontCommentItem = function FrontCommentItem(_ref) {
   var _DataInt$first_level_;
 
   var donnees = _ref.donnees,
-      DatasUserSession = _ref.DatasUserSession;
+      DatasUserSession = _ref.DatasUserSession,
+      hasThirdLevel = _ref.hasThirdLevel;
 
   var _useState = React.useState(donnees),
       DataInt = _useState[0],
@@ -125,7 +126,7 @@ var FrontCommentItem = function FrontCommentItem(_ref) {
       className: styles.textSommaireForum
     }, donnee === null || donnee === void 0 ? void 0 : donnee.content, " "))), React__default.createElement("div", {
       className: styles.cardDiscussionHeureCommentaire
-    }, React__default.createElement("a", {
+    }, hasThirdLevel && React__default.createElement("a", {
       className: styles.cardDiscussionCommentaire,
       "data-toggle": "collapse",
       href: "#collapseExample" + (donnee === null || donnee === void 0 ? void 0 : donnee.id),
@@ -146,7 +147,7 @@ var FrontCommentItem = function FrontCommentItem(_ref) {
 
       return React__default.createElement("div", {
         key: item.id,
-        className: "row " + (showLinks ? styles.forumDiscussionLigneUnion : '') + "\n                                            mb-3"
+        className: "row " + (showLinks ? styles.forumDiscussionLigneUnion : '') + "\n                                                mb-3"
       }, React__default.createElement("div", {
         className: "col-3"
       }, React__default.createElement("div", {
@@ -228,7 +229,8 @@ var FrontCommentItem = function FrontCommentItem(_ref) {
 var Discussion = function Discussion(_ref) {
   var _donnees$author, _donnees$author2, _donnees$author3, _donnees$author4, _donnees$author5, _donnees$author6, _donnees$author7, _donnees$author8;
 
-  var datasUserSession = _ref.datasUserSession;
+  var datasUserSession = _ref.datasUserSession,
+      hasThirdLevel = _ref.hasThirdLevel;
 
   var _useParams = reactRouterDom.useParams(),
       slug = _useParams.slug;
@@ -332,7 +334,8 @@ var Discussion = function Discussion(_ref) {
     className: styles.textSommaireForum
   }, donnees.initialContent)))), React__default.createElement(FrontCommentItem, {
     donnees: donnees,
-    DatasUserSession: datasUserSession
+    DatasUserSession: datasUserSession,
+    hasThirdLevel: hasThirdLevel
   }), React__default.createElement("span", {
     className: styles.divSeparateur
   }), React__default.createElement("div", {
@@ -480,12 +483,7 @@ var Sommaire = function Sommaire(_ref) {
     className: "col-12"
   }, React__default.createElement(SommaireItem, {
     Datas: Datas
-  }), React__default.createElement("button", {
-    type: "button",
-    className: "btn " + styles.btnAjoutSujet,
-    "data-toggle": "modal",
-    "data-target": "#exampleModal"
-  }, "+"))))));
+  }))))));
 };
 
 var VolkenoForumy = function VolkenoForumy(_ref) {
@@ -503,6 +501,7 @@ var VolkenoForumy = function VolkenoForumy(_ref) {
   }), React.createElement(reactRouterDom.Route, {
     path: "/forum-discussion/:slug",
     element: React.createElement(Discussion, {
+      hasThirdLevel: props.hasThirdLevel && props.hasThirdLevel,
       datasUserSession: DatasUserSession
     })
   }))));

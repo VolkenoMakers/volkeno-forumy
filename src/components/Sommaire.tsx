@@ -26,9 +26,9 @@ const Sommaire: React.FC<DatasType> = ({ Datas }:sommaireProps): JSX.Element => 
                 <SommaireItem Datas={Datas}  />
               } 
 
-              <button type="button" className={`btn ${styles.btnAjoutSujet}` }data-toggle="modal" data-target="#exampleModal">
+              {/* <button type="button" className={`btn ${styles.btnAjoutSujet}` }data-toggle="modal" data-target="#exampleModal">
                 +
-              </button>
+              </button> */}
 
               {/* <button type="button" className={`btn ${styles.btnConnexion} 
                 ${hideButton

@@ -5,8 +5,8 @@ import Sommaire from './components/Sommaire'
 
 interface ForumProps {
   Datas: any;
-  // onSubmitMessageResponse:  (value: any) => void;
   DatasUserSession: any
+  hasThirdLevel?: any
 }
 
 
@@ -58,11 +58,8 @@ export const VolkenoForumy = ({...props}: ForumProps) => {
 					<Route
 						path="/forum-discussion/:slug"
 						element={<Discussion 
-              // onAddComment={onSubmitMessageResponse}
-            // onAddResponseComment={onAddResponseComment}
-            datasUserSession={DatasUserSession}
-            
-            />}
+              hasThirdLevel={props.hasThirdLevel && props.hasThirdLevel}
+            datasUserSession={DatasUserSession} />}
 					/>
         </Routes>
       </div>

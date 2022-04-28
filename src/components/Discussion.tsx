@@ -11,10 +11,12 @@ import moment from 'moment';
 
 type discussionProps = {
   datasUserSession: any
+  hasThirdLevel: boolean
 }
 
 const Discussion= ({
-	datasUserSession
+	datasUserSession,
+	hasThirdLevel
 	}: discussionProps) => {
 
 	const {slug} = useParams() 
@@ -140,7 +142,7 @@ const Discussion= ({
 								</div>
 							</div>
             
-            			<FrontCommentItem donnees={donnees} DatasUserSession={datasUserSession} />
+            			<FrontCommentItem donnees={donnees} DatasUserSession={datasUserSession} hasThirdLevel={hasThirdLevel} />
 
 						{/* =========================================================== FIN COLLAPSE ============================================================================ */}
 						

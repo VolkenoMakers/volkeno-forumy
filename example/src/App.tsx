@@ -61,7 +61,6 @@ let datasUserSession = [
 
   const [Datas, setDatas] = useState<string[]>([])
   const [DatasUserSession, setDatasUserSession] = useState(datasUserSession)
-  // const [SecondLevel, setSecondLevel] = useState(false)
 
 //======================= AJOUT SUJET ===================================
 
@@ -153,8 +152,8 @@ let datasUserSession = [
       <div className='forum-container'>
           <VolkenoForumy 
             Datas={Datas}
+            hasThirdLevel={true}
             DatasUserSession={DatasUserSession}
-            // SecondLevel={SecondLevel}
           />
 
           {

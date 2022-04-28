@@ -70,7 +70,7 @@ logged in user data
 }
 ```
 
-You should first make sure to create a method to retrieve user data to pass it in the datauser variable
+You should first make sure to create a method to retrieve user data to pass it in the DatasUserSession variable
 this process allows you to comment on a topic
 Example:
 ```tsx
@@ -78,20 +78,18 @@ const [DatasUserSession, setDatasUserSession] = useState<string[]>([])
 
 const onAddUserSession = (e:any) => {
   e.preventDefault()
-  if(firstNameUserSession.trim().length > 0 && firstNameUserSession.trim().length > 0 ){
-    let fields: any = {
-        id: generateUniqueID(),
-        slug: generateUniqueID(),
-        created_at: '22/04/2022',
-        user: {
-            firstName: firstNameUserSession,
-            lastName: lastNameUserSession,
-            avatar: '/mediafiles/avatars/default.png',
-        }
-    }
-
-    setDatasUserSession([...DatasUserSession, fields])
+  let fields: any = {
+      id: generateUniqueID(),
+      slug: generateUniqueID(),
+      created_at: '22/04/2022',
+      user: {
+        firstName: firstNameUserSession,
+        lastName: lastNameUserSession,
+        avatar: '/mediafiles/avatars/default.png',
+      }
   }
+
+  setDatasUserSession([...DatasUserSession, fields])
 }
 ```
 
@@ -148,7 +146,7 @@ const App = () => {
   const [Datas, setDatas] = useState<string[]>([])
   const [DatasUserSession, setDatasUserSession] = useState<string[]>([])
 
-  return <VolkenoForumy Datas={Datas} DatasUserSession={DatasUserSession} />
+  return <VolkenoForumy Datas={Datas} DatasUserSession={DatasUserSession} hasThirdLevel={false} />
 
 }
 
@@ -163,6 +161,7 @@ export default App
 | ------------------------ | :------: | :-----:  | :-------:| :------------------------------------------------------------------------------ |
 | Datas               | string   |  true    | ...   | Contain forum data                                      |
 | DatasUserSession                    | string   |  true    | ...      |  contain user logged in data                                                                     |
+| hasThirdLevel                    | boolean   |  true    | false      |  allows the user to add or not add a third level of discussion                                                                     |
                                                                
 
 ## License

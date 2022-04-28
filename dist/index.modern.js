@@ -10,7 +10,8 @@ var styles = {"test":"_styles-module__test__3ybTi","contentViewStart":"_styles-m
 
 const FrontCommentItem = ({
   donnees,
-  DatasUserSession
+  DatasUserSession,
+  hasThirdLevel
 }) => {
   var _DataInt$first_level_;
 
@@ -94,7 +95,7 @@ const FrontCommentItem = ({
       className: styles.textSommaireForum
     }, donnee === null || donnee === void 0 ? void 0 : donnee.content, " "))), React__default.createElement("div", {
       className: styles.cardDiscussionHeureCommentaire
-    }, React__default.createElement("a", {
+    }, hasThirdLevel && React__default.createElement("a", {
       className: styles.cardDiscussionCommentaire,
       "data-toggle": "collapse",
       href: `#collapseExample${donnee === null || donnee === void 0 ? void 0 : donnee.id}`,
@@ -116,7 +117,7 @@ const FrontCommentItem = ({
       return React__default.createElement("div", {
         key: item.id,
         className: `row ${showLinks ? styles.forumDiscussionLigneUnion : ''}
-                                            mb-3`
+                                                mb-3`
       }, React__default.createElement("div", {
         className: "col-3"
       }, React__default.createElement("div", {
@@ -194,7 +195,8 @@ const FrontCommentItem = ({
 };
 
 const Discussion = ({
-  datasUserSession
+  datasUserSession,
+  hasThirdLevel
 }) => {
   var _donnees$author, _donnees$author2, _donnees$author3, _donnees$author4, _donnees$author5, _donnees$author6, _donnees$author7, _donnees$author8;
 
@@ -290,7 +292,8 @@ const Discussion = ({
     className: styles.textSommaireForum
   }, donnees.initialContent)))), React__default.createElement(FrontCommentItem, {
     donnees: donnees,
-    DatasUserSession: datasUserSession
+    DatasUserSession: datasUserSession,
+    hasThirdLevel: hasThirdLevel
   }), React__default.createElement("span", {
     className: styles.divSeparateur
   }), React__default.createElement("div", {
@@ -445,12 +448,7 @@ const Sommaire = ({
     className: "col-12"
   }, React__default.createElement(SommaireItem, {
     Datas: Datas
-  }), React__default.createElement("button", {
-    type: "button",
-    className: `btn ${styles.btnAjoutSujet}`,
-    "data-toggle": "modal",
-    "data-target": "#exampleModal"
-  }, "+"))))));
+  }))))));
 };
 
 const VolkenoForumy = ({ ...props
@@ -469,6 +467,7 @@ const VolkenoForumy = ({ ...props
   }), createElement(Route, {
     path: "/forum-discussion/:slug",
     element: createElement(Discussion, {
+      hasThirdLevel: props.hasThirdLevel && props.hasThirdLevel,
       datasUserSession: DatasUserSession
     })
   }))));
