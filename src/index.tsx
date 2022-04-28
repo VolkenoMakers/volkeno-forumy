@@ -15,37 +15,7 @@ export const VolkenoForumy = ({...props}: ForumProps) => {
   let {
     Datas, DatasUserSession
   } = props
-  
 
-  
-
-  // const onSubmitMessageResponse = (
-  //   subject: any, 
-  //   commentText:any
-  //   ) =>{
-  //   console.log(
-  //   'sujet',subject,
-  //   // 'comment',commentText
-  //   )
-  //   let field ={
-  //     content : commentText,
-  //     user: {
-  //       firstName: "Paul",
-  //       lastName: "Gomis",
-  //       avatar: '/mediafiles/avatars/default.png',
-  //     }
-  //   }
-  //   Datas = subject.first_level_response.push(field)
-  //   console.log('date',Datas)
-  // }
-
-  // const onAddResponseComment = (subject:any, comment:any, commentText:any) => {
-  //   console.log(
-  //     subject,
-  //     comment,
-  //     commentText
-  //   )
-  // }
 
   return (
     <BrowserRouter>
@@ -57,7 +27,7 @@ export const VolkenoForumy = ({...props}: ForumProps) => {
 					/>
 					<Route
 						path="/forum-discussion/:slug"
-						element={<Discussion 
+						element={<Discussion
               hasThirdLevel={props.hasThirdLevel && props.hasThirdLevel}
             datasUserSession={DatasUserSession} />}
 					/>
