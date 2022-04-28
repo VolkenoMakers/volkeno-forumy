@@ -152,7 +152,7 @@ let datasUserSession = [
       <div className='forum-container'>
           <VolkenoForumy 
             Datas={Datas}
-            hasThirdLevel={true}
+            hasThirdLevel={false}
             DatasUserSession={DatasUserSession}
           />
 

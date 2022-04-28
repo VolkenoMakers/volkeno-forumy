@@ -159,8 +159,8 @@ export default App
 
 | Property                 |   Type   | Require  |  Default | Description                                                                              |
 | ------------------------ | :------: | :-----:  | :-------:| :------------------------------------------------------------------------------ |
-| Datas               | string   |  true    | ...   | Contain forum data                                      |
-| DatasUserSession                    | string   |  true    | ...      |  contain user logged in data                                                                     |
+| Datas               | string   |  true    | []   | Contain forum data                                      |
+| DatasUserSession                    | string   |  true    | []      |  contain user logged in data                                                                     |
 | hasThirdLevel                    | boolean   |  true    | false      |  allows the user to add or not add a third level of discussion                                                                     |
                                                                
 
