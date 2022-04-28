@@ -1,50 +1,9 @@
 import React, { useState } from 'react'
-
 import { VolkenoForumy } from 'volkeno-forumy'
 import 'volkeno-forumy/dist/index.css'
 import moment from 'moment'
 
 const App = () => {
-
-    
-
-//   let datas = [
-//     {
-//       initialTitle: "Quels sont les avantages d'utiliser le vélo comme moyen de transport ?",
-//       initialContent: " Le vélo est un moyen de transport silencieux et écologique. C'est un engin qui ne présente pas beaucoup de danger. D'une part, le vélo ne nous fait pas respirer les vapeurs d'essence, mais les vapeurs du matin et du soir. D'autre part, il se moque des règlements, il ignore les interdits.",
-//       id: 1,
-//       slug: 'avantage_velo',
-//       created_at: "6/04/2022",
-//       author: {
-//           firstName: "Joël ",
-//           lastName: "Gomis",
-//           avatar: '/mediafiles/avatars/default.png',
-//       },
-//       first_level_response: [
-//           {
-//               id: 1,
-//               slug: 'initial_message_slug',
-//               user: {
-//                   firstName: "Sadio",
-//                   lastName: "Sanghare",
-//                   avatar: '/mediafiles/avatars/default.png',
-//               },
-//               content: "Comment 1",
-//               created_at: "6/04/2022",
-//               second_level_response: [
-//               {
-//                 id: 1,
-//                 slug: 'first_level_message_slug',
-//                   user: {
-//                       firstName: "Ndeye",
-//                       lastName: "Faye",
-//                       avatar: '/mediafiles/avatars/default.png',
-//                   },
-//                   content: "Reponse 7 deus",
-//               }
-//               ]
-//           }
-//   ]
 
   const [Datas, setDatas] = useState<string[]>([])
   const [DatasUserSession, setDatasUserSession] = useState<string[]>([])
@@ -62,10 +21,10 @@ const App = () => {
   function generateUniqueID() {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  
+
     for (var i = 0; i < 5; i++)
       text += possible.charAt(Math.floor(Math.random() * possible.length));
-  
+
     return text;
   }
 
@@ -83,7 +42,7 @@ const App = () => {
     const onAdd = (e:any) => {
         e.preventDefault()
         if(initialTitle.trim().length > 0 ){
-            
+
             let fields: any = {
                 initialTitle: initialTitle,
                 initialContent: initialContent,
@@ -111,7 +70,7 @@ const App = () => {
     const onAddUserSession = (e:any) => {
         e.preventDefault()
         if(firstNameUserSession.trim().length > 0 && firstNameUserSession.trim().length > 0 ){
-            
+
             let fields: any = {
                 id: generateUniqueID(),
                 slug: generateUniqueID(),
@@ -124,7 +83,7 @@ const App = () => {
             }
 
             setDatasUserSession([...DatasUserSession, fields])
-          
+
             resetForm2()
             setFirstNameUserSession('')
             setLastNameUserSession('')
@@ -135,13 +94,12 @@ const App = () => {
         }
     }
 
-  
+
   return (
       <div className='forum-container'>
-          <VolkenoForumy 
+          <VolkenoForumy
             Datas={Datas}
             DatasUserSession={DatasUserSession}
-            // onSubmitMessageResponse={() => onAddResponse(Comment)}
           />
 
 
@@ -165,7 +123,7 @@ const App = () => {
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <form id='add_msg_form'> 
+                  <form id='add_msg_form'>
                     <div className="modal-body">
                         <div className="form-group mr-3 w-100">
                           <label htmlFor="exampleFormControlInputdeux">First name</label>
@@ -227,7 +185,7 @@ const App = () => {
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <form id='add_msg_form2'> 
+                  <form id='add_msg_form2'>
                     <div className="modal-body">
                         <div className="form-group mr-3 w-100">
                           <label htmlFor="exampleFormControlInputdeux">First name</label>
