@@ -6,8 +6,6 @@ import moment from 'moment'
 
 const App = () => {
 
-    
-
 //   let datas = [
 //     {
 //       initialTitle: "Quels sont les avantages d'utiliser le vélo comme moyen de transport ?",

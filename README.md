@@ -72,6 +72,7 @@ logged in user data
 
 You should first make sure to create a method to retrieve user data to pass it in the DatasUserSession variable
 this process allows you to comment on a topic
+
 Example:
 ```tsx
 const [DatasUserSession, setDatasUserSession] = useState<string[]>([])
@@ -95,6 +96,7 @@ const onAddUserSession = (e:any) => {
 
 then to add a subject,
 create a method to retrieve the required fields and send it to the Datas variable
+
 Example:
 
 ```tsx
