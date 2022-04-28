@@ -10,16 +10,14 @@ import moment from 'moment';
 
 
 type discussionProps = {
-  onAddComment: (subject: any, commentText: string)=> any
-  onAddResponseComment: (subject: any, comment:any, commentText: string )=> any
   datasUserSession: any
+  hasThirdLevel: boolean
 }
 
 const Discussion= ({
-//   onAddComment,
-  onAddResponseComment,
-  datasUserSession
-}: discussionProps) => {
+	datasUserSession,
+	hasThirdLevel
+	}: discussionProps) => {
 
 	const {slug} = useParams() 
 
@@ -144,7 +142,7 @@ const Discussion= ({
 								</div>
 							</div>
             
-            			<FrontCommentItem donnees={donnees} onAddResponseComment={onAddResponseComment} DatasUserSession={datasUserSession} />
+            			<FrontCommentItem donnees={donnees} DatasUserSession={datasUserSession} hasThirdLevel={hasThirdLevel} />
 
 						{/* =========================================================== FIN COLLAPSE ============================================================================ */}
 						
@@ -152,7 +150,7 @@ const Discussion= ({
 
 						{
 
-						datasUserSession.length > 0 ? (
+						// datasUserSession.length > 0 ? (
 
 							<div className={`
 								row
@@ -200,37 +198,31 @@ const Discussion= ({
 												</div>
 
 												<div className="col-10">
-													{/* <AjoutComments
-														onSubmitMessageResponse={(comment: string)=>{
-														onAddComment(donnees, comment)
-														}}
-													/> */}
-
-														<form className='mb-3'>
-															<div className={
-																`${styles.forumCardSommaire}` 
-																}>
-																<div className='row'>
-																	<div className='col-12 pt-3 mb-md-4 mb-5'>
-																		<textarea className='form-control'
-																		placeholder='Répondre' name='contents' 
-																		value={comment}
-																		onChange={(e)=>{
-																			setComment(e.target.value)
-																		}}
-																		></textarea>                       
-																	</div>                  
-																</div>
+													<form className='mb-3'>
+														<div className={
+															`${styles.forumCardSommaire}` 
+															}>
+															<div className='row'>
+																<div className='col-12 pt-3 mb-md-4 mb-5'>
+																	<textarea className='form-control'
+																	placeholder='Répondre' name='contents' 
+																	value={comment}
+																	onChange={(e)=>{
+																		setComment(e.target.value)
+																	}}
+																	></textarea>                       
+																</div>                  
 															</div>
+														</div>
 
-															<button className={
-																styles.formAddCguButtonAjouter 
-															}
-																onClick={submitComment}
-															>
-																Ajouter
-															</button>
-														</form>
+														<button className={
+															styles.formAddCguButtonAjouter 
+														}
+															onClick={submitComment}
+														>
+															Ajouter
+														</button>
+													</form>
 
 												</div>
 											</div>
@@ -240,11 +232,11 @@ const Discussion= ({
 								}
 								</div>
 
-						) : (
-							<div className="alert alert-warning" role="alert">
-								Vous êtes déconnecté! Veuillez vous <a href="/" className="alert-link">reconnecté</a> pour continuer.
-							</div>
-						)
+						// ) : (
+						// 	<div className="alert alert-warning" role="alert">
+						// 		Vous êtes déconnecté! Veuillez vous <a href="/" className="alert-link">reconnecté</a> pour continuer.
+						// 	</div>
+						// )
 
 
 

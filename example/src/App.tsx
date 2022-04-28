@@ -5,8 +5,59 @@ import moment from 'moment'
 
 const App = () => {
 
+//   let datas = [
+//     {
+//       initialTitle: "Quels sont les avantages d'utiliser le vélo comme moyen de transport ?",
+//       initialContent: " Le vélo est un moyen de transport silencieux et écologique. C'est un engin qui ne présente pas beaucoup de danger. D'une part, le vélo ne nous fait pas respirer les vapeurs d'essence, mais les vapeurs du matin et du soir. D'autre part, il se moque des règlements, il ignore les interdits.",
+//       id: 1,
+//       slug: 'avantage_velo',
+//       created_at: "6/04/2022",
+//       author: {
+//           firstName: "Joël ",
+//           lastName: "Gomis",
+//           avatar: '/mediafiles/avatars/default.png',
+//       },
+//       first_level_response: [
+//           {
+//               id: 1,
+//               slug: 'initial_message_slug',
+//               user: {
+//                   firstName: "Sadio",
+//                   lastName: "Sanghare",
+//                   avatar: '/mediafiles/avatars/default.png',
+//               },
+//               content: "Comment 1",
+//               created_at: "6/04/2022",
+//               second_level_response: [
+//               {
+//                 id: 1,
+//                 slug: 'first_level_message_slug',
+//                   user: {
+//                       firstName: "Ndeye",
+//                       lastName: "Faye",
+//                       avatar: '/mediafiles/avatars/default.png',
+//                   },
+//                   content: "Reponse 7 deus",
+//               }
+//               ]
+//           }
+//   ]
+
+let datasUserSession = [
+  {
+    id: generateUniqueID(),
+    slug: generateUniqueID(),
+    created_at: moment().format('DD/MM/yyyy'),
+    user: {
+      firstName: 'Lorem',
+      lastName: 'Ipsum',
+      avatar: '/mediafiles/avatars/default.png',
+    }
+  }
+]
+
   const [Datas, setDatas] = useState<string[]>([])
-  const [DatasUserSession, setDatasUserSession] = useState<string[]>([])
+  const [DatasUserSession, setDatasUserSession] = useState(datasUserSession)
 
 //======================= AJOUT SUJET ===================================
 
@@ -89,8 +140,6 @@ const App = () => {
             setLastNameUserSession('')
 
             launchAlert()
-
-            // alert('Vous êtes bien connecté. Veuillez ajouter un sujet pour continuer !!')
         }
     }
 
@@ -99,9 +148,9 @@ const App = () => {
       <div className='forum-container'>
           <VolkenoForumy
             Datas={Datas}
+            hasThirdLevel={false}
             DatasUserSession={DatasUserSession}
           />
-
 
           {
             (display) ? (
