@@ -7,14 +7,9 @@ import { AiOutlineClockCircle } from "react-icons/ai";
 import moment from 'moment';
 
 
-const FrontCommentItem: React.FC<any> = (
-    { donnees,
-        //  onAddResponseComment, 
-         DatasUserSession }
-    ): JSX.Element => {
+const FrontCommentItem: React.FC<any> = ({ donnees, DatasUserSession }): JSX.Element => {
 
         
-
         const [DataInt, setDataInt] = useState(donnees)
 
         const [showLinks, setShowLinks] = useState(false);

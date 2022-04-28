@@ -70,6 +70,55 @@ logged in user data
 }
 ```
 
+You should first make sure to create a method to retrieve user data to pass it in the datauser variable
+this process allows you to comment on a topic
+Example:
+```tsx
+const [DatasUserSession, setDatasUserSession] = useState<string[]>([])
+
+const onAddUserSession = (e:any) => {
+  e.preventDefault()
+  if(firstNameUserSession.trim().length > 0 && firstNameUserSession.trim().length > 0 ){
+    let fields: any = {
+        id: generateUniqueID(),
+        slug: generateUniqueID(),
+        created_at: '22/04/2022',
+        user: {
+            firstName: firstNameUserSession,
+            lastName: lastNameUserSession,
+            avatar: '/mediafiles/avatars/default.png',
+        }
+    }
+
+    setDatasUserSession([...DatasUserSession, fields])
+  }
+}
+```
+
+then to add a subject,
+create a method to retrieve the required fields and send it to the Datas variable
+Example:
+
+```tsx
+const onAddSubject = (e:any) => {
+  e.preventDefault()
+  let fields: any = {
+      initialTitle: initialTitle,
+      initialContent: initialContent,
+      id: generateUniqueID(),
+      slug: generateUniqueID(),
+      created_at: moment().format('DD/MM/yyyy'),
+      author: {
+          firstName: firstName,
+          lastName: lastName,
+          avatar: '/mediafiles/avatars/default.png',
+      },
+      first_level_response: []
+  }
+  setDatas([...Datas, fields])
+}
+```
+
 
 <!-- ![alt text](https://github.com/VolkenoMakers/volkeno-forumy/blob/add-response/src/components/img/dataForumStructure.png) -->
 

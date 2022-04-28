@@ -46,8 +46,22 @@ const App = () => {
 //           }
 //   ]
 
+let datasUserSession = [
+  {
+    id: generateUniqueID(),
+    slug: generateUniqueID(),
+    created_at: moment().format('DD/MM/yyyy'),
+    user: {
+      firstName: 'Lorem',
+      lastName: 'Ipsum',
+      avatar: '/mediafiles/avatars/default.png',
+    }
+  }
+]
+
   const [Datas, setDatas] = useState<string[]>([])
-  const [DatasUserSession, setDatasUserSession] = useState<string[]>([])
+  const [DatasUserSession, setDatasUserSession] = useState(datasUserSession)
+  // const [SecondLevel, setSecondLevel] = useState(false)
 
 //======================= AJOUT SUJET ===================================
 
@@ -130,10 +144,9 @@ const App = () => {
             setLastNameUserSession('')
 
             launchAlert()
-
-            // alert('Vous êtes bien connecté. Veuillez ajouter un sujet pour continuer !!')
         }
     }
+
 
   
   return (
@@ -141,9 +154,8 @@ const App = () => {
           <VolkenoForumy 
             Datas={Datas}
             DatasUserSession={DatasUserSession}
-            // onSubmitMessageResponse={() => onAddResponse(Comment)}
+            // SecondLevel={SecondLevel}
           />
-
 
           {
             (display) ? (
