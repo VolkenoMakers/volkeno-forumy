@@ -15,18 +15,14 @@ export const VolkenoForumy = ({...props}: ForumProps) => {
   let {
     Datas, DatasUserSession
   } = props
-  
 
-  
+
+
 
   const onSubmitMessageResponse = (
-    subject: any, 
+    subject: any,
     commentText:any
     ) =>{
-    console.log(
-    'sujet',subject,
-    // 'comment',commentText
-    )
     let field ={
       content : commentText,
       user: {
@@ -60,7 +56,7 @@ export const VolkenoForumy = ({...props}: ForumProps) => {
 						element={<Discussion onAddComment={onSubmitMessageResponse}
             onAddResponseComment={onAddResponseComment}
             datasUserSession={DatasUserSession}
-            
+
             />}
 					/>
         </Routes>
