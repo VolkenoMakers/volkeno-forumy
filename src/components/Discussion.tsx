@@ -106,7 +106,7 @@ const Discussion= ({
 												donnees?.initialTitle
 											} 
 										</h3>
-										<div className={styles.forumSommairAauteurCard}>
+										<div className={styles.forumSommaireAuteurCard}>
 											<IoReturnDownBackOutline className="mr-1" />{" "}
 											Par{" "}
 											{donnees
