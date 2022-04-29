@@ -1,12 +1,9 @@
 import React, { useState } from 'react'
-
 import { VolkenoForumy } from 'volkeno-forumy'
 import 'volkeno-forumy/dist/index.css'
 import moment from 'moment'
 
 const App = () => {
-
-    
 
 //   let datas = [
 //     {
@@ -75,10 +72,10 @@ let datasUserSession = [
   function generateUniqueID() {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  
+
     for (var i = 0; i < 5; i++)
       text += possible.charAt(Math.floor(Math.random() * possible.length));
-  
+
     return text;
   }
 
@@ -96,7 +93,7 @@ let datasUserSession = [
     const onAdd = (e:any) => {
         e.preventDefault()
         if(initialTitle.trim().length > 0 ){
-            
+
             let fields: any = {
                 initialTitle: initialTitle,
                 initialContent: initialContent,
@@ -124,7 +121,7 @@ let datasUserSession = [
     const onAddUserSession = (e:any) => {
         e.preventDefault()
         if(firstNameUserSession.trim().length > 0 && firstNameUserSession.trim().length > 0 ){
-            
+
             let fields: any = {
                 id: generateUniqueID(),
                 slug: generateUniqueID(),
@@ -137,7 +134,7 @@ let datasUserSession = [
             }
 
             setDatasUserSession([...DatasUserSession, fields])
-          
+
             resetForm2()
             setFirstNameUserSession('')
             setLastNameUserSession('')
@@ -147,10 +144,9 @@ let datasUserSession = [
     }
 
 
-  
   return (
       <div className='forum-container'>
-          <VolkenoForumy 
+          <VolkenoForumy
             Datas={Datas}
             hasThirdLevel={false}
             DatasUserSession={DatasUserSession}
@@ -180,7 +176,7 @@ let datasUserSession = [
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <form id='add_msg_form'> 
+                  <form id='add_msg_form'>
                     <div className="modal-body">
                         <div className="form-group mr-3 w-100">
                           <label htmlFor="exampleFormControlInputdeux">First name</label>
@@ -242,7 +238,7 @@ let datasUserSession = [
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <form id='add_msg_form2'> 
+                  <form id='add_msg_form2'>
                     <div className="modal-body">
                         <div className="form-group mr-3 w-100">
                           <label htmlFor="exampleFormControlInputdeux">First name</label>
