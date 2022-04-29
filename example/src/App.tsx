@@ -163,6 +163,10 @@ let datasUserSession = [
 
           {/* ======================== MODALE AJOUT SUJET ========================= */}
 
+            <button type="button" className={`btn btnAjoutSujet` }data-toggle="modal" data-target="#exampleModal">
+              +
+            </button>
+
             <div className="modal fade" id="exampleModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div className='modal-dialog' role="document">
                 <div className="modal-content">
