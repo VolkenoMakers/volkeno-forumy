@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 
 
 const SommaireItem = ({ Datas }: any): JSX.Element => {
-  
+
   return (
       <div>
 
@@ -26,7 +26,7 @@ const SommaireItem = ({ Datas }: any): JSX.Element => {
                       >
 
                     <div className={
-                        styles.forumCardSommaire 
+                        styles.forumCardSommaire
                         } key={item?.id}>
                     <div className={styles.cardSommaireDateAjout}>
                         {item?.created_at}
@@ -43,12 +43,12 @@ const SommaireItem = ({ Datas }: any): JSX.Element => {
                         </div>
                         <div className="">
                         <h3 className={
-                            styles.titreSommaireForum 
+                            styles.titreSommaireForum
                             }>
-                            {item?.initialTitle} 
+                            {item?.initialTitle}
                         </h3>
                         <div className={styles.forumSommaireAuteurCard}>
-                            <IoReturnDownBackOutline className="mr-1" /> 
+                            <IoReturnDownBackOutline className="mr-1" />
                             Par{" "}
                             {item?.author?.firstName !== undefined ||
                             item?.author?.lastName !== undefined
@@ -62,7 +62,7 @@ const SommaireItem = ({ Datas }: any): JSX.Element => {
                         <p className={
                             styles.textSommaireForum
                             }>
-                            {item?.initialContent} 
+                            {item?.initialContent}
                         </p>
                         </div>
                         <div className="col-lg-3">
@@ -76,8 +76,8 @@ const SommaireItem = ({ Datas }: any): JSX.Element => {
                                 className={
                                     styles.divSommaireForumUserChat2}
                                 />
-                            ))} 
-                            
+                            ))}
+
                             <div className={
                                 styles.divSommaireForumUserChat5
                                 }>
@@ -99,7 +99,7 @@ const SommaireItem = ({ Datas }: any): JSX.Element => {
                     </div>
 
                     </NavLink>
-                
+
                     )
                 })
                 ) : (
@@ -107,9 +107,9 @@ const SommaireItem = ({ Datas }: any): JSX.Element => {
                     <div className="row div-card">
                     <div className={`col-12 ${styles.emptySubjectMessage} alert alert-warning`} role="alert">
                         <h4 className="admin-contacts-title text-center">
-                            Pas de sujet de discussion
+                          No talking point
                         </h4>
-                        <p>Appuyer sur le boutton <span className={`${styles.emptySubjectMessageBtnPlus}`}>+</span> en bas pour ajouter des sujet !!</p>
+                        <p>Press on the <span className={`${styles.emptySubjectMessageBtnPlus}`}>+</span> button at the bottom to add subject. </p>
                     </div>
                     </div>
                 </div>

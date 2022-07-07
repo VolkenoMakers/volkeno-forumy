@@ -18,8 +18,9 @@ export const VolkenoForumy = ({...props}: ForumProps) => {
 
 
   return (
-    <BrowserRouter>
+
 			<div className="router-container">
+        <BrowserRouter>
 				<Routes>
 					<Route
 						path="/"
@@ -32,7 +33,8 @@ export const VolkenoForumy = ({...props}: ForumProps) => {
             datasUserSession={DatasUserSession} />}
 					/>
         </Routes>
+        </BrowserRouter>
       </div>
-    </BrowserRouter>
+
   )
 }

@@ -4,11 +4,11 @@
 
 ## Description
 
-the forum has three levels of possible addition:
+The forum has three levels of possible addition:
 
-* the first concerns the addition of the subject. You must add a title, an initial content, an id, a slug, a creation date, a first name and a last name.
+* The first concerns the addition of the subject. You must add a title, an initial content, an id, a slug, a creation date, a first name and a last name.
 
-* the second provide you the posibility to add comments to a subject. You need the following fields: comment content, id, slug, creation date, first name and last name.
+* The second provide you the posibility to add comments to a subject. You need the following fields: comment content, id, slug, creation date, first name and last name.
 
 * And for the last level users can reply to a comment with the same fields of level two
 
@@ -70,8 +70,10 @@ logged in user data
 }
 ```
 
-You should first make sure to create a method to retrieve user data to pass it in the DatasUserSession variable
-this process allows you to comment on a topic
+You should first make sure to create a method to retrieve user data to pass it in the DatasUserSession variable. This process allows you, to comment on a topic.
+
+# Screenshot
+![Volkeno Forumy Screenshot](https://v1.casimages.com/v/2022/07/07//oC1jOb-Enregistrement-de-lecran-2022-07-07-a-130032.mov)
 
 Example:
 ```tsx
@@ -94,7 +96,7 @@ const onAddUserSession = (e:any) => {
 }
 ```
 
-then to add a subject,
+Then to add a subject,
 create a method to retrieve the required fields and send it to the Datas variable
 
 Example:
@@ -148,7 +150,11 @@ const App = () => {
   const [Datas, setDatas] = useState<string[]>([])
   const [DatasUserSession, setDatasUserSession] = useState<string[]>([])
 
-  return <VolkenoForumy Datas={Datas} DatasUserSession={DatasUserSession} hasThirdLevel={false} />
+  return <VolkenoForumy
+            Datas={Datas}
+            DatasUserSession={DatasUserSession}
+            hasThirdLevel={false}
+          />
 
 }
 
@@ -164,7 +170,7 @@ export default App
 | Datas               | string   |  true    | []   | Contain forum data                                      |
 | DatasUserSession                    | string   |  true    | []      |  contain user logged in data                                                                     |
 | hasThirdLevel                    | boolean   |  true    | false      |  allows the user to add or not add a third level of discussion                                                                     |
-                                                               
+
 
 ## License
 
