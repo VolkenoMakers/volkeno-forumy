@@ -75,7 +75,7 @@ You should first make sure to create a method to retrieve user data to pass it i
 # Screenshot
 ![Volkeno Forumy Screenshot](https://nsm09.casimages.com/img/2022/07/07//22070703451625804917945185.png)
 
-Example:
+# Example of use
 ```tsx
 const [DatasUserSession, setDatasUserSession] = useState<string[]>([])
 
