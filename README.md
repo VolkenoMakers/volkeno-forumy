@@ -73,7 +73,7 @@ logged in user data
 You should first make sure to create a method to retrieve user data to pass it in the DatasUserSession variable. This process allows you, to comment on a topic.
 
 # Screenshot
-![Volkeno Forumy Screenshot](https://v1.casimages.com/v/2022/07/07//oC1jOb-Enregistrement-de-lecran-2022-07-07-a-130032.mov)
+![Volkeno Forumy Screenshot](https://nsm09.casimages.com/img/2022/07/07//22070703451625804917945185.png)
 
 Example:
 ```tsx
